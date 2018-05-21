@@ -1,0 +1,38 @@
+@tailwind preflight;
+
+@import '~font-awesome/css/font-awesome.css';
+
+@tailwind components;
+
+@tailwind utilities;
+
+#stripes {
+    transform-origin: 0;
+    transform: skewY(-6deg);
+    background: linear-gradient(150deg, #CC1F1A 0%, #E3342F 30%, #EF5753 50%);
+}
+
+#secondary:before {
+    position: absolute;
+    content: "";
+    background: #f6f9fc;
+    width: 100%;
+    height: 120%;
+    top:0;
+    transform: skewY(6deg);
+    z-index: -1;
+}
+
+[v-cloak] > * { display:none; }
+
+.navbar-item.active {
+    @apply .text-red-darkest .border-red;
+}
+
+.navbar-item {
+    @apply .px-2 .py-6 .text-sm .text-grey .no-underline .border-b-2 .border-transparent;
+}
+
+.navbar-item:hover {
+    @apply .border-red
+}
