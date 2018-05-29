@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
+use App\Drug;
 use Illuminate\Http\Request;
 
-class ArticlesController extends Controller
+class DrugsController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth');
     }
 
     /**
@@ -19,9 +19,7 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::all();
-
-        return view('articles.index', compact('articles'));
+        //
     }
 
     /**
@@ -53,9 +51,7 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $article = Article::with('drugs')->findOrFail($id);
-
-        return view('articles.show', compact('article'));
+        //
     }
 
     /**
@@ -66,9 +62,9 @@ class ArticlesController extends Controller
      */
     public function edit($id)
     {
-        $article = Article::with('drugs')->findOrFail($id);
+        $drug = Drug::with('article')->find($id);
 
-        return view('articles.edit', compact('article'));
+        return view('drugs.edit', compact('drug'));
     }
 
     /**
@@ -80,9 +76,10 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        Article::find($request->id)->update($request->all());
+        $drug = Drug::find($request->id);
+        $drug->update($request->all());
 
-        return redirect()->route('articles.show', $request->id);
+        return redirect()->route('articles.show', $drug->article_id);
     }
 
     /**

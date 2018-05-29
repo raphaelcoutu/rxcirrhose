@@ -16,3 +16,8 @@ Route::get('/', function () {
 });
 
 Route::resource('articles', 'ArticlesController');
+Route::resource('drugs', 'DrugsController');
+
+Route::get('/admin', 'AdminController@getLogin')->name('admin.getLogin');
+Route::post('/admin', 'AdminController@postLogin')->name('admin.postLogin');
+Route::get('/logout', 'AdminController@getLogout')->name('admin.getLogout');

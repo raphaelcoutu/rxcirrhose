@@ -16,9 +16,19 @@ window.Vue = require('vue');
  */
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
+// Vue.component('cirrhose-editor', require('./components/Editor.vue'));
 Vue.component('cirrhose-search-button', require('./components/Search-Button.vue'));
 Vue.component('cirrhose-search', require('./components/Search.vue'));
 
 const app = new Vue({
-    el: '#app'
+    el: '#app',
+    data: {
+        mobileMenu: false
+    },
+    methods: {
+        toggleMobileMenu() {
+            this.mobileMenu = !this.mobileMenu;
+        }
+    }
+
 });

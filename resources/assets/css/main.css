@@ -1,7 +1,5 @@
 @tailwind preflight;
 
-@import '~font-awesome/css/font-awesome.css';
-
 @tailwind components;
 
 @tailwind utilities;
@@ -25,14 +23,43 @@
 
 [v-cloak] > * { display:none; }
 
-.navbar-item.active {
+nav a.active {
     @apply .text-red-darkest .border-red;
 }
 
-.navbar-item {
-    @apply .px-2 .py-6 .text-sm .text-grey .no-underline .border-b-2 .border-transparent;
+.table-header {
+    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey .border-b .border-grey-light
 }
 
-.navbar-item:hover {
-    @apply .border-red
+.summary-list > li {
+    list-style: none;
+    font-weight: bold;
+    padding: 0.5em 0.5em;
+}
+
+td > p {
+    padding:10px 0;
+}
+
+td {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.trans {
+    transition: linear 300ms;
+}
+
+[v-cloak] > * {
+    display: none;
+}
+
+@media (max-width: 500px) {
+    th.table-header {
+        font-size:12px;
+        padding: 0;
+    }
+    td {
+        font-size: 12px;
+    }
 }

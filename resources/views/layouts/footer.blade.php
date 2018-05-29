@@ -1,12 +1,10 @@
 <footer class="bg-red text-white text-xs py-2 mt-4">
-    <div class="flex justify-center">
-        <div class="flex justify-around w-1/2">
+    <div class="container mx-auto flex justify-center">
+        <div class="flex flex-col justify-around w-3/4">
             <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight">À propos</a>
-            <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight">Qui sommes-nous?</a>
+            <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight my-2">Qui sommes-nous?</a>
             <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight">Contact</a>
+            <p class="mt-4">&copy; {{ date("Y") }}</p>
         </div>
     </div>
-    <p class="flex justify-center mt-8">
-        &copy; {{ date("Y") }}, Conception web: Raphaël Coutu
-    </p>
 </footer>

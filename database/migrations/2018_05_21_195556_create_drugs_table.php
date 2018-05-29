@@ -16,6 +16,7 @@ class CreateDrugsTable extends Migration
         Schema::create('drugs', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('article_id');
+            $table->string('name');
             $table->text('absorption');
             $table->text('distribution');
             $table->text('metabolisme');
