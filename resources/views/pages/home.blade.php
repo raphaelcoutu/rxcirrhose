@@ -28,9 +28,9 @@
             <div :class="mobileMenu ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto md:w-3/5 sm:justify-end" v-cloak>
                 <div class="w-full sm:flex justify-between items-center tracking-tight font-thin uppercase bg-red-lightest sm:bg-transparent">
                     <a href="#" class="block sm:inline-block p-2 text-sm text-black sm:text-white sm:border-b-2 border-red-lightest no-underline sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Accueil</a>
-                    <a href="#" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Cirrhose du foie</a>
+                    <a href="{{ url('cirrhose') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Cirrhose du foie</a>
                     <a href="{{ route('articles.index') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Médicaments</a>
-                    <a href="#" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">FAQ</a>
+                    <a href="{{ url('faq') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">FAQ</a>
                 </div>
             </div>
         </div>
@@ -50,15 +50,18 @@
                                 <p class="text-sm sm:text-base font-thin uppercase"></i>Nouvelle référence gratuite</p>
                                 <h1 class="text-xl sm:text-3xl">Ajustement des médicaments en insuffisance hépatique</h1>
                             </div>
-                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">La cirrhose a un impact majeur sur le métabolisme de la majorité des médicaments disponibles sur le marché.
-                                Bien que ce problème de santé devient de plus en plus prévalence (plus de 1 % de la population mondiale en serait atteinte), il existe peu d’information dans les monographies concernant leur ajustement en présence d’insuffisance hépatique.</p>
+                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">La cirrhose a un impact majeur sur le métabolisme de la majorité des médicaments disponibles sur le marché. Bien que ce problème de santé devient de plus en plus prévalent, il existe peu d’information dans les monographies concernant leur ajustement en présence d’insuffisance hépatique.</p>
                             <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('articles.index') }}">Explorer la documentation</a>
                         </div>
                     </div>
                 </section>
             </header>
-            <section id="primary" class="mx-auto container flex flex-col items-center justify-around md:h-128">
-                <div class="w-full flex justify-center">
+            <section id="primary" class="mx-auto container flex flex-col items-center justify-around">
+                <div class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-light shadow border rounded border-red-dark py-3">
+                    <p>10 fiches médicamenteuses produites</p>
+                    <p>39 molécules analysées</p>
+                </div>
+                <div class="w-full flex justify-center mt-8">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
                         @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32'])
                     </div>
@@ -69,15 +72,16 @@
                         </p>
                     </div>
                 </div>
-                <div class="w-full flex md:flex-row-reverse justify-center">
+                <div class="w-full flex md:flex-row-reverse justify-center mt-4">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
                         @include('svg.document', ['class' => 'w-16 h-16 md:w-32 md:h-32'])
                     </div>
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
-                        <p class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie du médicament a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.
-                        </p>
+                        <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
+                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie du médicament a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
+                            <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh ici.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -88,60 +92,57 @@
                     <div class="flex flex-col md:flex-row justify-around mt-10">
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
                             <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
-                            <p class="text-grey-darkest py-4">Prénom Nom</p>
+                            <p class="text-grey-darkest py-4">Yasemin Cokay</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
                             <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
-                            <p class="text-grey-darkest py-4">Prénom Nom</p>
+                            <p class="text-grey-darkest py-4">Steven Mancino</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
                             <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
-                            <p class="text-grey-darkest py-4">Prénom Nom</p>
+                            <p class="text-grey-darkest py-4">Fabiano Pandozzi</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
                             <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
-                            <p class="text-grey-darkest py-4">Prénom Nom</p>
+                            <p class="text-grey-darkest py-4">Donna Renda</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
                             <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png" alt="">
-                            <p class="text-grey-darkest py-4">Prénom Nom</p>
+                            <p class="text-grey-darkest py-4">Alessio Valentini</p>
                         </div>
                     </div>
                     <p class="mt-10 uppercase text-grey-darker">Pharmaciens réviseurs</p>
                     <div class="flex flex-col md:flex-row justify-around mt-10">
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/11012183_10153535350093777_6154377630598111426_n.jpg?_nc_cat=0&oh=d198a2164efe9721a7724d4d92d7f178&oe=5B956FF8">
+                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
                             <p class="text-grey-darkest py-4">Raphaël Coutu</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-1/12401009_1075363999162736_3807110703358194319_n.jpg?_nc_cat=0&oh=6bc7ce968a65904f54170f108c8b03b2&oe=5B817B4C">
+                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
                             <p class="text-grey-darkest py-4">Victor Ferreira</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://scontent-yyz1-1.xx.fbcdn.net/v/t1.0-9/11800065_10153490591324491_4053491543982135528_n.jpg?_nc_cat=0&oh=4895f6f1ac00d89d5ef81959a7e8ae95&oe=5B9568C6">
+                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
                             <p class="text-grey-darkest py-4">Alexandre Mathieu</p>
                         </div>
                     </div>
                 </div>
             </section>
             <section id="tertiary" class="bg-white">
-                <div class="container mx-auto py-10">
-                    <h2 class="text-center">Mise en garde</h2>
-                    <div class="flex flex-col w-3/4 mt-10 mx-auto">
-                        <div class="flex flex-col md:flex-row">
-                            <div class="w-full md:w-1/2 mt-4 bg-red-lightest rounded border-2 border-red-dark p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                <p>Ce site se veut un guide ou une référence contenant assez d’informations pour aider le pharmacien à prendre une décision éclairée. Cependant, ce guide ne remplace aucunement le jugement du professionnel de la santé.</p>
-                            </div>
-                            <div class="w-full md:w-1/2 mt-4 bg-red-lightest rounded border-2 border-red-dark p-4 md:ml-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                <p>Il importe de se rappeler que les valeurs de laboratoire aberrantes devraient être questionnées rigoureusement si elles n’ont vraiment aucun sens. Au besoin, il est pertinent de répéter une analyse de laboratoire.</p>
+                <div class="container flex flex-col mx-auto py-10">
+                    <div>
+                        <h2 class="text-center">Mise en garde</h2>
+                        <div class="flex w-3/4 mt-10 mx-auto">
+                            <div class="w-full mt-4 bg-red-lightest rounded border-2 border-red-dark p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
+                                    <p>Ce site se veut un guide ou une référence contenant assez d’informations pour aider le pharmacien à prendre une décision éclairée. Cependant, ce guide ne remplace aucunement le jugement du professionnel de la santé.</p>
                             </div>
                         </div>
-                        <div class="flex flex-col md:flex-row md:mt-4">
-                            <div class="w-full md:w-1/2 mt-4 md:mt-0 bg-red-lightest rounded border-2 border-red-dark p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                <p>En tant que pharmaciens, nous sommes biaisés et nous avons tendance à attribuer tous les problèmes du patient à ses médicaments. Cependant, il faut voir le patient dans son ensemble et penser que les anomalies des valeurs de laboratoire ne sont pas nécessairement dues aux médicaments ou que ceux-ci peuvent avoir contribué sans être l’unique cause. Selon la situation, le patient devrait tout de même être référé en cas d’anomalie significative.</p>
-                            </div>
-                            <div class="w-full md:w-1/2 mt-4 md:mt-0 bg-red-lightest rounded border-2 border-red-dark p-4 md:ml-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                <p>Les valeurs normales des analyses de laboratoire peuvent varier selon les laboratoires d’analyse et selon les caractéristiques du patient (l’ethnie, le sexe, etc.). Les valeurs normales inscrites dans les tableaux sont à titre indicatif.</p>
+                    </div>
+                    <div class="mt-10">
+                        <h2 class="text-center">Conflits d’intérêts</h2>
+                        <div class="flex w-3/4 mt-10 mx-auto">
+                            <div class="w-full mt-4 p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
+                                <p>Aucun membre de l’équipe n’a de conflits d’intérêts à divulguer.</p>
                             </div>
                         </div>
                     </div>

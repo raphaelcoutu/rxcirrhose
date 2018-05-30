@@ -10,4 +10,14 @@ class PagesController extends Controller
     {
         return view('pages.home');
     }
+
+    public function cirrhose()
+    {
+        return view('pages.cirrhose');
+    }
+
+    public function faq()
+    {
+        return view('pages.faq');
+    }
 }

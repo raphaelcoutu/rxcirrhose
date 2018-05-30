@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'PagesController@home');
+Route::get('/cirrhose', 'PagesController@cirrhose');
+Route::get('/faq', 'PagesController@faq');
 
 Route::resource('articles', 'ArticlesController');
 Route::resource('drugs', 'DrugsController');
