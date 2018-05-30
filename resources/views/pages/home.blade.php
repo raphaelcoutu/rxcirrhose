@@ -5,6 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="RxCirrhose" />
+    <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
 
     <title>RxCirrhose</title>
 
