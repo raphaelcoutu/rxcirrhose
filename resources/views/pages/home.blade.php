@@ -91,38 +91,54 @@
                     <p class="mt-6 uppercase text-grey-darker">Étudiants finissant en pharmacie</p>
                     <div class="flex flex-col md:flex-row justify-around mt-10">
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Yasemin Cokay</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Steven Mancino</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Fabiano Pandozzi</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Donna Renda</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png" alt="">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Alessio Valentini</p>
                         </div>
                     </div>
                     <p class="mt-10 uppercase text-grey-darker">Pharmaciens réviseurs</p>
                     <div class="flex flex-col md:flex-row justify-around mt-10">
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Raphaël Coutu</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Victor Ferreira</p>
                         </div>
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <img class="h-24 w-24 rounded-full border-2 border-red" src="https://rentnjoy.com/development/wp-content/uploads/1457/86/analyst-placeholder-avatar.png">
+                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
+                                @include('svg.user', ['class' => 'h-16 w-16'])
+                            </div>
                             <p class="text-grey-darkest py-4">Alexandre Mathieu</p>
                         </div>
                     </div>
