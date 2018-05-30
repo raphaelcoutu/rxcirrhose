@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    @include('layouts.navbar', ['active' => 'cirrhose'])
+    @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-1 justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
             <div class="flex border-b border-grey-light items-center">
