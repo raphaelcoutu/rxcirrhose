@@ -14,7 +14,7 @@
             </div>
             <div :class="mobileMenu ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto md:w-3/5 md:justify-between tracking-tight font-thin uppercase sm:justify-end" v-cloak>
                 <a href="/" class="block px-2 py-3 sm:py-6 text-sm text-grey no-underline border-b-2 border-transparent sm:hover:border-red hover:bg-red-lightest sm:hover:bg-transparent hover:text-black trans">Accueil</a>
-                <a href="{{ url('cirrhose') }}" class="block px-2 py-3 sm:py-6 text-sm text-grey no-underline border-b-2 border-transparent sm:hover:border-red hover:bg-red-lightest sm:hover:bg-transparent hover:text-black trans flex{{ $active == 'cirrhose' ? ' active' : '' }}"><span class="md:hidden">Cirrhose</span><span class="hidden md:block">Cirrhose du foie</span></a>
+                <a href="{{ url('cirrhose') }}" class="block px-2 py-3 sm:py-6 text-sm text-grey no-underline border-b-2 border-transparent sm:hover:border-red hover:bg-red-lightest sm:hover:bg-transparent hover:text-black trans flex{{ $active == 'cirrhose' ? ' active' : '' }}">Cirrhose</a>
                 <a href="{{ route('articles.index') }}" class="block px-2 py-3 sm:py-6 text-sm text-grey no-underline border-b-2 border-transparent sm:hover:border-red hover:bg-red-lightest sm:hover:bg-transparent hover:text-black trans{{ $active == 'medicaments' ? ' active' : '' }}">Médicaments</a>
                 <a href="{{ url('faq') }}" class="block px-2 py-3 sm:py-6 text-sm text-grey no-underline border-b-2 border-transparent sm:hover:border-red hover:bg-red-lightest sm:hover:bg-transparent hover:text-black trans{{ $active == 'faq' ? ' active' : '' }}">FAQ</a>
                 <div class="w-12 flex justify-center items-center">

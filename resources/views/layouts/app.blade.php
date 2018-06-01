@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ app()->getLocale() }}" class="min-h-screen">
+<html lang="{{ app()->getLocale() }}">
 <head>
     @include('layouts.analytics')
     <meta charset="utf-8">
@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 </head>
-<body class="font-sans flex flex-col min-h-screen bg-red-lightest">
+<body class="font-sans flex flex-col bg-red-lightest">
 
-<div id="app" class="flex flex-col min-h-screen">
+<div id="app" class="flex flex-col">
     @yield('content')
 </div>
 
