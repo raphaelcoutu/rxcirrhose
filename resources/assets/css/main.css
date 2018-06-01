@@ -2,6 +2,14 @@
 
 @tailwind components;
 
+nav a.active {
+    @apply .text-red-darkest .border-red;
+}
+
+.table-header {
+    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey .border-b .border-grey-light
+}
+
 @tailwind utilities;
 
 #stripes {
@@ -26,14 +34,6 @@ a {
 }
 
 [v-cloak] > * { display:none; }
-
-nav a.active {
-    @apply .text-red-darkest .border-red;
-}
-
-.table-header {
-    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey .border-b .border-grey-light
-}
 
 .summary-list > li {
     list-style: none;
