@@ -10,6 +10,10 @@
     background: linear-gradient(150deg, #CC1F1A 0%, #E3342F 30%, #EF5753 50%);
 }
 
+a {
+    text-decoration: none;
+}
+
 #secondary:before {
     position: absolute;
     content: "";
