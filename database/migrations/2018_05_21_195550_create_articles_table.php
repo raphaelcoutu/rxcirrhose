@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->text('summary')->nullable();
             $table->text('pharmacodynamics')->nullable();
             $table->text('references')->nullable();
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }
