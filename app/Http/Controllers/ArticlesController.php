@@ -31,7 +31,7 @@ class ArticlesController extends Controller
      */
     public function create()
     {
-        //
+        return view('articles.create');
     }
 
     /**
@@ -42,7 +42,13 @@ class ArticlesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'title' => 'required|unique:articles|max:255'
+        ]);
+
+        Article::create($request->all());
+
+        return redirect()->route('articles.index');
     }
 
     /**
@@ -53,7 +59,9 @@ class ArticlesController extends Controller
      */
     public function show($id)
     {
-        $article = Article::with('drugs')->findOrFail($id);
+        $article = Article::with(['drugs' => function($query) {
+            $query->orderBy('name');
+        }])->findOrFail($id);
 
         return view('articles.show', compact('article'));
     }
@@ -80,6 +88,10 @@ class ArticlesController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'title' => "required|unique:articles,title,{$id}|max:255"
+        ]);
+
         Article::find($request->id)->update($request->all());
 
         return redirect()->route('articles.show', $request->id);

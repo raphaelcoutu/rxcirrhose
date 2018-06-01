@@ -16,7 +16,11 @@ Route::get('/cirrhose', 'PagesController@cirrhose');
 Route::get('/faq', 'PagesController@faq');
 
 Route::resource('articles', 'ArticlesController');
-Route::resource('drugs', 'DrugsController');
+
+Route::get('drugs/{id}/create', 'DrugsController@create')->name('drugs.create');
+Route::get('drugs/{id}/edit', 'DrugsController@edit')->name('drugs.edit');
+Route::post('drugs/{id}/store', 'DrugsController@store')->name('drugs.store');
+Route::put('drugs/{id}', 'DrugsController@update')->name('drugs.update');
 
 Route::get('/admin', 'AdminController@getLogin')->name('admin.getLogin');
 Route::post('/admin', 'AdminController@postLogin')->name('admin.postLogin');

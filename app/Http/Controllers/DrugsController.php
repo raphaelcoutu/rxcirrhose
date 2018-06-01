@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;
 use App\Drug;
 use Illuminate\Http\Request;
 
@@ -27,9 +28,11 @@ class DrugsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($id)
     {
-        //
+        $article = Article::findOrFail($id);
+
+        return view('drugs.create', compact('article'));
     }
 
     /**
@@ -38,9 +41,18 @@ class DrugsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        //
+        $article = Article::findOrFail($id);
+
+        $request->validate([
+            'name' => 'required|unique:drugs|max:255'
+        ]);
+
+        $drug = new Drug($request->all());
+        $article->drugs()->save($drug);
+
+        return redirect()->route('articles.edit', $id);
     }
 
     /**
@@ -79,7 +91,7 @@ class DrugsController extends Controller
         $drug = Drug::find($request->id);
         $drug->update($request->all());
 
-        return redirect()->route('articles.show', $drug->article_id);
+        return redirect()->route('articles.edit', $drug->article_id);
     }
 
     /**

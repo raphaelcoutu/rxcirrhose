@@ -21,6 +21,11 @@
                 </li>
                 @endforeach
             </ul>
+            @auth
+            <div class="mt-4">
+                <a href="{{ route('articles.create') }}" class="bg-red-light p-2 text-white shadow rounded">Ajouter une fiche</a>
+            </div>
+            @endauth
         </div>
     </div>
     @include('layouts.footer')
