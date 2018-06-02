@@ -1,3 +1,14 @@
+@if ($errors->any())
+    <div class="w-3/4 mx-auto p-4 bg-red-lightest mt-4 text-red border border-red rounded shadow">
+        <h3 class="py-2 border-t border-b border-red">Erreurs à la validation</h3>
+        <ul class="list-reset p-4 font-thin">
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 @if(isset($drug))
     <form action="{{ route('drugs.update', $drug->id) }}" method="POST">
     @method('PUT')
@@ -12,6 +23,49 @@
         <input type="text" name="name" class="border border-red-light rounded w-3/4 p-2"
                value="{{ old('name', optional($drug ?? null)->name) }}" />
     </div>
+
+    <div class="flex justify-between mt-4">
+        <label for="childA_category" class="w-1/4">Child A:</label>
+        <div class="w-3/4 flex">
+            <select name="childA_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childA_category', optional($drug ?? null)->childA_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childA_category', optional($drug ?? null)->childA_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childA_category', optional($drug ?? null)->childA_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childA_category', optional($drug ?? null)->childA_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            </select>
+            <input type="text" name="childA_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childA_text', optional($drug ?? null)->childA_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+        </div>
+    </div>
+
+    <div class="flex justify-between mt-4">
+        <label for="childB_category" class="w-1/4">Child B:</label>
+        <div class="w-3/4 flex">
+            <select name="childB_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childB_category', optional($drug ?? null)->childB_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childB_category', optional($drug ?? null)->childB_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childB_category', optional($drug ?? null)->childB_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childB_category', optional($drug ?? null)->childB_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            </select>
+            <input type="text" name="childB_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childB_text', optional($drug ?? null)->childB_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+        </div>
+    </div>
+
+    <div class="flex justify-between mt-4">
+        <label for="childC_category" class="w-1/4">Child C:</label>
+        <div class="w-3/4 flex">
+            <select name="childC_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childC_category', optional($drug ?? null)->childC_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childC_category', optional($drug ?? null)->childC_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childC_category', optional($drug ?? null)->childC_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childC_category', optional($drug ?? null)->childC_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            </select>
+            <input type="text" name="childC_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childC_text', optional($drug ?? null)->childC_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+        </div>
+    </div>
+
 
     <div class="flex justify-between mt-4">
         <label for="absorption" class="w-1/4">Absorption:</label>

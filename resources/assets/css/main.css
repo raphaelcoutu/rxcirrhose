@@ -7,7 +7,23 @@ nav a.active {
 }
 
 .table-header {
-    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey .border-b .border-grey-light
+    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey-darker .border-b .border-grey-light
+}
+
+.securitaire {
+    @apply .bg-green-light .text-green-darker .font-thin
+}
+
+.precaution {
+    @apply .bg-yellow-light .text-yellow-darker .font-thin
+}
+
+.absence-donnees {
+    @apply .bg-grey-light .text-grey-darker .font-thin
+}
+
+.non-recommande {
+    @apply .bg-red-light .text-red-darker .font-thin
 }
 
 @tailwind utilities;

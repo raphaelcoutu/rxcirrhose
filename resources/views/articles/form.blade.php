@@ -25,7 +25,7 @@
     </div>
 
     <div class="flex justify-between mt-4">
-        <label for="summary" class="w-1/4">Tableau résumé:</label>
+        <label for="summary" class="w-1/4">Résumé:</label>
         <textarea name="summary" class="w-3/4 border border-red-light rounded p-2 h-48">{{ old('summary', optional($article ?? null)->summary) }}</textarea>
     </div>
 

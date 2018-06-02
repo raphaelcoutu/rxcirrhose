@@ -88,6 +88,10 @@ class DrugsController extends Controller
      */
     public function update(Request $request, $id)
     {
+        $request->validate([
+            'name' => "required|unique:drugs,name,{$id}|max:255"
+        ]);
+
         $drug = Drug::find($request->id);
         $drug->update($request->all());
 

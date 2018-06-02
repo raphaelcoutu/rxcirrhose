@@ -17,6 +17,12 @@ class CreateDrugsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('article_id');
             $table->string('name');
+            $table->tinyInteger('childA_category');
+            $table->string('childA_text')->nullable();
+            $table->tinyInteger('childB_category');
+            $table->string('childB_text')->nullable();
+            $table->tinyInteger('childC_category');
+            $table->string('childC_text')->nullable();
             $table->text('absorption')->nullable();
             $table->text('distribution')->nullable();
             $table->text('metabolisme')->nullable();

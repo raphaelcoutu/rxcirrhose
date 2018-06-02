@@ -33,6 +33,44 @@
                 @endauth
             </div>
             <h3 id="resume" class="text-xl text-red py-2">Tableau résumé</h3>
+            <table class="w-full">
+                <thead>
+                <tr>
+                    <th class="table-header">Molécule</th>
+                    <th width="25%" class="table-header">Child A</th>
+                    <th width="25%" class="table-header">Child B</th>
+                    <th width="25%" class="table-header">Child C</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($article->drugs as $drug)
+                <tr>
+                    <td>{{ $drug->name }}</td>
+                    <td class="{{ $drug->childClass("A") }}">
+                        @if($drug->childA_text)
+                            {{ $drug->childA_text }}
+                        @else
+                            {{ $drug->childString("A") }}
+                        @endif
+                    </td>
+                    <td class="{{ $drug->childClass("B") }}">
+                        @if($drug->childB_text)
+                            {{ $drug->childB_text }}
+                        @else
+                            {{ $drug->childString("B") }}
+                        @endif
+                    </td>
+                    <td class="{{ $drug->childClass("C") }}">
+                        @if($drug->childC_text)
+                            {{ $drug->childC_text }}
+                        @else
+                            {{ $drug->childString("C") }}
+                        @endif
+                    </td>
+                </tr>
+                @endforeach
+                </tbody>
+            </table>
             {!! $article->summary !!}
 
             <h3 id="pharmacodynamie" class="text-xl text-red py-2">Pharmacodynamie</h3>
