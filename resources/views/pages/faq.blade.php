@@ -2,7 +2,7 @@
 
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
-    <div class="mx-auto container flex flex-1 justify-between items-start pt-4 leading-loose tracking-normal">
+    <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
             <div class="flex border-b border-grey-light items-center">
                 <h2 class="text-3xl leading-none text-red">Foire aux questions</h2>
@@ -26,24 +26,32 @@
             <p class="mt-2">Selon les données rapportées, une recommandation a été émise concernant l’utilisation de chaque molécule selon la sévérité de la cirrhose du patient.</p>
 
             <div class="mt-2">
-                <span class="bg-green-light font-thin p-2">Sécuritaire</span>
+                <span class="securitaire p-2">Sécuritaire</span>
                 <p class="md:pl-8">Lorsque les données de pharmacocinétiques ne diffèrent pas des sujets sains et/ou que les patients cirrhotiques exposés à la molécule n’ont pas subi plus d’effets indésirables comparativement aux sujets sains, la recommandation ‘’sécuritaire’’ a été émise.</p>
             </div>
 
             <div class="mt-2">
-                <span class="bg-yellow-light font-thin p-2">Précaution</span>
+                <span class="precaution p-2">Précaution</span>
                 <p class="md:pl-8">Lorsqu’une altération significative des paramètres pharmacocinétiques chez les patients cirrhotiques a été détectée dans les études de pharmacocinétique et/ou que les patients exposés à la molécule ont subi plus d’effets indésirables (non dangereux), la recommandation ‘’précaution’’ a été émise. Un suivi plus serré des effets indésirables peut être nécessaire.</p>
             </div>
 
             <div class="mt-2">
-                <span class="bg-grey font-thin p-2">Absence de données</span>
+                <span class="absence-donnees p-2">Absence de données</span>
                 <p class="md:pl-8">Aucune donnée pharmacocinétique ou clinique n’ont été répertoriées dans la littérature. Il est donc impossible de formuler une recommandation pour cette molécule à ce stade de sévérité de la cirrhose.</p>
             </div>
 
             <div class="mt-2">
-                <span class="bg-red-light font-thin p-2">Non recommandé</span>
+                <span class="non-recommande p-2">Non recommandé</span>
                 <p class="md:pl-8">Les études de pharmacocinétiques indiquent une augmentation disproportionnée de l’exposition du médicament chez les patients cirrhotiques ou une augmentation très importante du risque d’effets indésirables. Une molécule alternative devrait être utilisée.</p>
             </div>
+
+            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Est-ce normal que le site s'affiche mal sur mon navigateur?</h3>
+            <p class="mt-2">Présentement, le site supporte uniquement les navigateurs web suivants:</p>
+            <ul>
+                <li>Apple Safari 11 et versions ultérieures</li>
+                <li>Google Chrome 60 et versions ultérieures</li>
+                <li>Internet Explorer 11 et versions ultérieures</li>
+            </ul>
         </div>
     </div>
     @include('layouts.footer')
