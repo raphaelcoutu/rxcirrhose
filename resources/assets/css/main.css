@@ -2,12 +2,38 @@
 
 @tailwind components;
 
+.navbar-item {
+    @apply .block .flex-1 .px-2 .py-3 .text-sm .text-grey .no-underline .border-b-2 .border-transparent .trans
+}
+
+.navbar-item:hover {
+    @apply .bg-red-lightest text-black;
+}
+
 nav a.active {
-    @apply .text-red-darkest .border-red;
+    @apply .text-red .bg-red-lightest
+}
+
+@screen sm {
+    .navbar-item {
+        @apply .py-6 .text-center
+    }
+
+    .navbar-item:hover {
+        @apply .border-red .bg-transparent
+    }
+
+    nav a.active {
+        @apply .text-red-darkest .border-red .bg-transparent
+    }
 }
 
 .table-header {
     @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey-darker .border-b .border-grey-light
+}
+
+td > h4 {
+    @apply .font-medium .tracking-tight .text-grey-darker .uppercase .text-sm .bg-white .border-t .border-b .border-blue-light .pl-4
 }
 
 .securitaire {
