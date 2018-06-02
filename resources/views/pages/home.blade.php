@@ -92,7 +92,7 @@
             </section>
             <section id="secondary" class="relative py-8 mt-10">
                 <div class="container mx-auto w-2/3 flex-col">
-                    <h2>Qui Sommes-nous?</h2>
+                    <h2>Qui sommes-nous?</h2>
                     <p class="mt-6 uppercase text-grey-darker">Étudiants finissant en pharmacie</p>
                     <div class="flex flex-col md:flex-row justify-around mt-10">
                         <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">

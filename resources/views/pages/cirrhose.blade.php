@@ -14,10 +14,13 @@
             <p class="mt-2">Il est composé de cinq paramètres : la bilirubine, l’albumine, le temps de prothrombine (ou l’INR), la présence d’ascite ainsi que l’encéphalopathie hépatique. Une valeur de 1 à 3 points est attribuée à chaque paramètre. Les valeurs sont additionnées à la fin afin d’obtenir le score de Child-Turcotte-Pugh. La sévérité de la cirrhose va être divisée en 3 classes : A, B ou C.</p>
             <p class="mt-2">Plus le score est élevé, plus le risque de morbidité et de mortalité associé à la cirrhose va être augmenté.</p>
 
-            <div class="mt-2 w-3/4 mx-auto bg-grey-lightest border border-grey px-4 rounded">
-                <p>Score de 5 à 6 points : cirrhose légère, Child-Pugh A (survie à un an de 100 %)</p>
-                <p>Score de 7 à 9 points : cirrhose modérée, Child-Pugh B (survie à un an de 80 %)</p>
-                <p>Score de 10 à 15 points : cirrhose sévère, Child-Pugh C (survie à un an de 45 %)</p>
+            <div class="mt-2 w-3/4 mx-auto bg-grey-lightest border border-grey px-4 rounded py-2 leading-none">
+                <p><span class="font-medium">Score de 5 à 6 points</span> : cirrhose légère, Child-Pugh A</p>
+                <p class="ml-6">Survie à un an de 100 %</p>
+                <p class="mt-2"><span class="font-medium">Score de 7 à 9 points</span> : cirrhose modérée, Child-Pugh B</p>
+                <p class="ml-6">Survie à un an de 80 %</p>
+                <p class="mt-2"><span class="font-medium">Score de 10 à 15 points</span> : cirrhose sévère, Child-Pugh C</p>
+                <p class="ml-6">Survie à un an de 45 %</p>
             </div>
             <p class="mt-4">Voici comment calculer le score :</p>
             <table>
