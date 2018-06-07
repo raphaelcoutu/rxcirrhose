@@ -3,7 +3,7 @@
         <div class="flex flex-col justify-around w-3/4">
             <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight">À propos</a>
             <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight my-2">Qui sommes-nous?</a>
-            <a href="#" class="no-underline text-white uppercase text-sm font-thin tracking-tight">Contact</a>
+            <a href="mailto:rxcirrhose@gmail.com" class="no-underline text-white uppercase text-sm font-thin tracking-tight">Contact</a>
             <p class="mt-4">&copy; {{ date("Y") }}</p>
         </div>
     </div>
