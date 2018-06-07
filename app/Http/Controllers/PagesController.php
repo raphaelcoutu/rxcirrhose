@@ -16,6 +16,11 @@ class PagesController extends Controller
         return view('pages.cirrhose');
     }
 
+    public function childPugh()
+    {
+        return view('pages.child-pugh');
+    }
+
     public function faq()
     {
         return view('pages.faq');

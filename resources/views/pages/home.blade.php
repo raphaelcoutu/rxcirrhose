@@ -85,7 +85,7 @@
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
                             <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie du médicament a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
-                            <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('cirrhose') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
+                            <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
                         </div>
                     </div>
                 </div>

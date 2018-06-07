@@ -14,6 +14,7 @@
 Route::get('/', 'PagesController@home');
 Route::get('/cirrhose', 'PagesController@cirrhose');
 Route::get('/faq', 'PagesController@faq');
+Route::get('/child-pugh', 'PagesController@childPugh');
 
 Route::resource('articles', 'ArticlesController');
 
