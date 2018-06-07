@@ -45,6 +45,9 @@
                 <p class="md:pl-8">Les études de pharmacocinétiques indiquent une augmentation disproportionnée de l’exposition du médicament chez les patients cirrhotiques ou une augmentation très importante du risque d’effets indésirables. Une molécule alternative devrait être utilisée.</p>
             </div>
 
+            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Chez quel type de patient peut-on utiliser l’information du site?</h3>
+            <p class="mt-2">La revue de littérature et les recommandations émises sont applicables pour les patients présentant une cirrhose compensée. Elles ne sont pas destinées aux patients souffrant d’une décompensation aiguë de leur maladie hépatique ou d'une hépatite fulminante.</p>
+
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Est-ce normal que le site s'affiche mal sur mon navigateur?</h3>
             <p class="mt-2">Présentement, le site supporte uniquement les navigateurs web suivants:</p>
             <ul>
