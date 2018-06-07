@@ -64,7 +64,7 @@
             <section id="primary" class="mx-auto container flex flex-col items-center justify-around pb-8">
                 <div class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-light shadow border rounded border-red-dark py-3">
                     <p>10 fiches médicamenteuses produites</p>
-                    <p>39 molécules analysées</p>
+                    <p>33 molécules analysées</p>
                 </div>
                 <div class="w-full flex justify-center mt-8">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
