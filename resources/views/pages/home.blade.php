@@ -23,7 +23,7 @@
     <header class="absolute pin-t z-10 w-full">
         <div class="container mx-auto flex justify-between flex-wrap">
             <div class="flex flex-no-shrink py-2">
-                <a href="#" class="mt-2 font-semibold text-xl text-white no-underline pl-2">RxCirrhose</a>
+                <a href="{{ url('/') }}" class="mt-2 font-semibold text-xl text-white no-underline pl-2">RxCirrhose</a>
             </div>
             <div class="block sm:hidden">
                 <button class="flex items-center text-white p-2 m-2 border border-white rounded" @click="toggleMobileMenu">
@@ -63,8 +63,8 @@
             </header>
             <section id="primary" class="mx-auto container flex flex-col items-center justify-around pb-8">
                 <div class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-light shadow border rounded border-red-dark py-3">
-                    <p>10 fiches médicamenteuses produites</p>
-                    <p>33 molécules analysées</p>
+                    <p>{{ $articlesCount }} fiches médicamenteuses produites</p>
+                    <p>{{ $drugsCount }} molécules analysées</p>
                 </div>
                 <div class="w-full flex justify-center mt-8">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
@@ -73,7 +73,7 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl">Documentation résumée</h2>
                         <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">
-                            Le site est conçu pour présenter le suivi des médicaments par classes médicamenteuses. Chaque fiche contient un tableau résumé expliquant brièvement les recommandations. Par la suite, chacune des recommandations est justifiée par une revue de la littérature récente.
+                            Le site est conçu pour présenter des fiches de recommandation par classes médicamenteuses lors d'insuffisance hépatique. L'utilisation suggérée et les précautions sont justifiées par une revue de la littérature récente.
                         </p>
                     </div>
                 </div>
@@ -84,91 +84,37 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie du médicament a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
+                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie de la classe médicamenteuse a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
                             <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
                         </div>
                     </div>
                 </div>
             </section>
-            <section id="secondary" class="relative py-8 mt-10">
+            {{--<section id="secondary" class="relative py-8 mt-10">--}}
+            <section class="relative py-8 mt-10">
                 <div class="container mx-auto w-2/3 flex-col">
-                    <h2>Qui sommes-nous?</h2>
-                    <p class="mt-6 uppercase text-grey-darker">Étudiants finissant en pharmacie</p>
-                    <div class="flex flex-col md:flex-row justify-around mt-10">
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Yasemin Cokay</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Steven Mancino</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Fabiano Pandozzi</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Donna Renda</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Alessio Valentini</p>
-                        </div>
-                    </div>
-                    <p class="mt-10 uppercase text-grey-darker">Pharmaciens réviseurs</p>
-                    <div class="flex flex-col md:flex-row justify-around mt-10">
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Raphaël Coutu</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Victor Ferreira</p>
-                        </div>
-                        <div class="flex flex-col justify-center items-center bg-white rounded border border-grey-light p-2 my-2">
-                            <div class="h-24 w-24 rounded-full border-2 border-red flex justify-center items-center bg-grey-lightest">
-                                @include('svg.user', ['class' => 'h-16 w-16'])
-                            </div>
-                            <p class="text-grey-darkest py-4">Alexandre Mathieu</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section id="tertiary" class="bg-white">
-                <div class="container flex flex-col mx-auto py-10">
                     <div>
                         <h2 class="text-center">Mise en garde</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div class="w-full mt-4 bg-red-lightest rounded border-2 border-red-dark p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                    <p>Ce site se veut un guide ou une référence contenant assez d’informations pour aider le pharmacien à prendre une décision éclairée. Cependant, ce guide ne remplace aucunement le jugement du professionnel de la santé.</p>
+                                <p>Ce site se veut un guide ou une référence contenant assez d’informations pour aider le pharmacien à prendre une décision éclairée. Cependant, ce guide ne remplace aucunement le jugement du professionnel de la santé.</p>
                             </div>
                         </div>
                     </div>
                     <div class="mt-10">
                         <h2 class="text-center">Conflits d’intérêts</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
-                            <div class="w-full mt-4 p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
+                            <div class="w-full mt-4 p-4 text-red-darker bg-white shadow tracking-normal leading-normal flex items-center">
                                 <p>Aucun membre de l’équipe n’a de conflits d’intérêts à divulguer.</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            {{--<section id="tertiary" class="bg-white">--}}
+                {{--<div class="container flex flex-col mx-auto py-10">--}}
+                {{--</div>--}}
+            {{--</section>--}}
         </main>
     </div>
     @include('layouts.footer')
