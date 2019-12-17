@@ -34,11 +34,13 @@
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Collaborateurs</h3>
             <ul>
-                <li>Yasemin Cokay, candidat au Pharm.D (2018): Rédaction de fiches</li>
+                <li>Yasemin Cokay, candidate au Pharm.D (2018): Rédaction de fiches</li>
                 <li>Steven Mancino, candidat au Pharm.D (2018): Rédaction de fiches</li>
                 <li>Fabiano Pandozzi, candidat au Pharm.D (2018): Rédaction de fiches</li>
-                <li>Donna Renda, candidat au Pharm.D (2018): Rédaction de fiches</li>
+                <li>Donna Renda, candidate au Pharm.D (2018): Rédaction de fiches</li>
                 <li>Alessio Valentini, candidat au Pharm.D (2018): Rédaction de fiches</li>
+                <li>Sandra Arencia Cubas, candidate au Pharm.D (2020): Rédaction de fiches</li>
+                <li>Elizabeth Delisle, candidate au Pharm.D (2020): Rédaction de fiches</li>
             </ul>
         </div>
     </div>
