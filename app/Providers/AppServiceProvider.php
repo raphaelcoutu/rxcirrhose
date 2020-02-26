@@ -27,7 +27,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->bindSearchClient();
+        // Pour Elasticsearch
+        //$this->bindSearchClient();
     }
 
     private function bindSearchClient()
