@@ -12,7 +12,7 @@
                 @foreach($articles as $article)
                 <li>
                     <i class="fas fa-long-arrow-alt-right"></i>
-                    <a class="text-red-dark no-underline" href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a>
+                    <a class="text-red-dark no-underline" href="{{ route('articles.showSlug', $article->slug) }}">{{ $article->title }}</a>
                     @auth
                     <span class="text-sm ml-2">
                         [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>]

@@ -9,7 +9,7 @@ class ArticlesController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth')->except(['index', 'show']);
+        $this->middleware('auth')->except(['index', 'show', 'showSlug']);
     }
 
     /**
@@ -46,7 +46,9 @@ class ArticlesController extends Controller
             'title' => 'required|unique:articles|max:255'
         ]);
 
-        Article::create($request->all());
+        $slugArr = ['slug' => str_slug($request->title)];
+
+        Article::create(array_merge($request->all(), $slugArr));
 
         return redirect()->route('articles.index');
     }
@@ -62,6 +64,21 @@ class ArticlesController extends Controller
         $article = Article::with(['drugs' => function($query) {
             $query->orderBy('name');
         }])->findOrFail($id);
+
+        return redirect()->route('articles.showSlug', $article->slug);
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  string  $slug
+     * @return \Illuminate\Http\Response
+     */
+    public function showSlug($slug)
+    {
+        $article = Article::with(['drugs' => function($query) {
+            $query->orderBy('name');
+        }])->where('slug', $slug)->firstOrFail();
 
         return view('articles.show', compact('article'));
     }
@@ -92,7 +109,9 @@ class ArticlesController extends Controller
             'title' => "required|unique:articles,title,{$id}|max:255"
         ]);
 
-        Article::find($request->id)->update($request->all());
+        $slugArr = ['slug' => str_slug($request->title)];
+
+        Article::find($request->id)->update(array_merge($request->all(), $slugArr));
 
         return redirect()->route('articles.show', $request->id);
     }

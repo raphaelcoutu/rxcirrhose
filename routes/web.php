@@ -17,6 +17,14 @@ Route::get('/faq', 'PagesController@faq');
 Route::get('/child-pugh', 'PagesController@childPugh');
 Route::get('/qui-sommes-nous', 'PagesController@quiSommesNous');
 
+Route::get('articles', 'ArticlesController@index')->name('articles.index');
+Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
+Route::get('articles/{id}', 'ArticlesController@show')->name('articles.show')->where('id', '[0-9]+');
+Route::get('articles/{id}/edit', 'ArticlesController@edit')->name('articles.edit');
+Route::get('articles/{slug}', 'ArticlesController@showSlug')->name('articles.showSlug')->where('slug', '(.*)');
+Route::post('articles/store', 'ArticlesController@store')->name('articles.store');
+Route::put('articles/{id}', 'ArticlesController@update')->name('articles.update');
+
 Route::get('/search', 'SearchController@search');
 
 Route::get('drugs/{id}/create', 'DrugsController@create')->name('drugs.create');
