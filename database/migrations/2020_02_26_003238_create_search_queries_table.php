@@ -15,6 +15,7 @@ class CreateSearchQueriesTable extends Migration
     {
         Schema::create('search_queries', function (Blueprint $table) {
             $table->increments('id');
+            $table->ipAddress('host');
             $table->string('query');
             $table->integer('results');
             $table->timestamp('created_at');

@@ -39,6 +39,7 @@ class SearchController extends Controller
             ->get();
 
         $searchQuery = new SearchQuery;
+        $searchQuery->host = request()->getClientIp();
         $searchQuery->query = $query;
         $searchQuery->results = $results->count();
         $searchQuery->save();
