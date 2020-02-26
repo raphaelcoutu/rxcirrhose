@@ -7,12 +7,12 @@ use Elasticsearch\Client;
 
 class ArticleObserver
 {
-    private $elasticsearch;
+    // private $elasticsearch;
 
-    public function __construct(Client $elasticsearch)
-    {
-        $this->elasticsearch = $elasticsearch;
-    }
+    // public function __construct(Client $elasticsearch)
+    // {
+    //     $this->elasticsearch = $elasticsearch;
+    // }
 
     /**
      * Handle the article "created" event.
