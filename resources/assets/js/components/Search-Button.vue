@@ -3,10 +3,12 @@
 </template>
 
 <script>
+    import { EventBus } from './../event-bus';
+
     export default {
         methods: {
             toggle() {
-                this.$root.$emit('toggleSearch');
+                EventBus.$emit('toggleSearch');
             }
         }
     }

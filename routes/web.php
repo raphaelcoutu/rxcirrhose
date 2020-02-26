@@ -17,7 +17,7 @@ Route::get('/faq', 'PagesController@faq');
 Route::get('/child-pugh', 'PagesController@childPugh');
 Route::get('/qui-sommes-nous', 'PagesController@quiSommesNous');
 
-Route::resource('articles', 'ArticlesController');
+Route::get('/search', 'SearchController@search');
 
 Route::get('drugs/{id}/create', 'DrugsController@create')->name('drugs.create');
 Route::get('drugs/{id}/edit', 'DrugsController@edit')->name('drugs.edit');
@@ -26,4 +26,5 @@ Route::put('drugs/{id}', 'DrugsController@update')->name('drugs.update');
 
 Route::get('/admin', 'AdminController@getLogin')->name('admin.getLogin');
 Route::post('/admin', 'AdminController@postLogin')->name('admin.postLogin');
+Route::get('/admin/reindex', 'SearchController@reindex')->name('admin.reindex');
 Route::get('/logout', 'AdminController@getLogout')->name('admin.getLogout');

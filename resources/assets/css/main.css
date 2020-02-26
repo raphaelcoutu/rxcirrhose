@@ -11,7 +11,19 @@
 }
 
 nav a.active {
-    @apply .text-red .bg-red-lightest
+    @apply .text-red .bg-red-lightest;
+}
+
+.search-item {
+    @apply .bg-white .p-2 .shadow-md .border-l-4 .border-blue-lighter .font-bold .text-blue-darker .mx-auto w-2/5;
+}
+
+.search-item:hover {
+    @apply .bg-blue-lightest .cursor-pointer;
+}
+
+.search-not-found {
+    @apply .bg-white .p-2 .shadow-md .border-l-4 .text-blue-darker;
 }
 
 @screen sm {

@@ -36,9 +36,15 @@
                     <a href="{{ url('cirrhose') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Cirrhose</a>
                     <a href="{{ route('articles.index') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">Médicaments</a>
                     <a href="{{ url('faq') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">FAQ</a>
+                    <div class="w-12 flex justify-center items-center">
+                        <cirrhose-search-button
+                                class="px-2 py-6 no-underline text-sm text-grey border-b-2 border-transparent hover:text-grey-darker"
+                        ></cirrhose-search-button>
+                    </div>
                 </div>
             </div>
         </div>
+        <cirrhose-search class="fixed w-full"></cirrhose-search>
     </header>
     <div id="globalContent" class="flex-1">
         <main class="relative overflow-hidden">
