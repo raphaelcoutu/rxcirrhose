@@ -65,7 +65,7 @@ class ArticlesController extends Controller
             $query->orderBy('name');
         }])->findOrFail($id);
 
-        return redirect()->route('articles.showSlug', $article->slug);
+        return redirect()->route('articles.showSlug', $article->slug, 301);
     }
 
     /**

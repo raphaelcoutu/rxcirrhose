@@ -17,8 +17,8 @@ window.Vue = require('vue');
 
 // Vue.component('example-component', require('./components/ExampleComponent.vue'));
 // Vue.component('cirrhose-editor', require('./components/Editor.vue'));
-Vue.component('cirrhose-search-button', require('./components/Search-Button.vue'));
-Vue.component('cirrhose-search', require('./components/Search.vue'));
+Vue.component('cirrhose-search-button', require('./components/Search-Button.vue').default);
+Vue.component('cirrhose-search', require('./components/Search.vue').default);
 
 const app = new Vue({
     el: '#app',

@@ -11,16 +11,6 @@ use Illuminate\Support\ServiceProvider;
 class AppServiceProvider extends ServiceProvider
 {
     /**
-     * Bootstrap any application services.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        Article::observe(ArticleObserver::class);
-    }
-
-    /**
      * Register any application services.
      *
      * @return void
@@ -29,6 +19,16 @@ class AppServiceProvider extends ServiceProvider
     {
         // Pour Elasticsearch
         //$this->bindSearchClient();
+    }
+
+    /**
+     * Bootstrap any application services.
+     *
+     * @return void
+     */
+    public function boot()
+    {
+        Article::observe(ArticleObserver::class);
     }
 
     private function bindSearchClient()
