@@ -52,6 +52,25 @@
         <textarea name="references" class="w-3/4 border border-red-light rounded p-2 h-48">{{ old('references', optional($article ?? null)->references) }}</textarea>
     </div>
 
+    <div class="flex justify-between mt-4">
+        <label for="keywords" class="w-1/4">Keywords:</label>
+        <textarea name="keywords" class="w-3/4 border border-red-light rounded p-2 h-24">{{ old('keywords', optional($article ?? null)->keywords) }}</textarea>
+    </div>
+
+    <div class="flex mt-4">
+        <label class="w-1/4">Active:</label>
+        <div class="w-1/4 flex justify-between">
+            <div>
+                <input type="radio" name="active" value="1" id="active_oui" {{ old('active', optional($article ?? null)->active) == '1' ? 'checked' : '' }}>
+                <label for="active_oui">Oui</label>
+            </div>
+            <div>
+                <input type="radio" name="active" value="0" id="active_non" {{ old('active', optional($article ?? null)->active) == '0' ? 'checked' : '' }}>
+                <label for="active_non">Non</label>
+            </div>
+        </div>
+    </div>
+
     <div class="flex justify-end mt-4">
         @if(isset($article))
             <a href="{{ route('articles.show', $article->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
