@@ -60,6 +60,7 @@
                 query: null,
                 show: false,
                 results: [],
+                appUrl: process.env.MIX_APP_URL
             }
         },
 
@@ -67,7 +68,7 @@
             getArticles: _.debounce(function() {
                 if(!this.query || this.query == "" || this.query.length < 3) return;
 
-                axios.get('http://localhost/search?q=' + this.query)
+                axios.get(`${this.appUrl}/search?q=${this.query}`)
                     .then((response) => {
                         if (response.data) {
                             this.results = response.data;
