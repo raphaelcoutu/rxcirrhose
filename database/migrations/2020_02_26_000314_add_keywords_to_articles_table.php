@@ -14,7 +14,7 @@ class AddKeywordsToArticlesTable extends Migration
     public function up()
     {
         Schema::table('articles', function (Blueprint $table) {
-            $table->text('keywords')->after('active');
+            $table->string('keywords')->after('active')->index();
         });
     }
 
