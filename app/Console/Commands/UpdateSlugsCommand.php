@@ -6,14 +6,14 @@ use App\Article;
 use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 
-class UpdateArticlesSlugs extends Command
+class UpdateSlugsCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'update-slugs';
+    protected $signature = 'slugs:update';
 
     /**
      * The console command description.
