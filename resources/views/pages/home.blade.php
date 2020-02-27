@@ -10,6 +10,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:title" content="RxCirrhose" />
     <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
+    <meta property="description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
 
     <title>RxCirrhose</title>
 
