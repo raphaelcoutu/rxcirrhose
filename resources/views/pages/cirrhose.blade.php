@@ -9,7 +9,7 @@
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
             <div class="flex border-b border-grey-light items-center">
-                <h2 class="text-3xl leading-none text-red">La cirrhose</h2>
+                <h1 class="text-3xl leading-none text-red">La cirrhose</h1>
             </div>
 
             <p class="mt-2">La cirrhose est une maladie du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de fibrose et d’une modification de l’architecture de l’organe pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques.

@@ -30,7 +30,7 @@
         </div>
         <div class="md:w-3/4 w-full bg-white border-t-8 border-red px-2 sm:px-6 py-3 shadow mt-4 md:mt-0 break-words">
             <div class="flex border-b border-grey-light items-center">
-                <h2 class="text-3xl leading-none text-red">{{ $article->title }}</h2>
+                <h1 class="text-3xl leading-none text-red">{{ $article->title }}</h1>
                 @auth
                 <span class="text-sm ml-2">
                     [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>]

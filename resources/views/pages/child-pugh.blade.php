@@ -9,7 +9,7 @@
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
             <div class="flex border-b border-grey-light items-center">
-                <h2 class="text-3xl leading-none text-red">La classification Child-Pugh</h2>
+                <h1 class="text-3xl leading-none text-red">La classification Child-Pugh</h1>
             </div>
             <p class="mt-2">La classification de Child-Pugh-Turcotte (aussi connu sous le nom de score de Child-Pugh) est un score pronostique de la cirrhose. Il a été validé pour prédire la survie des patients à 1 et 2 ans.</p>
 
