@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Cirrhose')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

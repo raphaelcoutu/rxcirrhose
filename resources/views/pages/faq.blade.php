@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Foire aux questions')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

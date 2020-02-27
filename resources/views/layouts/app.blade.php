@@ -13,7 +13,7 @@
     <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
     @show
 
-    <title>RxCirrhose</title>
+    <title>@yield('title') - RxCirrhose</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">

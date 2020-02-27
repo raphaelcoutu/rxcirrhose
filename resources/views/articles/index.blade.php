@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Médicaments')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-1 justify-between items-start pt-4 leading-loose tracking-normal relative">
