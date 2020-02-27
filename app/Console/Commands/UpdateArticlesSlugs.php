@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Article;
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 
 class UpdateArticlesSlugs extends Command
@@ -41,7 +42,7 @@ class UpdateArticlesSlugs extends Command
         $articles = Article::all();
 
         foreach($articles as $article) {
-            $article->slug = str_slug($article->title);
+            $article->slug = Str::slug($article->title);
             $article->save();
         }
     }

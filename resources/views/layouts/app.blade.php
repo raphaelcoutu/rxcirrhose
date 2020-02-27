@@ -1,5 +1,5 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}" class="min-h-screen">
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="min-h-screen">
 <head>
     @include('layouts.analytics')
     <meta charset="utf-8">

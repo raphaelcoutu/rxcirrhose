@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Article;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
 class ArticlesController extends Controller
@@ -46,7 +47,7 @@ class ArticlesController extends Controller
             'title' => 'required|unique:articles|max:255'
         ]);
 
-        $slugArr = ['slug' => str_slug($request->title)];
+        $slugArr = ['slug' => Str::slug($request->title)];
 
         Article::create(array_merge($request->all(), $slugArr));
 
@@ -106,10 +107,10 @@ class ArticlesController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'title' => "required|unique:articles,title,{$id}|max:255"
+            'title' => ['required', 'unique:articles,title,'. $id, 'max:255']
         ]);
 
-        $slugArr = ['slug' => str_slug($request->title)];
+        $slugArr = ['slug' => Str::slug($request->title)];
 
         Article::find($request->id)->update(array_merge($request->all(), $slugArr));
 
