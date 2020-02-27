@@ -2,6 +2,8 @@
 
 @section('title', $article->title)
 
+@section('description', mb_substr(strip_tags($article->pharmacodynamics), 0, 150).'...')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-col md:flex-row items-start pt-4 leading-loose tracking-normal">

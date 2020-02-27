@@ -2,6 +2,8 @@
 
 @section('title', 'Classification Child-Pugh')
 
+@section('description', 'La classification de Child-Pugh-Turcotte (aussi connu sous le nom de score de Child-Pugh) est un score pronostique de la cirrhose. Il a été validé pour prédire la survie des patients à 1 et 2 ans...')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

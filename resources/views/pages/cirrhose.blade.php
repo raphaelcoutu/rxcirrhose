@@ -2,6 +2,8 @@
 
 @section('title', 'Cirrhose')
 
+@section('description', 'La cirrhose est une maladie du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de fibrose et d’une modification de l’architecture de l’organe pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques...')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

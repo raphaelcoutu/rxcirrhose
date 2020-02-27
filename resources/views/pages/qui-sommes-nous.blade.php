@@ -2,6 +2,8 @@
 
 @section('title', 'Qui sommes-nous?')
 
+@section('description', 'Raphaël Coutu, Victor Ferreira, Alexandre Mathieu et plusieurs autres collaborateurs.')
+
 @section('content')
     @include('layouts.navbar', ['active' => ''])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

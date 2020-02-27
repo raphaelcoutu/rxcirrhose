@@ -9,8 +9,14 @@
     @section('metadata')
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="RxCirrhose" />
-    <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
+    <meta property="og:title" content="@yield('title') - RxCirrhose" />
+        @hasSection('description')
+        <meta property="og:description" content="@yield('description')" />
+        <meta property="description" content="@yield('description')" />
+        @else
+        <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
+        <meta property="description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
+        @endif
     @show
 
     <title>@yield('title') - RxCirrhose</title>
