@@ -80,7 +80,7 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl">Documentation résumée</h2>
                         <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">
-                            Le site est conçu pour présenter des fiches de recommandation par classes médicamenteuses lors d'insuffisance hépatique. L'utilisation suggérée et les précautions sont justifiées par une revue de la littérature récente.
+                            Le site est conçu pour présenter des fiches de recommandation par classes médicamenteuses lors d'insuffisance hépatique. L'utilisation suggérée et les précautions sont justifiées par une revue de la littérature récente. L'objectif est de fournir un outil de référence supplémentaire aux cliniciens pour la prescription aux patients avec cirrhose de médicaments couramment utilisés.
                         </p>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie de la classe médicamenteuse a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les patients sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
+                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie de la classe médicamenteuse a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les sujets sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
                             <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
                         </div>
                     </div>
