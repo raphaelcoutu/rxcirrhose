@@ -2,7 +2,7 @@
 
 @section('title', 'Cirrhose')
 
-@section('description', 'La cirrhose est le stade le plus évolué d'une maladie chronique du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de nodules de fibrose, d’une modification histologique et à une perte hépatocytaire pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques...')
+@section('description', 'La cirrhose est le stade le plus évolué d\'une maladie chronique du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de nodules de fibrose, d\'une modification histologique et à une perte hépatocytaire pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques...')
 
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
@@ -12,8 +12,8 @@
                 <h1 class="text-3xl leading-none text-red">La cirrhose</h1>
             </div>
 
-            <p class="mt-2">La cirrhose est une maladie du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de fibrose et d’une modification de l’architecture de l’organe pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques.
-                Le mot grec kirrhos signifiant ‘’orange’’ ou ‘’roux’’ a inspiré le nom de la maladie, puisqu’à l’autopsie, les nodules que l’on retrouve au niveau du foie sont de cette couleur.
+            <p class="mt-2">La cirrhose est le stade le plus évolué d'une maladie chronique du foie causée par une agression chronique des hépatocytes. Ce dommage mène à la formation de nodules de fibrose, d’une modification histologique et à une perte hépatocytaire pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques.
+                Le mot grec <i>kirrhos</i> signifiant ‘’orange’’ ou ‘’roux’’ a inspiré le nom de la maladie, puisqu’à l’autopsie, les nodules que l’on retrouve au niveau du foie sont de cette couleur.
             </p>
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Étiologies</h3>
             <p class="mt-2">De nombreuses étiologies peuvent expliquer le dommage hépatique :</p>
@@ -67,8 +67,8 @@
                 <li>Thrombocytopénie</li>
                 <li>Élévation de la phosphatase alcaline et de la gamma glutamyl transpeptidase</li>
                 <li>Élévation des transaminases (AST et ALT)</li>
-            <p class="mt-2">Bien qu'on utilise parfois le terme «test de fonction hépatique», il faut distinguer les tests reflétant la fonction hépatique (RNI, albuminémie et bilirubinémie) des autres qui suggèrent une pathologie hépatique sans traduire le réel fonctionnement du foie. L'élévation des transaminases ne permet pas de conclure à une cirrhose ou à une altération du fonctionnement hépatique.</p>
             </ul>
+            <p class="mt-2">Bien qu'on utilise parfois le terme &laquo;test de fonction hépatique&raquo;, il faut distinguer les tests reflétant la fonction hépatique (RNI, albuminémie et bilirubinémie) des autres qui suggèrent une pathologie hépatique sans traduire le réel fonctionnement du foie. L'élévation des transaminases ne permet pas de conclure à une cirrhose ou à une altération du fonctionnement hépatique.</p>
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Pathophysiologie et complications</h3>
             <p class="mt-2">Le foie est un système de filtration du sang et de synthèse de molécules. Il est perfusé à la fois par l’artère hépatique et la veine porte. De nombreuses activités métaboliques vont avoir lieu à cet endroit, notamment la néoglucogénèse, la production de protéines, la synthèse de l’urée, le métabolisme oxydatif, la glycolyse et la lipogénèse. Il faut également mentionner que les conduits biliaires sont reliés à cet organe. C’est à cet endroit que le foie va éliminer la bile qui pourra ensuite aller s’accumuler dans la vésicule biliaire entre les repas.</p>
@@ -79,9 +79,9 @@
 
             <p class="mt-2">L'hypertension portale peut causer une rétention hydro-sodée sous forme d'oedème des membres inférieurs et au cours de laquelle du liquide va s’accumuler au niveau de la cavité péritonéale.</p>
 
-            <p class="mt-2"></>La péritonite bactérienne spontanée ou infection du liquide d'ascite est une autre complication de la cirrhose. Les patients ont une modification de la flore gastro-intestinale et de l’immunité locale. Le risque de translocation bactérienne va être augmenté. L'ascite devient alors infecté après une contamination hématogène.
+            <p class="mt-2">La péritonite bactérienne spontanée ou infection du liquide d'ascite est une autre complication de la cirrhose. Les patients ont une modification de la flore gastro-intestinale et de l’immunité locale. Le risque de translocation bactérienne va être augmenté. L'ascite devient alors infecté après une contamination hématogène.
 
-            <p class="mt-2"></>Les patients peuvent également développer de l’encéphalopathie hépatique. Ce problème neurologique serait causé par l’accumulation de substances détoxifiées par le foie, mais qui s’accumulent dans le contexte de cirrhose, notamment l’ammoniac. Elle se manifeste par divers degrés de dysfonction cérébrale, de subtiles anomalies de tests psychométriques à des manifestations cliniques évidentes telles que la confusion, la désorientation, la somnolence, l’astérixis. Dans les cas sévères, le patient peut être comateux.
+            <p class="mt-2">Les patients peuvent également développer de l’encéphalopathie hépatique. Ce problème neurologique serait causé par l’accumulation de substances détoxifiées par le foie, mais qui s’accumulent dans le contexte de cirrhose, notamment l’ammoniac. Elle se manifeste par divers degrés de dysfonction cérébrale, de subtiles anomalies de tests psychométriques à des manifestations cliniques évidentes telles que la confusion, la désorientation, la somnolence, l’astérixis. Dans les cas sévères, le patient peut être comateux.
 
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Sévérité de la cirrhose</h3>
@@ -93,14 +93,12 @@
             <p class="mt-2">Toutes ces complications peuvent affecter le devenir du médicament autant du point de vue pharmacocinétique que pharmacodynamique.</p>
 
             <p class="mt-2">Plusieurs patients avec cirrhose peuvent présenter des troubles de la motilité gastro-intestinale, parfois compliqués de pullulation bactérienne, ce qui peut affecter l'absorption des médicaments. Dans la plupart des cas, elle sera surtout retardée.
-            Les enzymes métabolisants normalement les xénobiotiques peuvent être moins performantes vu la réduction du nombre d’hépatocytes. 
+            Les enzymes métabolisants normalement les xénobiotiques peuvent être moins performantes vu la réduction du nombre d’hépatocytes.
             Les réactions de phase I (oxydation et réduction) seront réduites suite à la destruction de l’architecture du foie. En théorie, le cytochrome P450 2C19 serait le premier touché suivi du 1A2, 2D6 puis 2E1.
             Lorsqu’une atteinte cholestatique est présente, l’élimination des médicaments via les voies biliaires sera affectée.
             Les médicaments peuvent contourner le foie via les collatérales s’étant formées en présence d’hypertension portale.
             La distribution des médicaments peut également être altérée, surtout pour les patients qui présentent de l’ascite. Le volume de distribution des médicaments hydrophiles peut être augmenté.
-            La diminution de la synthèse des protéines va aussi avoir un effet sur la pharmacothérapie. Plusieurs médicaments vont se lier fortement à l’albumine afin d’être transportés à travers le corps. L’hypoalbuminémie peut provoquer une augmentation des concentrations libres de certaines substances et augmenter leur effet thérapeutique et toxique.
-            
-            Lorsqu’une atteinte cholestatique est présente, l’élimination des médicaments via les voies biliaires sera affectée.</p>
+            La diminution de la synthèse des protéines va aussi avoir un effet sur la pharmacothérapie. Plusieurs médicaments vont se lier fortement à l’albumine afin d’être transportés à travers le corps. L’hypoalbuminémie peut provoquer une augmentation des concentrations libres de certaines substances et augmenter leur effet thérapeutique et toxique.</p>
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Démarche de prise en charge</h3>
             <p class="mt-2">Sur le site, vous trouverez des recommandations d’utilisation en cirrhose pour certains médicaments. Si jamais un patient se présente avec une ordonnance pour un produit sur lequel nous ne nous sommes pas prononcés, nous proposons l’approche suivante :</p>
