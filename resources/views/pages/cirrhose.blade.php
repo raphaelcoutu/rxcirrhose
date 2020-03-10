@@ -117,7 +117,13 @@
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-light'])
                 <div class="bg-grey-lightest rounded border border-grey-light text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Doser les concentrations sériques de la molécule lorsque possible et envisageable.</div>
             </div>
-
+            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Références suggérées</h3>
+            <ul>
+                <li>Exemple à remplacer</li>
+                <li>Exemple à remplacer</li>
+                <li>Exemple à remplacer</li>
+                <li>Exemple à remplacer</li>
+            </ul>
 
         </div>
     </div>
