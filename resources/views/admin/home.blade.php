@@ -9,7 +9,7 @@
                     <h1 class="text-3xl leading-none text-red">Admin</h1>
                 </div>
                 <a href="{{ route('admin.getLogout') }}">Logout</a>
-                <p>Il y a {{ $queryCount }} requêtes.</p>
+                <p>Il y a {{ $queries->total() }} requêtes.</p>
                 <table>
                     <thead>
                     <tr>
@@ -30,7 +30,25 @@
                         @endforeach
                     </tbody>
                 </table>
-                </div>
+                @if ($queries->hasPages())
+                    <ul class="pagination flex justify-between mx-4 mt-4 list-reset text-white font-bold">
+                    {{-- Previous Page Link --}}
+                    @if (!$queries->onFirstPage())
+                        <li>
+                            <a class="button bg-transparent border border-brown py-2 px-4 rounded opacity-85" href="{{ $queries->previousPageUrl() }}" rel="prev">@lang('pagination.previous')</a>
+                        </li>
+                    @else
+                        <li></li>
+                    @endif
+
+                    {{-- Next Page Link --}}
+                    @if ($queries->hasMorePages())
+                        <li>
+                            <a class="button bg-transparent border border-brown py-2 px-4 rounded opacity-85" href="{{ $queries->nextPageUrl() }}" rel="next">@lang('pagination.next')</a>
+                        </li>
+                    @endif
+                    </ul>
+                @endif
             </div>
         </div>
     </div>

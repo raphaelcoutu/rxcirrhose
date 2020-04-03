@@ -13,14 +13,9 @@ class AdminController extends Controller
     public function getLogin(Request $request)
     {
         if(Auth::check()) {
-            $page = $request['page'] ?? 1;
-            $nbPerPage = 25;
-            $offset = ($page - 1) * $nbPerPage;
+            $queries = SearchQuery::orderBy('created_at', 'desc')->paginate();
 
-            $queries = SearchQuery::orderBy('created_at', 'desc')->offset($offset)->limit(25)->get();
-            $queryCount = SearchQuery::count();
-
-            return view('admin.home', compact('queries', 'queryCount'));
+            return view('admin.home', compact('queries'));
         }
 
         return view('admin.login');
