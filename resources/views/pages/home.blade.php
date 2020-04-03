@@ -61,7 +61,7 @@
                                 <p class="text-sm sm:text-base font-thin uppercase"></i>Nouvelle référence gratuite</p>
                                 <h1 class="text-xl sm:text-3xl">Ajustement des médicaments en insuffisance hépatique</h1>
                             </div>
-                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">La cirrhose a un impact majeur sur le métabolisme de la majorité des médicaments disponibles sur le marché. Bien que ce problème de santé devient de plus en plus prévalent, il existe peu d’information dans les monographies concernant leur ajustement en présence d’insuffisance hépatique.</p>
+                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">Le foie joue un rôle majeur dans le métabolisme d’un grand nombre de médicaments. La cirrhose peut donc avoir un impact majeur sur l’efficacité et l’innocuité des médicaments. Malgré que la prévalence ce problème de santé soit en augmentation, peu d’information concernant leur ajustement en présence d’insuffisance hépatique est facilement accessible pour guider les cliniciens dans leur prise de décision.</p>
                             <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('articles.index') }}">Explorer la documentation</a>
                         </div>
                     </div>
@@ -77,9 +77,9 @@
                         @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32'])
                     </div>
                     <div class="w-2/3">
-                        <h2 class="text-xl md:text-2xl">Documentation résumée</h2>
+                        <h2 class="text-xl md:text-2xl">Contenu du site</h2>
                         <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">
-                            Le site est conçu pour présenter des fiches de recommandation par classes médicamenteuses lors d'insuffisance hépatique. L'utilisation suggérée et les précautions sont justifiées par une revue de la littérature récente. L'objectif est de fournir un outil de référence supplémentaire aux cliniciens pour la prescription aux patients avec cirrhose de médicaments couramment utilisés.
+                            Le site internet vise à présenter des fiches résumant les données disponibles quant à l’utilisation des médicaments en insuffisance hépatique. Les recommandations offertes sont basées sur une revue de la littérature et l’opinion d’experts. L'objectif est de fournir un outil de référence supplémentaire aux cliniciens dans la prise en charge de la thérapie médicamenteuse de leurs patients cirrhotiques.
                         </p>
                     </div>
                 </div>
@@ -90,7 +90,12 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            <p>Pour chaque classe, vous trouverez au début de la fiche un tableau résumant la sécurité du médicament selon la sévérité de la cirrhose. Une section concernant la pharmacodynamie de la classe médicamenteuse a été développée pour aider les cliniciens à comprendre l’impact de la cirrhose sur l’effet du médicament (et vice-versa). Un tableau résume ensuite les propriétés pharmacocinétiques de chaque molécule chez les sujets sains et chez les cirrhotiques. Un résumé des études utilisées pour formuler les recommandations se trouve à la suite du tableau. Les références sont disponibles à la fin de la fiche.</p>
+                            <p>Pour chaque classe médicamenteuse, une fiche sera produite.
+La première section contient un tableau résumé contenant les recommandations d’ajustement pour chaque médicament en fonction du degré d’atteinte hépatique.
+La seconde section offre un sommaire des considérations pharmacodynamiques impliquées entre la classe médicamenteuses, les pathologies qu’elles traitent et la cirrhose en général.
+La troisième section présente, molécule par molécule, un tableau résumé des paramètres pharmacocinétiques chez les patients sains et chez les patients cirrhotiques, lorsque disponibles. Chaque tableau est suivi d’une analyse descriptive de la littérature retrouvée ainsi que son interprétation.
+Les références se retrouveront à la fin de chaque fiche médicamenteuse.
+</p>
                             <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
                         </div>
                     </div>
@@ -103,7 +108,7 @@
                         <h2 class="text-center">Mise en garde</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div class="w-full mt-4 bg-red-lightest rounded border-2 border-red-dark p-4 text-red-darker shadow tracking-normal leading-normal flex items-center">
-                                <p>Ce site se veut un guide ou une référence contenant assez d’informations pour aider le pharmacien à prendre une décision éclairée. Cependant, ce guide ne remplace aucunement le jugement du professionnel de la santé.</p>
+                                <p>Ce site se veut un outil d’aide à la décision pour les divers professionnels de la santé portés à prendre en charge des patients atteints de cirrhose. Cependant, les recommandations émises ne remplacent aucunement le jugement du professionnel de la santé.</p>
                             </div>
                         </div>
                     </div>
@@ -111,7 +116,7 @@
                         <h2 class="text-center">Conflits d’intérêts</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div class="w-full mt-4 p-4 text-red-darker bg-white shadow tracking-normal leading-normal flex items-center">
-                                <p>Aucun membre de l’équipe n’a de conflits d’intérêts à divulguer.</p>
+                                <p>Tous le membres de l’équipe certifient qu’il n’ont aucun conflit d’intérêts à divulguer.</p>
                             </div>
                         </div>
                     </div>
