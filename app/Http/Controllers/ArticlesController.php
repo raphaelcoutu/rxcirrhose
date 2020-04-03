@@ -114,7 +114,7 @@ class ArticlesController extends Controller
 
         Article::find($request->id)->update(array_merge($request->all(), $slugArr));
 
-        return redirect()->route('articles.show', $request->id);
+        return redirect()->route('articles.showSlug', Str::slug($request->title));
     }
 
     /**
