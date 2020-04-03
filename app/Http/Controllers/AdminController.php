@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\SearchQuery;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -9,10 +10,17 @@ use Illuminate\Support\Facades\Hash;
 
 class AdminController extends Controller
 {
-    public function getLogin()
+    public function getLogin(Request $request)
     {
         if(Auth::check()) {
-            return view('admin.home');
+            $page = $request['page'] ?? 1;
+            $nbPerPage = 25;
+            $offset = ($page - 1) * $nbPerPage;
+
+            $queries = SearchQuery::orderBy('created_at', 'desc')->offset($offset)->limit(25)->get();
+            $queryCount = SearchQuery::count();
+
+            return view('admin.home', compact('queries', 'queryCount'));
         }
 
         return view('admin.login');
@@ -23,7 +31,7 @@ class AdminController extends Controller
         if(Hash::check($request->password, User::find(1)->password)) {
             Auth::loginUsingId(1);
 
-            return view('admin.home');
+            return redirect()->route('admin.getLogin');
         }
 
         return redirect()->to('/');
