@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Article;
 use App\SearchQuery;
 use Elasticsearch\Client;
-use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
@@ -38,11 +39,13 @@ class SearchController extends Controller
             })->limit(5)
             ->get();
 
-        $searchQuery = new SearchQuery;
-        $searchQuery->host = request()->getClientIp();
-        $searchQuery->query = $query;
-        $searchQuery->results = $results->count();
-        $searchQuery->save();
+        if (!Auth::check()) {
+            $searchQuery = new SearchQuery;
+            $searchQuery->host = request()->getClientIp();
+            $searchQuery->query = $query;
+            $searchQuery->results = $results->count();
+            $searchQuery->save();
+        }
 
         return $results;
     }
