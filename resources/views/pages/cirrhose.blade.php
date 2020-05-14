@@ -29,7 +29,7 @@
                 </tr>
                 <tr>
                     <td class="bg-grey-lighter font-sans text-sm text-grey-darker border-b border-grey-light">Auto-immunes</td>
-                    <td class="border-b-2 border-grey-lightest">maladies auto-immunes, cirrhose biliaire primitive</td>
+                    <td class="border-b-2 border-grey-lightest">maladies auto-immunes, cholangite biliaire primitive</td>
                 </tr>
                 <tr>
                     <td class="bg-grey-lighter font-sans text-sm text-grey-darker border-b border-grey-light">Vasculaires</td>
