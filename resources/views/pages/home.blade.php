@@ -61,7 +61,7 @@
                                 <p class="text-sm sm:text-base font-thin uppercase"></i>Nouvelle référence gratuite</p>
                                 <h1 class="text-xl sm:text-3xl">Ajustement des médicaments en insuffisance hépatique</h1>
                             </div>
-                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">Le foie joue un rôle majeur dans le métabolisme d’un grand nombre de médicaments. La cirrhose peut donc avoir un impact majeur sur l’efficacité et l’innocuité des médicaments. Malgré que la prévalence ce problème de santé soit en augmentation, peu d’information concernant leur ajustement en présence d’insuffisance hépatique est facilement accessible pour guider les cliniciens dans leur prise de décision.</p>
+                            <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">Le foie joue un rôle majeur dans le métabolisme d’un grand nombre de médicaments. La cirrhose peut donc avoir un impact significatif sur l’efficacité et l’innocuité des médicaments. Malgré que la prévalence de ce problème de santé soit en augmentation, peu d’information concernant leur ajustement en présence d’insuffisance hépatique est facilement accessible pour guider les cliniciens dans leur prise de décision.</p>
                             <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('articles.index') }}">Explorer la documentation</a>
                         </div>
                     </div>
