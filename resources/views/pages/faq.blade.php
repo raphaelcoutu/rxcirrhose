@@ -48,7 +48,21 @@
                 <span class="non-recommande p-2">Non recommandé</span>
                 <p class="md:pl-8">Les études de pharmacocinétiques indiquent une augmentation disproportionnée de l’exposition du médicament chez les patients cirrhotiques ou encore que l’usage de la molécule expose les patients cirrhotiques a un risque significatif d’effet indésirable majeur. Cette recommandation peut également être émise lorsqu’aucun fractionnement de dose n’est possible, dans la mesure où cela était jugé nécessaire. Une molécule alternative devrait être utilisée.</p>
             </div>
-            
+
+            <div class="mt-2">
+                <span class="p2 text-grey-darker font-thin">Initier à faible dose</span>
+                <p class="md:pl-8">Ce commentaire peut être ajouté lorsque l’exposition à une molécule est fortement augmentée et qu’une dose de traitement initiale réduite est jugée nécessaire. Il est employée pour guider rapidement les utilisateurs du site dans leur prise de décision.</p>
+            </div>
+
+            <div class="mt-2">
+                <span class="p2 text-grey-darker font-thin">Titrer lentement</span>
+                <p class="md:pl-8">Ce commentaire peut être ajouté lorsque la clairance d’une molécule est fortement réduite et qu’une titration plus lente des doses est jugée nécessaire. Il est employée pour guider rapidement les utilisateurs du site dans leur prise de décision.</p>
+            </div>
+
+            <div class="mt-2">
+                <span class="p2 text-grey-darker font-thin">Autre</span>
+                <p class="md:pl-8">Il arrive que des recommandations de doses soient ajoutées à même le tableau. Cela peut être le cas lorsque des monographies le spécifie pour des raisons légales ou encore lorsque des regroupements d’experts se sont positionnés sur l’usage d’une molécule.</p>
+            </div>
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Chez quel type de patient peut-on utiliser l’information du site?</h3>
             <p class="mt-2">La revue de littérature et les recommandations émises sont applicables pour les patients présentant une cirrhose compensée ou une cirrhose décompensée stable. Elles ne sont pas destinées aux patients souffrant d’une décompensation aiguë de leur maladie hépatique ou d'une hépatite fulminante.</p>
