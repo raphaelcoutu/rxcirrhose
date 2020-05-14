@@ -90,11 +90,11 @@
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">Structure des fiches médicamenteuses</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            <p>Pour chaque classe médicamenteuse, une fiche sera produite.
-La première section contient un tableau résumé contenant les recommandations d’ajustement pour chaque médicament en fonction du degré d’atteinte hépatique.
-La seconde section offre un sommaire des considérations pharmacodynamiques impliquées entre la classe médicamenteuses, les pathologies qu’elles traitent et la cirrhose en général.
-La troisième section présente, molécule par molécule, un tableau résumé des paramètres pharmacocinétiques chez les patients sains et chez les patients cirrhotiques, lorsque disponibles. Chaque tableau est suivi d’une analyse descriptive de la littérature retrouvée ainsi que son interprétation.
-Les références se retrouveront à la fin de chaque fiche médicamenteuse.
+                            <p>Pour chaque classe médicamenteuse, une fiche sera produite.<br>
+                                La première section contient un tableau résumé contenant les recommandations d’ajustement pour chaque médicament en fonction du degré d’atteinte hépatique.<br>
+                                La seconde section offre un sommaire des considérations pharmacodynamiques impliquées entre la classe médicamenteuses, les pathologies qu’elles traitent et la cirrhose en général.<br>
+                                La troisième section présente, molécule par molécule, un tableau résumé des paramètres pharmacocinétiques chez les patients sains et chez les patients cirrhotiques, lorsque disponibles. Chaque tableau est suivi d’une analyse descriptive de la littérature retrouvée ainsi que son interprétation.<br>
+                                Les références se retrouveront à la fin de chaque fiche médicamenteuse.
 </p>
                             <p class="mt-2">Vous trouverez de l’information concernant le score Child-Pugh <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</p>
                         </div>
