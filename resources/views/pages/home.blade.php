@@ -116,7 +116,7 @@ Les références se retrouveront à la fin de chaque fiche médicamenteuse.
                         <h2 class="text-center">Conflits d’intérêts</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div class="w-full mt-4 p-4 text-red-darker bg-white shadow tracking-normal leading-normal flex items-center">
-                                <p>Tous le membres de l’équipe certifient qu’il n’ont aucun conflit d’intérêts à divulguer.</p>
+                                <p>Tous le membres de l’équipe certifient qu’ils n’ont aucun conflit d’intérêts à divulguer.</p>
                             </div>
                         </div>
                     </div>
