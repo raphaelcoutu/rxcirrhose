@@ -7,10 +7,10 @@
             <div class="flex border-b border-grey-light items-center">
                 <h2 class="text-3xl leading-none text-red">La classification Child-Pugh</h2>
             </div>
-            <p class="mt-2">La classification de Child-Pugh-Turcotte (aussi connu sous le nom de score de Child-Pugh) est un score pronostique de la cirrhose. Il a été validé pour prédire la survie des patients à 1 et 2 ans.</p>
+            <p class="mt-2">La classification de Child-Turcotte-Pugh (aussi connue sous le nom de score de Child-Pugh) est un outil pronostique employé chez les patients cirrhotiques. Il a été validé pour prédire la survie des patients à 1 et 2 ans.</p>
 
-            <p class="mt-2">Il est composé de cinq paramètres : la bilirubine, l’albumine, le temps de prothrombine (ou l’INR), la présence d’ascite ainsi que l’encéphalopathie hépatique. Une valeur de 1 à 3 points est attribuée à chaque paramètre. Les valeurs sont additionnées à la fin afin d’obtenir le score de Child-Turcotte-Pugh. La sévérité de la cirrhose va être divisée en 3 classes : A, B ou C.</p>
-            <p class="mt-2">Plus le score est élevé, plus le risque de morbidité et de mortalité associé à la cirrhose va être augmenté.</p>
+            <p class="mt-2">Il est composé de cinq paramètres : la bilirubine, l’albumine, le temps de prothrombine (ou le RNI), la présence d’ascite et d’encéphalopathie hépatique. Une valeur de 1 à 3 points est attribuée pour chaque paramètre. La somme de ces valeurs permet d’obtenir un score permettant de classifier le degré de cirrhose en consultant l'échelle de référence. La sévérité de la cirrhose se divise en 3 classes : A, B ou C, soit légère, modérée ou avancée.</p>
+            <p class="mt-2">Plus le score est élevé, plus le risque de morbidité et de mortalité associé à la cirrhose augmente.</p>
 
             <div class="mt-2 w-3/4 mx-auto bg-grey-lightest border border-grey px-4 rounded py-2 leading-none">
                 <p><span class="font-medium">Score de 5 à 6 points</span> : cirrhose légère, Child-Pugh A</p>
@@ -56,7 +56,7 @@
                     <td>&lt; 28</td>
                 </tr>
                 <tr>
-                    <td>INR</td>
+                    <td>RNI</td>
                     <td>&lt; 1.7</td>
                     <td>1.7 à 2.2</td>
                     <td>&gt; 2.2</td>
@@ -64,7 +64,7 @@
                 </tbody>
             </table>
 
-            <p class="mt-2">Bien qu’il n’ait pas été développé pour évaluer la capacité du foie à disposer des médicaments, il est souvent utilisé dans les monographies pour proposer des ajustements de dose. La FDA recommande d’utiliser ce score lors de la commercialisation de nouveaux produits.</p>
+            <p class="mt-2">Bien qu’elle n’ait pas été développée pour évaluer la capacité du foie à disposer des médicaments, cette classification est souvent utilisée dans les monographies pour proposer des ajustements de dose chez les patients atteints de cirrhose. La U.S. Food and Drug Administration (FDA) recommande d’utiliser ce score lors de la commercialisation de nouveaux produits.</p>
 
             <p class="mt-2">Les recommandations que vous trouverez à travers le site ont été émises en fonction du score Child-Turcotte-Pugh.</p>
         </div>
