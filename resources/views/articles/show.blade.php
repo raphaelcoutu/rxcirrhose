@@ -12,9 +12,11 @@
             <ul class="list-reset pl-2 text-red-dark mt-2">
                 <li class="leading-normal"><a class="text-red no-underline" href="#resume">Tableau résumé</a></li>
                 <li class="leading-normal"><a class="text-red no-underline" href="#pharmacodynamie">Pharmacodynamie</a></li>
+                @if($article->drugs->where('table_only', 0)->count() > 0)
                 <li class="leading-normal"><a class="text-red no-underline" href="#molecules">Molécules</a></li>
+                @endif
                 <ul class="list-reset pl-3">
-                    @foreach($article->drugs as $drug)
+                    @foreach($article->drugs->where('table_only', 0) as $drug)
                         <li class="leading-normal">
                             <a class="text-red-darker no-underline" href="#{{str_slug($drug->name) }}">{{ $drug->name }}</a>
                             @auth
@@ -81,8 +83,10 @@
             <h3 id="pharmacodynamie" class="text-xl text-red py-2">Pharmacodynamie</h3>
             {!! $article->pharmacodynamics !!}
 
+            @if($article->drugs->where('table_only', 0)->count() > 0)
             <h3 id="molecules" class="text-xl text-red py-2 anchor">Molécules</h3>
-            @foreach($article->drugs as $drug)
+            @endif
+            @foreach($article->drugs->where('table_only', 0) as $drug)
                 <h4 id={{str_slug($drug->name)}} class="mt-4">{{ $drug->name }}</h4>
             <section>
                 <table>

@@ -66,6 +66,20 @@
         </div>
     </div>
 
+    <div class="flex mt-4">
+        <label class="w-1/4">Seulement tableau:</label>
+        <div class="w-1/4 flex justify-between">
+            <div>
+                <input type="radio" name="table_only" value="1" id="table_only_oui" {{ old('table_only', optional($drug ?? null)->table_only) == '1' ? 'checked' : '' }}>
+                <label for="active_oui">Oui</label>
+            </div>
+            <div>
+                <input type="radio" name="table_only" value="0" id="table_only_non" {{ old('table_only', optional($drug ?? null)->table_only) == '0' ? 'checked' : '' }}>
+                <label for="active_non">Non</label>
+            </div>
+        </div>
+    </div>
+
 
     <div class="flex justify-between mt-4">
         <label for="absorption" class="w-1/4">Absorption:</label>
