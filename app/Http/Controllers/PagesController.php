@@ -34,4 +34,9 @@ class PagesController extends Controller
     {
         return view('pages.qui-sommes-nous');
     }
+
+    public function cgu()
+    {
+        return view('pages.conditions-generales-utilisation');
+    }
 }

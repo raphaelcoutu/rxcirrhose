@@ -16,6 +16,7 @@ Route::get('/cirrhose', 'PagesController@cirrhose');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/child-pugh', 'PagesController@childPugh');
 Route::get('/qui-sommes-nous', 'PagesController@quiSommesNous');
+Route::get('/conditions-generales-utilisation', 'PagesController@cgu');
 
 Route::get('articles', 'ArticlesController@index')->name('articles.index');
 Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
