@@ -9,7 +9,7 @@
         "doctrine/dbal": "^2.10",
         "elasticsearch/elasticsearch": "^7.6",
         "fideloper/proxy": "^4.0",
-        "laravel/framework": "5.8.*",
+        "laravel/framework": "6.20.*",
         "laravel/tinker": "^1.0",
         "spatie/laravel-sitemap": "^5.6"
     },
