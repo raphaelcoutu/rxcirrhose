@@ -1,0 +1,36 @@
+version: '3'
+services:
+  app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    image: rxcirrhose/app
+    ports:
+      - "8080:80"
+    networks:
+      - rxcirrhose
+    volumes:
+      - ../:/var/www/html
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_USER: user
+      MYSQL_PASSWORD: user
+      MYSQL_ROOT_PASSWORD: admin
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+      - ./mysql/logs:/var/log/mysql
+    networks:
+      - rxcirrhose
+    command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "8081:80"
+    networks:
+      - rxcirrhose
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+networks:
+  rxcirrhose:
