@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\SearchQuery;
+use App\Models\Article;
+use App\Models\SearchQuery;
 use Elasticsearch\Client;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;

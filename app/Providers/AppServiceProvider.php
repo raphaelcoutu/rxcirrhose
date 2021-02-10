@@ -2,10 +2,10 @@
 
 namespace App\Providers;
 
-use App\Article;
-use App\Observers\ArticleObserver;
+use App\Models\Article;
 use Elasticsearch\Client;
 use Elasticsearch\ClientBuilder;
+use App\Observers\ArticleObserver;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        Article::observe(ArticleObserver::class);
+        // Article::observe(ArticleObserver::class);
     }
 
     private function bindSearchClient()

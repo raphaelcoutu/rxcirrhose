@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
-use App\Drug;
+use App\Models\Article;
+use App\Models\Drug;
 use Illuminate\Http\Request;
 
 class DrugsController extends Controller

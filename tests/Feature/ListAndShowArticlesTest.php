@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Drug;
-use App\Article;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\Drug;
+use App\Models\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ListAndShowArticlesTest extends TestCase
@@ -16,10 +15,10 @@ class ListAndShowArticlesTest extends TestCase
     {
         parent::setUp();
 
-        $this->articles = factory(Article::class, 2)
+        $this->articles = Article::factory(2)
             ->create()
             ->each(function ($article) {
-                $article->drugs()->saveMany(factory(Drug::class, 2)->make());
+                $article->drugs()->saveMany(Drug::factory(2)->make());
             });
     }
 

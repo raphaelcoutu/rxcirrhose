@@ -5,7 +5,7 @@ docker-compose up -d
 
 # Création du fichier .env
 docker-compose exec app cp .env.example .env
-docker-compose exec app sed -i 's/DB_HOST=.*/DB_HOST=mysql/; s/DB_DATABASE=.*/DB_DATABASE=rxcirrhose/; s/DB_PASSWORD=.*/DB_PASSWORD=admin/' .env
+docker-compose exec app sed -i 's/APP_URL=.*/APP_URL=http://localhost:8080/;  s/DB_HOST=.*/DB_HOST=mysql/; s/DB_DATABASE=.*/DB_DATABASE=rxcirrhose/; s/DB_PASSWORD=.*/DB_PASSWORD=admin/' .env
 
 docker-compose exec app php artisan key:generate
 docker-compose exec app php artisan migrate

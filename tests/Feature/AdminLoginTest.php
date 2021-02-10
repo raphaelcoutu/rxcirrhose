@@ -2,9 +2,8 @@
 
 namespace Tests\Feature;
 
-use App\User;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class AdminLoginTest extends TestCase
@@ -31,7 +30,7 @@ class AdminLoginTest extends TestCase
      */
     public function testUserCannotViewLoginPageWhenAuthenticated()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->actingAs($user)
             ->get('/admin');

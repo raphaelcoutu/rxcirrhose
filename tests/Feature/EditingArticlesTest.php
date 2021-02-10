@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\User;
-use App\Article;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\User;
+use App\Models\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class EditingArticlesTest extends TestCase
@@ -19,8 +18,8 @@ class EditingArticlesTest extends TestCase
      */
     public function testAuthUserCanSeeEditPage()
     {
-        $user = factory(User::class)->make();
-        $article = factory(Article::class)->create();
+        $user = User::factory()->make();
+        $article = Article::factory()->create();
 
         $response = $this->actingAs($user)->get('articles/'.$article->id.'/edit');
 
@@ -34,7 +33,7 @@ class EditingArticlesTest extends TestCase
      */
     public function testGuestUserCannotSeeEditPage()
     {
-        $article = factory(Article::class)->create();
+        $article = Article::factory()->create();
 
         $response = $this->get('articles/'.$article->id.'/edit');
 
@@ -48,7 +47,7 @@ class EditingArticlesTest extends TestCase
      */
     public function testAuthUserCanSeeCreatePage()
     {
-        $user = factory(User::class)->make();
+        $user = User::factory()->make();
 
         $response = $this->actingAs($user)->get('articles/create');
 
@@ -62,7 +61,7 @@ class EditingArticlesTest extends TestCase
      */
     public function testGuestUserCannotSeeCreatePage()
     {
-        $article = factory(Article::class)->create();
+        Article::factory()->create();
 
         $response = $this->get('articles/create');
 
@@ -76,10 +75,10 @@ class EditingArticlesTest extends TestCase
      */
     public function testCannotCreateArticleWithSameTitle()
     {
-        $user = factory(User::class)->make();
-        $article = factory(Article::class)->create();
+        $user = User::factory()->make();
+        $article = Article::factory()->create();
 
-        $newArticle = factory(Article::class)->make([
+        $newArticle = Article::factory()->make([
             'title' => $article->title
         ]);
 

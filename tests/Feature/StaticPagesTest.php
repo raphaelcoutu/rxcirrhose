@@ -2,10 +2,9 @@
 
 namespace Tests\Feature;
 
-use App\Drug;
-use App\Article;
 use Tests\TestCase;
-use Illuminate\Foundation\Testing\WithFaker;
+use App\Models\Drug;
+use App\Models\Article;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class StaticPagesTest extends TestCase
@@ -31,7 +30,7 @@ class StaticPagesTest extends TestCase
      */
     public function testHomePageDisplaysArticleCount()
     {
-        factory(Article::class, 2)->create();
+        Article::factory(2)->create();
 
         $response = $this->get('/');
 
@@ -45,10 +44,10 @@ class StaticPagesTest extends TestCase
      */
     public function testHomePageDisplaysDrugCount()
     {
-        factory(Article::class, 2)
+        Article::factory(2)
             ->create()
             ->each(function ($article) {
-                $article->drugs()->saveMany(factory(Drug::class, 2)->make());
+                $article->drugs()->saveMany(Drug::factory(2)->make());
             });
 
         $response = $this->get('/');
