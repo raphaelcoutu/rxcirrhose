@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 
@@ -20,7 +21,10 @@ class ArticlesController extends Controller
      */
     public function index()
     {
-        $articles = Article::orderBy('title')->get();
+        if(Auth::check())
+            $articles = Article::orderBy('title')->get();
+        else
+            $articles = Article::orderBy('title')->where('active', true)->get();
 
         return view('articles.index', compact('articles'));
     }
