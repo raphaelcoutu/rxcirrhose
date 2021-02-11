@@ -15,8 +15,6 @@
     <title>{{ __('navbar.brand') }}</title>
 
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
-
-    <!-- Styles -->
 </head>
 <body class="font-sans flex flex-col h-full" >
 <div id="app">
@@ -81,9 +79,7 @@
                     </div>
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl">{{ __('home.content') }}</h2>
-                        <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">
-
-                        </p>
+                        <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">{{ __('home.content_text') }}</p>
                     </div>
                 </div>
                 <div class="w-full flex md:flex-row-reverse justify-center mt-4">
