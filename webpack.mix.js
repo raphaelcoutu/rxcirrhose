@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+const path = require('path');
 const tailwindcss = require('tailwindcss');
 require('laravel-mix-purgecss');
 
