@@ -85,6 +85,9 @@ class ArticlesController extends Controller
             $query->orderBy('name');
         }])->where('slug', $slug)->firstOrFail();
 
+        if(!$article->active && !Auth::check())
+            return abort(403);
+
         return view('articles.show', compact('article'));
     }
 
