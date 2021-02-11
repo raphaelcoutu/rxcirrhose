@@ -9,17 +9,17 @@
     @section('metadata')
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="article" />
-    <meta property="og:title" content="@yield('title') - RxCirrhose" />
+    <meta property="og:title" content="@yield('title') - {{ __('navbar.brand') }}" />
         @hasSection('description')
         <meta property="og:description" content="@yield('description')" />
         <meta property="description" content="@yield('description')" />
         @else
-        <meta property="og:description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
-        <meta property="description" content="Référence d'ajustement des médicaments en insuffisance hépatique." />
+        <meta property="og:description" content="{{ __('navbar.description') }}" />
+        <meta property="description" content="{{ __('navbar.description') }}" />
         @endif
     @show
 
-    <title>@yield('title') - RxCirrhose</title>
+    <title>@yield('title') - {{ __('navbar.brand') }}</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">

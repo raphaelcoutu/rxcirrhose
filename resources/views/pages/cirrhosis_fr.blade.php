@@ -7,7 +7,7 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
             <div class="flex border-b border-grey-light items-center">
                 <h1 class="text-3xl leading-none text-red">La cirrhose</h1>
             </div>
@@ -113,11 +113,11 @@ un patient se présente avec une ordonnance d’un produit pour lequel aucune fi
             </div>
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Références suggérées</h3>
             <ul>
-                <li>Poitras, Pierre et collaborateurs. L’appareil digestif : Des sciences fondamentales à la clinique. Les Presses de l’Université de Montréal, 2020.</li>
-                <li>Tsochatzis EA et al. Liver cirrhosis. Lancet 2014;17:1749-61.</li>
-                <li>Ge PS et al. Treatment of patients with cirrhosis. N Engl J Med 2016;25:767-77.</li>
+                <li>Poitras, Pierre et coll. L’appareil digestif : Des sciences fondamentales à la clinique. Les Presses de l’Université de Montréal, 2020.</li>
+                <li>Tsochatzis EA et coll. Liver cirrhosis. Lancet 2014;17:1749-61.</li>
+                <li>Ge PS et coll. Treatment of patients with cirrhosis. N Engl J Med 2016;25:767-77.</li>
                 <li>Lewis JH, Stine JG. Review article: prescribing medications in patients with cirrhosis - a practical guide. Aliment Pharmacol Ther. 2013 Jun;37(12):1132-56.</li>
-                <li>Ferreira V et al. L'ajustement des médicaments dans les cas de cirrhose. Québec Pharmacie, 2018.</li>
+                <li>Ferreira V et coll. L'ajustement des médicaments dans les cas de cirrhose. Québec Pharmacie, 2018.</li>
             </ul>
 
         </div>

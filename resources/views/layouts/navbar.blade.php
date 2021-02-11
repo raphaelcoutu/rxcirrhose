@@ -4,7 +4,7 @@
             <div class="w-1/5 px-6">
                 <a href="{{ url('/') }}" class="flex items-center no-underline text-black">
                 @include('svg.liver', ['class' => 'h-16 w-16'])
-                <span class="font-semibold text-xl">RxCirrhose</span>
+                <span class="font-semibold text-xl">{{ __('navbar.brand') }}</span>
                 </a>
             </div>
             <div class="block sm:hidden flex items-center">
@@ -13,10 +13,13 @@
                 </button>
             </div>
             <div :class="mobileMenu ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto md:w-3/5 md:justify-between tracking-tight font-thin uppercase sm:justify-end" v-cloak>
-                <a href="/" class="navbar-item">Accueil</a>
-                <a href="{{ url('cirrhose') }}" class="navbar-item {{ $active == 'cirrhose' ? 'active' : '' }}">Cirrhose</a>
-                <a href="{{ route('articles.index') }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">Médicaments</a>
-                <a href="{{ url('faq') }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">FAQ</a>
+                <a href="/" class="navbar-item">{{ __('navbar.home') }}</a>
+                <a href="{{ url(__('navbar.cirrhosis')) }}" class="navbar-item {{ $active == 'cirrhose' ? 'active' : '' }}">{{ __('navbar.cirrhosis') }}</a>
+                <a href="{{ route('articles.index') }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">{{ __('navbar.drugs') }}</a>
+                <a href="{{ url('faq') }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">{{ __('navbar.faq') }}</a>
+                <a href="{{ url()->current(). '?lang='.__('navbar.other_locale') }}" class="navbar-item">
+                    @include('svg.globe', ['class' => 'sm:hidden md:hidden w-3 h-3 fill-current text-red-light']){{ __('navbar.other_locale_name') }}
+                </a>
                 <div class="flex-1 w-12 flex justify-center items-center">
                     <cirrhose-search-button
                             class="px-2 py-6 no-underline text-sm text-grey border-b-2 border-transparent hover:text-grey-darker"

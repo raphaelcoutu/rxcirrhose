@@ -15,10 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@home');
 Route::get('/cirrhose', 'PagesController@cirrhose');
+Route::get('/cirrhosis', 'PagesController@cirrhosis');
 Route::get('/faq', 'PagesController@faq');
 Route::get('/child-pugh', 'PagesController@childPugh');
 Route::get('/qui-sommes-nous', 'PagesController@quiSommesNous');
-Route::get('/conditions-generales-utilisation', 'PagesController@cgu');
+Route::get('/about-us', 'PagesController@aboutUs');
+Route::get('/conditions-generales-utilisation', 'PagesController@conditionsGeneralesUtilisation');
+Route::get('/terms-of-use', 'PagesController@termsOfUse');
 
 Route::get('articles', 'ArticlesController@index')->name('articles.index');
 Route::get('articles/create', 'ArticlesController@create')->name('articles.create');
