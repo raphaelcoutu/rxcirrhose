@@ -10,6 +10,6 @@ return [
     'distribution' => 'distribution',
     'metabolism' => 'métabolisme',
     'excretion' => 'excrétion',
-    'drug_monograph_recommandations' => 'eecommandations de la monographie',
+    'drug_monograph_recommandations' => 'recommandations de la monographie',
     'references' => 'références'
 ];
