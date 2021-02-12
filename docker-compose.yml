@@ -10,7 +10,8 @@ services:
     networks:
       - rxcirrhose
     volumes:
-      - ../:/var/www/html
+      - ./:/var/www/html
+    env_file: .env
   mysql:
     image: mysql:5.7
     environment:
@@ -18,8 +19,8 @@ services:
       MYSQL_PASSWORD: user
       MYSQL_ROOT_PASSWORD: admin
     volumes:
-      - ./mysql/data:/var/lib/mysql
-      - ./mysql/logs:/var/log/mysql
+      - ./docker/mysql/data:/var/lib/mysql
+      - ./docker/mysql/logs:/var/log/mysql
     networks:
       - rxcirrhose
     command: ['mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci']
