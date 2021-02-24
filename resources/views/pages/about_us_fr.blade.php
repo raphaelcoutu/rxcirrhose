@@ -46,7 +46,7 @@
                 <li>Sandra Arencia Cubas, candidate au Pharm.D (2020): Rédaction de fiches</li>
                 <li>Elizabeth Delisle, candidate au Pharm.D (2020): Rédaction de fiches</li>
                 <li>Isabelle Dansereau, candidate au Pharm.D (2020): Rédaction de fiches</li>
-                <li>Wael Mouas, candidate au Pharm.D (2021): Rédaction de fiches</li>
+                <li>Wael Mouas, candidat au Pharm.D (2021): Rédaction de fiches</li>
             </ul>
         </div>
     </div>
