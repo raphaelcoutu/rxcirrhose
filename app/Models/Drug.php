@@ -11,9 +11,9 @@ class Drug extends Model
 
     protected $guarded = [];
 
-    public function article()
+    public function articleTranslation()
     {
-        return $this->belongsTo(Article::class);
+        return $this->belongsTo(ArticleTranslation::class);
     }
 
     public function childClass(string $value)

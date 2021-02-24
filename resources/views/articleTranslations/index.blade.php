@@ -14,21 +14,10 @@
                 @foreach($articles as $article)
                 <li>
                     <i class="fas fa-long-arrow-alt-right"></i>
-                    @if(!$article->active) <i>NON PUBLIÉE</i> @endif
-                    <a class="text-red-dark no-underline" href="{{ route('articles.showSlug', $article->slug) }}">{{ $article->title }}</a>
-                    @auth
-                    <span class="text-sm ml-2">
-                        [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>]
-                    </span>
-                    @endauth
+                    <a class="text-red-dark no-underline" href="{{ route('articleTranslations.showBySlug', ['locale' => App::currentLocale(), 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                 </li>
                 @endforeach
             </ul>
-            @auth
-            <div class="mt-4">
-                <a href="{{ route('articles.create') }}" class="bg-red-light p-2 text-white shadow rounded">Ajouter une fiche</a>
-            </div>
-            @endauth
         </div>
     </div>
     @include('layouts.footer')

@@ -7,10 +7,10 @@
             <h3>Ajouter une molécule</h3>
             <div>
                 <i class="fas fa-long-arrow-alt-left"></i> Retour à
-                <a class="text-red no-underline" href="{{ route('articles.edit', $article->id) }}">{{ $article->title }}</a>
+                <a class="text-red no-underline" href="{{ route('admin.articleTranslations.edit', $articleTranslation->id) }}">{{ $articleTranslation->title }}</a>
             </div>
         </div>
-        @include('drugs.form')
+        @include('admin.drugs.form')
     </div>
     @include('layouts.footer')
 @endsection

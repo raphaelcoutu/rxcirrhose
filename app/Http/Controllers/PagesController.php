@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
+use App\Models\ArticleTranslation;
 use App\Models\Drug;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -11,8 +11,9 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $articlesCount = Article::where('active', 1)->count();
-        $drugsCount = Drug::where('active', 1)->count();
+        $articles = ArticleTranslation::with('drugs')->select('title')->where('locale', App::currentLocale())->where('active', 1)->withCount('drugs')->get();
+        $articlesCount = $articles->count();
+        $drugsCount = $articles->sum('drugs_count');
         return view('pages.home', compact('articlesCount', 'drugsCount'));
     }
 

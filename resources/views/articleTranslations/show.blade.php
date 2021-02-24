@@ -35,7 +35,7 @@
                 <h1 class="text-3xl leading-none text-red">{{ $article->title }}</h1>
                 @auth
                 <span class="text-sm ml-2">
-                    [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>]
+                    {{-- [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>] --}}
                 </span>
                 @endauth
             </div>

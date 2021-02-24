@@ -9,6 +9,7 @@
                     <h1 class="text-3xl leading-none text-red">Admin</h1>
                 </div>
                 <a href="{{ route('admin.getLogout') }}">Logout</a>
+                <a href="{{ route('admin.articles.index') }}">Gestionnaire de fiches</a>
                 <p>Il y a {{ $queries->total() }} requêtes.</p>
                 <table>
                     <thead>

@@ -15,8 +15,8 @@ class Article extends Model
 
     protected $guarded = [];
 
-    public function drugs()
+    public function translations()
     {
-        return $this->hasMany(Drug::class);
+        return $this->hasMany(ArticleTranslation::class);
     }
 }

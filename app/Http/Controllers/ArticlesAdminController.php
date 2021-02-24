@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\Drug;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
+use App\Models\ArticleTranslation;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
-class DrugsController extends Controller
+class ArticlesAdminController extends Controller
 {
     public function __construct()
     {
@@ -20,7 +23,9 @@ class DrugsController extends Controller
      */
     public function index()
     {
-        //
+        $articles = Article::with('translations:id,article_id,locale')->orderBy('name')->get();
+
+        return view('admin.articles.index', compact('articles'));
     }
 
     /**
@@ -28,11 +33,9 @@ class DrugsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create()
     {
-        $article = Article::findOrFail($id);
-
-        return view('drugs.create', compact('article'));
+        return view('admin.articles.create');
     }
 
     /**
@@ -41,29 +44,15 @@ class DrugsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(Request $request)
     {
-        $article = Article::findOrFail($id);
-
         $request->validate([
-            'name' => 'required|unique:drugs|max:255'
+            'name' => 'required|unique:articles|max:255'
         ]);
 
-        $drug = new Drug($request->all());
-        $article->drugs()->save($drug);
+        Article::create($request->all());
 
-        return redirect()->route('articles.edit', $id);
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
+        return redirect()->route('admin.articles.index');
     }
 
     /**
@@ -74,9 +63,9 @@ class DrugsController extends Controller
      */
     public function edit($id)
     {
-        $drug = Drug::with('article')->find($id);
+        $article = Article::with('translations')->findOrFail($id);
 
-        return view('drugs.edit', compact('drug'));
+        return view('admin.articles.edit', compact('article'));
     }
 
     /**
@@ -89,13 +78,12 @@ class DrugsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'name' => "required|unique:drugs,name,{$id}|max:255"
+            'name' => ['required', 'unique:articles,name,'. $id, 'max:255']
         ]);
 
-        $drug = Drug::find($request->id);
-        $drug->update($request->all());
+        Article::find($request->id)->update($request->all());
 
-        return redirect()->route('articles.edit', $drug->article_id);
+        return redirect()->route('admin.articles.index');
     }
 
     /**

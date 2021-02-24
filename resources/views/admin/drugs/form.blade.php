@@ -14,7 +14,8 @@
     @method('PUT')
         <input type="hidden" name="id" value="{{ $drug->id }}">
 @else
-    <form action="{{ route('drugs.store', $article->id) }}" method="POST">
+    <form action="{{ route('drugs.store') }}" method="POST">
+        <input type="hidden" name="article_translation_id" value="{{ $articleTranslation->id }}">
 @endif
     @csrf
 
@@ -113,11 +114,11 @@
 
     <div class="flex justify-end mt-4">
         @if(isset($drug))
-            <a href="{{ route('articles.edit', $drug->article->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Retour à la classe</a>
-            <a href="{{ route('articles.show', $drug->article->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
+            <a href="{{ route('admin.articleTranslations.edit', $drug->articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Retour à la classe</a>
+            <a href="{{ route('articleTranslations.show', $drug->articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
         @else
-            <a href="{{ route('articles.edit', $article->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Retour à la classe</a>
-            <a href="{{ route('articles.show', $article->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
+            <a href="{{ route('admin.articleTranslations.edit', $articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Retour à la classe</a>
+            <a href="{{ route('articleTranslations.show', $articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
         @endif
         <button type="submit" class="p-2 text-red border border-red rounded">Enregistrer</button>
     </div>
