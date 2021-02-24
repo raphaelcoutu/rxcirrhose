@@ -21,8 +21,10 @@ On peut donc spécifier dans le fichier .env
 WWWUSER=1000
 ```
 
+
+```
 # Installer composer et php (si pas déjà fait au préalable)
-# sudo apt-get install composer (installera également php)
+sudo apt-get install composer (installera également php)
 php artisan key:generate
 php artisan key:migrate
 
