@@ -10,7 +10,7 @@
                     </div>
                 </div>
                 <div class="py-4 flex flex-col">
-                    <a :href="`/articles/${item.slug}`" class="search-item" tabindex="0" v-for="item in results" :key="item.id">{{ item.title }}</a>
+                    <a :href="`/articles/${item.locale}/${item.slug}`" class="search-item" tabindex="0" v-for="item in results" :key="item.id">{{ item.title }}</a>
                     <div class="mx-auto w-2/5">
                         <p class="search-not-found" v-if="dirty &&!results.length">Aucun résultat trouvé.</p>
                     </div>

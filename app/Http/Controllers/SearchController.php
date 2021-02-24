@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\Article;
-use App\Models\SearchQuery;
 use Elasticsearch\Client;
+use App\Models\SearchQuery;
 use Illuminate\Support\Arr;
 use Illuminate\Http\Request;
+use App\Models\ArticleTranslation;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
@@ -31,12 +33,13 @@ class SearchController extends Controller
     private function searchOnEloquent(string $query = '')
     {
         $keywords = explode(' ', trim($this->stripAccents($query)));
-        $results = Article::select(['id', 'title', 'slug'])
-            ->where(function($q) use ($keywords) {
-                foreach($keywords as $keyword) {
-                    $q->where('keywords', 'LIKE', '%'.$keyword.'%');
-                }
-            })->limit(5)
+        $results = ArticleTranslation::select('id', 'locale', 'title', 'slug')
+        ->whereHas('article', function ($q) use ($keywords) {
+            foreach ($keywords as $keyword) {
+                $q->where('keywords', 'LIKE', '%' . $keyword . '%');
+            }
+        })->where('locale', App::currentLocale())
+            ->limit(5)
             ->get();
 
         if (!Auth::check()) {
