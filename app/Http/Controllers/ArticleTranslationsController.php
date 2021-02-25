@@ -50,4 +50,15 @@ class ArticleTranslationsController extends Controller
 
         return view('articleTranslations.show', compact('article'));
     }
+
+    public function redirectToLocalizedArticle($slug)
+    {
+        // Si aucune locale n'est disponible dans le path
+        // On redirige vers la version FR (legacy redirect)
+
+        return redirect()->action(
+            [ArticleTranslationsController::class, 'showBySlug'],
+            ['locale' => 'fr', 'slug' => $slug]
+        );
+    }
 }
