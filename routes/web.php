@@ -26,6 +26,7 @@ Route::get('/terms-of-use', 'PagesController@termsOfUse');
 
 Route::get('articles', 'ArticleTranslationsController@index')->name('articleTranslations.index');
 Route::get('articles/{id}', 'ArticleTranslationsController@show')->name('articleTranslations.show')->where('id', '[0-9]+'); // Vieille redirection
+Route::get('articles/{slug}', 'ArticleTranslationsController@redirectToLocalizedArticle'); // Vieille redirection
 Route::get('articles/{locale}/{slug}', 'ArticleTranslationsController@showBySlug')->name('articleTranslations.showBySlug')->where('slug', '(.*)');
 
 Route::get('admin/articles', 'ArticlesAdminController@index')->name('admin.articles.index');
