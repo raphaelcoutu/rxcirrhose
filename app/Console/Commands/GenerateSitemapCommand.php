@@ -48,7 +48,9 @@ class GenerateSitemapCommand extends Command
             ->add(Url::create('qui-sommes-nous'))
             ->add(Url::create('about-us'))
             ->add(Url::create('conditions-generales-utilisation'))
-            ->add(Url::create('terms-of-use'));
+            ->add(Url::create('terms-of-use'))
+
+            ->add(Url::create('articles'));
 
         $articles = ArticleTranslation::where('active', 1)->get();
 
