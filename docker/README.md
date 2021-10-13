@@ -23,12 +23,12 @@ WWWUSER=1000
 
 
 ```
-# Installer composer et php (si pas déjà fait au préalable)
-sudo apt-get install composer (installera également php)
-php artisan key:generate
-php artisan key:migrate
+docker compose exec app bash
 
 composer install
+
+php artisan key:generate
+php artisan migrate
 
 # Installer nodejs (cf github.com/nodesource/distributions)
 npm install
