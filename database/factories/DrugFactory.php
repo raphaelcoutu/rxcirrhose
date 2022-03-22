@@ -22,7 +22,7 @@ class DrugFactory extends Factory
     public function definition()
     {
         return [
-            'article_id' => 1,
+            'article_translation_id' => 1,
             'name' => $this->faker->word,
             'childA_category' => 1,
             'childA_text' => 'Text modifiée',

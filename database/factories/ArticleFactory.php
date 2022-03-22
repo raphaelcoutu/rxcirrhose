@@ -25,12 +25,7 @@ class ArticleFactory extends Factory
         $title = $this->faker->words(3, true);
 
         return [
-            'title' => $title,
-            'slug' => Str::slug($title),
-            'summary' => $this->faker->text,
-            'pharmacodynamics' => $this->faker->text,
-            'references' => $this->faker->text,
-            'active' => 1,
+            'name' => $title,
             'keywords' => $this->faker->words(6, true)
         ];
     }

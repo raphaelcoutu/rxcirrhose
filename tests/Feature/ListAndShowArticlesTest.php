@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use App\Models\Drug;
 use App\Models\Article;
+use App\Models\ArticleTranslation;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ListAndShowArticlesTest extends TestCase
@@ -16,10 +17,8 @@ class ListAndShowArticlesTest extends TestCase
         parent::setUp();
 
         $this->articles = Article::factory(2)
-            ->create()
-            ->each(function ($article) {
-                $article->drugs()->saveMany(Drug::factory(2)->make());
-            });
+            ->has(ArticleTranslation::factory()->has(Drug::factory(2)), 'translations')
+            ->create();
     }
 
     /**
@@ -29,11 +28,11 @@ class ListAndShowArticlesTest extends TestCase
      */
     public function testListArticles()
     {
-        $response = $this->get('/articles');
+        $response = $this->fr()->get('/articles');
 
         $response->assertStatus(200);
-        $response->assertSeeText($this->articles[0]->title);
-        $response->assertSeeText($this->articles[1]->title);
+        $response->assertSeeText($this->articles[0]->translations()->first()->title);
+        $response->assertSeeText($this->articles[1]->translations()->first()->title);
     }
 
     /**
@@ -45,7 +44,7 @@ class ListAndShowArticlesTest extends TestCase
     {
         $response = $this->get('/articles/' . $this->articles[0]->id);
 
-        $this->followingRedirects();
+        $this->fr()->followingRedirects();
 
         $response->assertStatus(301);
     }
@@ -57,7 +56,8 @@ class ListAndShowArticlesTest extends TestCase
      */
     public function testGetArticleBySlugReturns200()
     {
-        $response = $this->get('/articles/' . $this->articles[0]->slug);
+        $translation = $this->articles[0]->translations()->first();
+        $response = $this->fr()->get('/articles/' . $translation->locale . '/' . $translation->slug);
 
         $response->assertStatus(200);
     }
@@ -69,10 +69,10 @@ class ListAndShowArticlesTest extends TestCase
      */
     public function testNotExitingArticleReturns404()
     {
-        $response = $this->get('/articles/100');
+        $response = $this->fr()->followingRedirects()->get('/articles/100');
         $response->assertStatus(404);
 
-        $response = $this->get('/articles/not-an-article');
+        $response = $this->fr()->followingRedirects()->get('/articles/not-an-article');
         $response->assertStatus(404);
     }
 }
