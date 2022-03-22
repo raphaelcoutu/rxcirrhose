@@ -26,7 +26,7 @@
                 </div>
                 <div class="border-b-2 border-grey-lighter">
                     <div class="text-red-darker">Alexandre Mathieu, Pharm.D, M.Sc.</div>
-                    <div class="pl-2 text-grey-darker text-sm leading-none">Pharmacien au CHUM</div>
+                    <div class="pl-2 text-grey-darker text-sm leading-none">Pharmacien au CISSS de Lanaudière</div>
                     <div class="pl-2 text-sm">Rédaction et révision de fiches</div>
                 </div>
                 <div>
