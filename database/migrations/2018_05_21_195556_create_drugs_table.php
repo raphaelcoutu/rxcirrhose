@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateDrugsTable extends Migration
 {
@@ -17,12 +17,12 @@ class CreateDrugsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('article_id');
             $table->string('name');
-            $table->tinyInteger('childA_category');
-            $table->string('childA_text')->nullable();
-            $table->tinyInteger('childB_category');
-            $table->string('childB_text')->nullable();
-            $table->tinyInteger('childC_category');
-            $table->string('childC_text')->nullable();
+            $table->tinyInteger('childa_category');
+            $table->string('childa_text')->nullable();
+            $table->tinyInteger('childb_category');
+            $table->string('childb_text')->nullable();
+            $table->tinyInteger('childc_category');
+            $table->string('childc_text')->nullable();
             $table->text('absorption')->nullable();
             $table->text('distribution')->nullable();
             $table->text('metabolisme')->nullable();

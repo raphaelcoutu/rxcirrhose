@@ -1,9 +1,9 @@
 <?php
 
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migrations\Migration;
 
 class AddArticlesTable extends Migration
 {
@@ -22,8 +22,8 @@ class AddArticlesTable extends Migration
         });
 
         Schema::table('article_translations', function (Blueprint $table) {
-            $table->integer('article_id')->after('id');
-            $table->char('locale', 2)->after('article_id');
+            $table->integer('article_id')->after('id')->default(0);
+            $table->char('locale', 2)->after('article_id')->default('fr');
         });
 
         Schema::table('drugs', function (Blueprint $table) {

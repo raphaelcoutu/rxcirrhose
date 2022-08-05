@@ -8,6 +8,8 @@ WORKDIR /var/www/html
 ENV TZ=UTC
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
+RUN sed -i 's/archive.ubuntu.com/mirror.csclub.uwaterloo.ca/' /etc/apt/sources.list
+
 RUN set -x \
     && apt-get update && apt-get install -y gnupg gosu \
     && gosu nobody true
@@ -25,7 +27,7 @@ RUN apt-get install -y nginx php8.0-fpm php8.0-cli \
        php8.0-xml php8.0-zip php8.0-bcmath php8.0-soap \
        php8.0-intl php8.0-readline \
        php8.0-msgpack php8.0-igbinary php8.0-ldap \
-       php-redis
+       php8.0-redis
 RUN php -r "readfile('http://getcomposer.org/installer');" | php -- --install-dir=/usr/bin/ --filename=composer \
     && mkdir /run/php \
     && apt-get -y autoremove \

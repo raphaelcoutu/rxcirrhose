@@ -18,14 +18,14 @@ class Drug extends Model
 
     public function childClass(string $value)
     {
-        $childs = ['A' => $this->childA_category, 'B' => $this->childB_category, 'C' => $this->childC_category];
+        $childs = ['A' => $this->childa_category, 'B' => $this->childb_category, 'C' => $this->childc_category];
 
         return $this->childIntToClass($childs[$value]);
     }
 
     public function childString(string $value)
     {
-        $childs = ['A' => $this->childA_category, 'B' => $this->childB_category, 'C' => $this->childC_category];
+        $childs = ['A' => $this->childa_category, 'B' => $this->childb_category, 'C' => $this->childc_category];
 
         return $this->childIntToString($childs[$value]);
     }

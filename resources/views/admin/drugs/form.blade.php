@@ -26,44 +26,44 @@
     </div>
 
     <div class="flex justify-between mt-4">
-        <label for="childA_category" class="w-1/4">Child A:</label>
+        <label for="childa_category" class="w-1/4">Child A:</label>
         <div class="w-3/4 flex">
-            <select name="childA_category" class="bg-white border border-red-light mr-4">
-                <option value="1" {{ old('childA_category', optional($drug ?? null)->childA_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
-                <option value="2" {{ old('childA_category', optional($drug ?? null)->childA_category) == 2 ? 'selected' : '' }}>Précaution</option>
-                <option value="3" {{ old('childA_category', optional($drug ?? null)->childA_category) == 3 ? 'selected' : '' }}>Absence de données</option>
-                <option value="4" {{ old('childA_category', optional($drug ?? null)->childA_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            <select name="childa_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childa_category', optional($drug ?? null)->childa_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childa_category', optional($drug ?? null)->childa_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childa_category', optional($drug ?? null)->childa_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childa_category', optional($drug ?? null)->childa_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
             </select>
-            <input type="text" name="childA_text" class="border border-red-light rounded w-full p-2"
-                   value="{{ old('childA_text', optional($drug ?? null)->childA_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+            <input type="text" name="childa_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childa_text', optional($drug ?? null)->childa_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
         </div>
     </div>
 
     <div class="flex justify-between mt-4">
-        <label for="childB_category" class="w-1/4">Child B:</label>
+        <label for="childb_category" class="w-1/4">Child B:</label>
         <div class="w-3/4 flex">
-            <select name="childB_category" class="bg-white border border-red-light mr-4">
-                <option value="1" {{ old('childB_category', optional($drug ?? null)->childB_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
-                <option value="2" {{ old('childB_category', optional($drug ?? null)->childB_category) == 2 ? 'selected' : '' }}>Précaution</option>
-                <option value="3" {{ old('childB_category', optional($drug ?? null)->childB_category) == 3 ? 'selected' : '' }}>Absence de données</option>
-                <option value="4" {{ old('childB_category', optional($drug ?? null)->childB_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            <select name="childb_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childb_category', optional($drug ?? null)->childb_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childb_category', optional($drug ?? null)->childb_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childb_category', optional($drug ?? null)->childb_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childb_category', optional($drug ?? null)->childb_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
             </select>
-            <input type="text" name="childB_text" class="border border-red-light rounded w-full p-2"
-                   value="{{ old('childB_text', optional($drug ?? null)->childB_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+            <input type="text" name="childb_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childb_text', optional($drug ?? null)->childb_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
         </div>
     </div>
 
     <div class="flex justify-between mt-4">
-        <label for="childC_category" class="w-1/4">Child C:</label>
+        <label for="childc_category" class="w-1/4">Child C:</label>
         <div class="w-3/4 flex">
-            <select name="childC_category" class="bg-white border border-red-light mr-4">
-                <option value="1" {{ old('childC_category', optional($drug ?? null)->childC_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
-                <option value="2" {{ old('childC_category', optional($drug ?? null)->childC_category) == 2 ? 'selected' : '' }}>Précaution</option>
-                <option value="3" {{ old('childC_category', optional($drug ?? null)->childC_category) == 3 ? 'selected' : '' }}>Absence de données</option>
-                <option value="4" {{ old('childC_category', optional($drug ?? null)->childC_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
+            <select name="childc_category" class="bg-white border border-red-light mr-4">
+                <option value="1" {{ old('childc_category', optional($drug ?? null)->childc_category) == 1 ? 'selected' : '' }}>Sécuritaire</option>
+                <option value="2" {{ old('childc_category', optional($drug ?? null)->childc_category) == 2 ? 'selected' : '' }}>Précaution</option>
+                <option value="3" {{ old('childc_category', optional($drug ?? null)->childc_category) == 3 ? 'selected' : '' }}>Absence de données</option>
+                <option value="4" {{ old('childc_category', optional($drug ?? null)->childc_category) == 4 ? 'selected' : '' }}>Non-recommandé</option>
             </select>
-            <input type="text" name="childC_text" class="border border-red-light rounded w-full p-2"
-                   value="{{ old('childC_text', optional($drug ?? null)->childC_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
+            <input type="text" name="childc_text" class="border border-red-light rounded w-full p-2"
+                   value="{{ old('childc_text', optional($drug ?? null)->childc_text) }}" placeholder="Si laissé vide, le nom de la catégorie sera affiché"/>
         </div>
     </div>
 

@@ -2,11 +2,11 @@
 
 namespace Tests\Feature;
 
-use Tests\TestCase;
-use App\Models\Drug;
 use App\Models\Article;
 use App\Models\ArticleTranslation;
+use App\Models\Drug;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Tests\TestCase;
 
 class ListAndShowArticlesTest extends TestCase
 {
@@ -57,6 +57,7 @@ class ListAndShowArticlesTest extends TestCase
     public function testGetArticleBySlugReturns200()
     {
         $translation = $this->articles[0]->translations()->first();
+
         $response = $this->fr()->get('/articles/' . $translation->locale . '/' . $translation->slug);
 
         $response->assertStatus(200);
