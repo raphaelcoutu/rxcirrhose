@@ -14,6 +14,7 @@
                 <table>
                     <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Date</th>
                         <th>IP</th>
                         <th>Query</th>
@@ -23,6 +24,7 @@
                     <tbody>
                         @foreach($queries as $query)
                         <tr>
+                            <td>{{ $query->id }}</td>
                             <td>{{ $query->created_at }}</td>
                             <td>{{ $query->host }}</td>
                             <td>{{ $query->query }}</td>

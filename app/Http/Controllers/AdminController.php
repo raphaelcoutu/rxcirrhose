@@ -13,7 +13,7 @@ class AdminController extends Controller
     public function getLogin(Request $request)
     {
         if(Auth::check()) {
-            $queries = SearchQuery::orderBy('created_at', 'desc')->paginate();
+            $queries = SearchQuery::orderBy('id', 'desc')->paginate();
 
             return view('admin.home', compact('queries'));
         }
