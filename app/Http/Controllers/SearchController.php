@@ -2,12 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article;
-use Elasticsearch\Client;
-use App\Models\SearchQuery;
-use Illuminate\Support\Arr;
-use Illuminate\Http\Request;
 use App\Models\ArticleTranslation;
+use App\Models\SearchQuery;
+use CodeInc\StripAccents\StripAccents;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 
@@ -36,7 +34,7 @@ class SearchController extends Controller
         $results = ArticleTranslation::select('id', 'locale', 'title', 'slug')
         ->whereHas('article', function ($q) use ($keywords) {
             foreach ($keywords as $keyword) {
-                $q->where('keywords', 'LIKE', '%' . $keyword . '%');
+                $q->where('keywords', 'ILIKE', '%' . $keyword . '%');
             }
         })->where('locale', App::currentLocale())
             ->limit(5)
@@ -47,6 +45,7 @@ class SearchController extends Controller
             $searchQuery->host = request()->getClientIp();
             $searchQuery->query = $query;
             $searchQuery->results = $results->count();
+            $searchQuery->created_at = \Carbon\Carbon::now();
             $searchQuery->save();
         }
 
