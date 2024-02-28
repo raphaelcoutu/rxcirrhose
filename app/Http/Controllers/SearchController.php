@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\ArticleTranslation;
 use App\Models\SearchQuery;
+use Carbon\Carbon;
 use CodeInc\StripAccents\StripAccents;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
@@ -11,19 +12,9 @@ use Illuminate\Support\Facades\Auth;
 
 class SearchController extends Controller
 {
-    // private $elasticsearch;
-
-    // public function __construct(Client $elasticsearch)
-    // {
-    //     $this->elasticsearch = $elasticsearch;
-    // }
-
     public function search(Request $request)
     {
         $query = $request->get('q') ?? '';
-
-        // $items = $this->searchOnElasticsearch($query);
-        // return $this->buildCollection($items);
 
         return $this->searchOnEloquent($query);
     }
@@ -31,7 +22,7 @@ class SearchController extends Controller
     private function searchOnEloquent(string $query = '')
     {
         $keywords = explode(' ', trim($this->stripAccents($query)));
-        $results = ArticleTranslation::select('id', 'locale', 'title', 'slug')
+        $results = ArticleTranslation::select(['id', 'locale', 'title', 'slug'])
         ->whereHas('article', function ($q) use ($keywords) {
             foreach ($keywords as $keyword) {
                 $q->where('keywords', 'ILIKE', '%' . $keyword . '%');
@@ -45,7 +36,7 @@ class SearchController extends Controller
             $searchQuery->host = request()->getClientIp();
             $searchQuery->query = $query;
             $searchQuery->results = $results->count();
-            $searchQuery->created_at = \Carbon\Carbon::now();
+            $searchQuery->created_at = Carbon::now();
             $searchQuery->save();
         }
 
@@ -55,49 +46,4 @@ class SearchController extends Controller
     function stripAccents($str) {
         return StripAccents::strip($str);
     }
-
-    // private function searchOnElasticsearch(string $query = '')
-    // {
-    //     $items = $this->elasticsearch->search([
-    //         'index' => 'articles',
-    //         'type' => 'articles',
-    //         'body' => [
-    //             "_source" => ["title"],
-    //             "query" => [
-    //                 "multi_match" => [
-    //                     "query"=> $query,
-    //                     "fields" => ["title", "summary"],
-    //                     "fuzziness" => "AUTO"
-    //                 ]
-    //             ]
-    //         ]
-    //     ]);
-
-    //     return $items;
-    // }
-
-    // private function buildCollection(array $items)
-    // {
-    //     return array_map(function ($item) {
-    //         return [
-    //             'id' => $item['_id'],
-    //             'title' => $item['_source']['title']
-    //         ];
-    //     }, $items['hits']['hits']);
-    // }
-
-    // public function reindex()
-    // {
-    //     foreach(Article::cursor() as $article)
-    //     {
-    //         $this->elasticsearch->index([
-    //             'index' => 'articles',
-    //             'type' => 'articles',
-    //             'id' => $article->getKey(),
-    //             'body' => $article->toArray()
-    //         ]);
-    //     }
-
-    //     return 'OK.';
-    // }
 }
