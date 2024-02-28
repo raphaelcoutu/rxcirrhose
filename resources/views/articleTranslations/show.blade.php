@@ -18,7 +18,7 @@
                 <ul class="list-reset pl-3">
                     @foreach($article->drugs->where('table_only', 0) as $drug)
                         <li class="leading-normal">
-                            <a class="text-red-darker no-underline" href="#{{str_slug($drug->name) }}">{{ $drug->name }}</a>
+                            <a class="text-red-darker no-underline" href="#{{Str::slug($drug->name) }}">{{ $drug->name }}</a>
                             @auth
                                 <span class="text-sm">
                                 [<a class="text-red-light no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]
@@ -87,7 +87,7 @@
             <h3 id="molecules" class="text-xl text-red py-2 anchor">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</h3>
             @endif
             @foreach($article->drugs->where('table_only', 0) as $drug)
-                <h4 id={{str_slug($drug->name)}} class="mt-4">{{ $drug->name }}</h4>
+                <h4 id={{Str::slug($drug->name)}} class="mt-4">{{ $drug->name }}</h4>
             <section>
                 <table>
                     <tr>

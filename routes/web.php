@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PagesController::class, 'home']);
+Route::get('/', [PagesController::class, 'home'])->name('/');
 Route::get('/cirrhose', [PagesController::class, 'cirrhose']);
 Route::get('/cirrhosis', [PagesController::class, 'cirrhosis']);
 Route::get('/faq', [PagesController::class, 'faq']);
