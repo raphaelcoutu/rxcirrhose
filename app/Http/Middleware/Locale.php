@@ -22,13 +22,13 @@ class Locale
         $session = $request->getSession();
 
         if (!$session->has(self::SESSION_KEY)) {
-            $session->put(self::SESSION_KEY, $request->getPreferredLanguage(self::LOCALES));
+            $session->set(self::SESSION_KEY, $request->getPreferredLanguage(self::LOCALES));
         }
 
         if ($request->has('lang')) {
             $lang = $request->get('lang');
             if (in_array($lang, self::LOCALES)) {
-                $session->put(self::SESSION_KEY, $lang);
+                $session->set(self::SESSION_KEY, $lang);
             }
         }
 

@@ -19,14 +19,14 @@ class PagesController extends Controller
 
     public function cirrhose()
     {
-        if(App::isLocale('en')) return redirect()->action('PagesController@cirrhosis');
+        if(App::isLocale('en')) return redirect()->action([PagesController::class, 'cirrhosis']);
 
         return view('pages.cirrhosis_'.App::currentLocale());
     }
 
     public function cirrhosis()
     {
-        if(App::isLocale('fr')) return redirect()->action('PagesController@cirrhose');
+        if(App::isLocale('fr')) return redirect()->action([PagesController::class, 'cirrhose']);
 
         return view('pages.cirrhosis_'.App::currentLocale());
     }
@@ -43,28 +43,28 @@ class PagesController extends Controller
 
     public function quiSommesNous()
     {
-        if(App::isLocale('en')) return redirect()->action('PagesController@aboutUs');
+        if(App::isLocale('en')) return redirect()->action([PagesController::class, 'aboutUs']);
 
         return view('pages.about_us_'.App::currentLocale());
     }
 
     public function aboutUs()
     {
-        if(App::isLocale('fr')) return redirect()->action('PagesController@quiSommesNous');
+        if(App::isLocale('fr')) return redirect()->action([PagesController::class, 'quiSommesNous']);
 
         return view('pages.about_us_'.App::currentLocale());
     }
 
     public function conditionsGeneralesUtilisation()
     {
-        if(App::isLocale('en')) return redirect()->action('PagesController@termsOfUse');
+        if(App::isLocale('en')) return redirect()->action([PagesController::class, 'termsOfUse']);
 
         return view('pages.terms_of_use_'.App::currentLocale());
     }
 
     public function termsOfUse()
     {
-        if(App::isLocale('fr')) return redirect()->action('PagesController@conditionsGeneralesUtilisation');
+        if(App::isLocale('fr')) return redirect()->action([PagesController::class, 'conditionsGeneralesUtilisation']);
 
         return view('pages.terms_of_use_'.App::currentLocale());
     }
