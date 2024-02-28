@@ -47,6 +47,8 @@
                 <li>Elizabeth Delisle, candidate au Pharm.D (2020): Rédaction de fiches</li>
                 <li>Isabelle Dansereau, candidate au Pharm.D (2020): Rédaction de fiches</li>
                 <li>Wael Mouas, candidat au Pharm.D (2021): Rédaction de fiches</li>
+                <li>Nourredine-Nassim Krid, candidat au Pharm.D (2023): Rédaction de fiches</li>
+                <li>Sandra Labonté, candidate à la maîtrise en pharmacothérapie avancée (2024): Rédaction de fiches</li>
             </ul>
         </div>
     </div>
