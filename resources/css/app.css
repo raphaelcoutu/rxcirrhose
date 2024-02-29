@@ -1,72 +1,72 @@
-@import "~@fortawesome/fontawesome-free/css/all.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
 
-@tailwind preflight;
-
+@tailwind base;
 @tailwind components;
+@tailwind utilities;
 
 .navbar-item {
-    @apply .block .flex-1 .px-2 .py-3 .text-sm .text-grey .no-underline .border-b-2 .border-transparent .trans
+    @apply block flex-1 px-2 py-3 text-sm text-gray-500 no-underline border-b-2 border-transparent trans;
 }
 
 .navbar-item:hover {
-    @apply .bg-red-lightest text-black;
+    @apply bg-red-100 text-black;
 }
 
 nav a.active {
-    @apply .text-red .bg-red-lightest;
+    @apply text-red-500 bg-red-100;
 }
 
 .search-item {
-    @apply .bg-white .p-2 .shadow-md .border-l-4 .border-blue-lighter .font-bold .text-blue-darker .mx-auto w-2/5;
+    @apply bg-white p-2 shadow-md border-l-4 border-blue-200 font-bold text-blue-700 mx-auto w-2/5;
 }
 
 .search-item:hover {
-    @apply .bg-blue-lightest .cursor-pointer;
+    @apply bg-blue-100 cursor-pointer;
 }
 
 .search-not-found {
-    @apply .bg-white .p-2 .shadow-md .border-l-4 .text-blue-darker;
+    @apply bg-white p-2 shadow-md border-l-4 text-blue-700;
 }
 
 @screen sm {
     .navbar-item {
-        @apply .py-6 .text-center
+        @apply py-6 text-center;
     }
 
     .navbar-item:hover {
-        @apply .border-red .bg-transparent
+        @apply border-red-500 bg-transparent;
     }
 
     nav a.active {
-        @apply .text-red-darkest .border-red .bg-transparent
+        @apply text-red-900 border-red-500 bg-transparent;
     }
 }
 
 .table-header {
-    @apply .py-2 .px-6 .bg-grey-lighter .font-sans .font-medium .uppercase .text-sm .text-grey-darker .border-b .border-grey-light
+    @apply py-2 px-6 bg-gray-200 font-sans font-medium uppercase text-sm text-gray-700 border-b border-gray-400;
 }
 
 td > h4 {
-    @apply .font-medium .tracking-tight .text-grey-darker .uppercase .text-sm .bg-white .border-t .border-b .border-blue-light .pl-4
+    @apply font-medium tracking-tight text-gray-700 uppercase text-sm bg-white border-t border-b border-blue-400 pl-4;
 }
 
 .securitaire {
-    @apply .bg-green-light .text-green-darker .font-thin
+    @apply bg-green-400 text-green-700 font-thin;
 }
 
 .precaution {
-    @apply .bg-yellow-light .text-yellow-darker .font-thin
+    @apply bg-yellow-400 text-yellow-700 font-thin;
 }
 
 .absence-donnees {
-    @apply .bg-grey-light .text-grey-darker .font-thin
+    @apply bg-gray-400 text-gray-700 font-thin;
 }
 
 .non-recommande {
-    @apply .bg-red-light .text-red-darker .font-thin
+    @apply bg-red-400 text-red-700 font-thin;
 }
 
-@tailwind utilities;
+/*@tailwind utilities;*/
 
 #stripes {
     transform-origin: 0;
