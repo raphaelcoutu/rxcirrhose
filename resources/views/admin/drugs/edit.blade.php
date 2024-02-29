@@ -7,7 +7,7 @@
         <h3>Éditer: {{ $drug->name}}</h3>
         <div>
             <i class="fas fa-long-arrow-alt-left"></i> Retour à
-            <a class="text-red no-underline" href="{{ route('admin.articleTranslations.edit', $drug->articleTranslation->id) }}">{{ $drug->articleTranslation->title }}</a>
+            <a class="text-red-500 no-underline" href="{{ route('admin.articleTranslations.edit', $drug->articleTranslation->id) }}">{{ $drug->articleTranslation->title }}</a>
         </div>
         </div>
         @include('admin.drugs.form')

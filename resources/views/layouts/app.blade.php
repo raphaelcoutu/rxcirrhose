@@ -22,16 +22,18 @@
                 <meta property="og:title" content="@yield('title') - {{ __('navbar.brand') }}"/>
         @show
 
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/main.css') }}">
-    </head>
-    <body class="font-sans flex flex-col bg-red-lightest min-h-screen">
+    <title>@yield('title') - {{ __('navbar.brand') }}</title>
+
+    <!-- Styles -->
+    @vite('resources/css/app.css')
+</head>
+<body class="font-sans flex flex-col bg-red-100 min-h-screen">
 
         <div id="app" class="flex flex-col min-h-screen">
             @yield('content')
         </div>
 
-        <script src="{{ mix('js/app.js') }}"></script>
+        @vite('resources/js/app.js')
 
     </body>
 </html>

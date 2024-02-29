@@ -1,5 +1,5 @@
 @if ($errors->any())
-    <div class="w-3/4 mx-auto p-4 bg-red-lightest mt-4 text-red border border-red rounded shadow">
+    <div class="w-3/4 mx-auto p-4 bg-red-100 mt-4 text-red-500 border border-red rounded shadow">
         <h3 class="py-2 border-t border-b border-red">Erreurs à la validation</h3>
         <ul class="list-reset p-4 font-thin">
             @foreach ($errors->all() as $error)
@@ -21,39 +21,39 @@
 
     <div class="flex justify-between mt-4">
         <label for="title" class="w-1/4">Titre:</label>
-        <input type="text" name="title" class="border border-red-light rounded w-3/4 p-2"
+        <input type="text" name="title" class="border border-red-400 rounded w-3/4 p-2"
                value="{{ old('title', optional($articleTranslation ?? null)->title) }}" />
     </div>
 
     <div class="flex justify-between mt-4">
         <label class="w-1/4">Fiche (groupe):</label>
-        <input type="text" class="border border-red-light rounded w-3/4 p-2" value="{{ $article->name }}" disabled>
+        <input type="text" class="border border-red-400 rounded w-3/4 p-2" value="{{ $article->name }}" disabled>
     </div>
 
     <div class="flex justify-between mt-4">
         <label class="w-1/4">Locale:</label>
-        <input type="text" class="border border-red-light rounded w-3/4 p-2" value="{{ request('locale') ?? optional($articleTranslation)->locale }}" disabled>
+        <input type="text" class="border border-red-400 rounded w-3/4 p-2" value="{{ request('locale') ?? optional($articleTranslation)->locale }}" disabled>
         <input type="hidden" name="locale" value="{{ request('locale') ?? optional($articleTranslation)->locale }}">
     </div>
 
     <div class="flex justify-between mt-4">
         <label for="summary" class="w-1/4">Résumé:</label>
-        <textarea name="summary" class="w-3/4 border border-red-light rounded p-2 h-48">{{ old('summary', optional($articleTranslation ?? null)->summary) }}</textarea>
+        <textarea name="summary" class="w-3/4 border border-red-400 rounded p-2 h-48">{{ old('summary', optional($articleTranslation ?? null)->summary) }}</textarea>
     </div>
 
     <div class="flex justify-between mt-4">
         <label for="pharmacodynamics" class="w-1/4">Pharmacodynamie:</label>
-        <textarea name="pharmacodynamics" class="w-3/4 border border-red-light rounded p-2 h-48">{{ old('pharmacodynamics', optional($articleTranslation ?? null)->pharmacodynamics) }}</textarea>
+        <textarea name="pharmacodynamics" class="w-3/4 border border-red-400 rounded p-2 h-48">{{ old('pharmacodynamics', optional($articleTranslation ?? null)->pharmacodynamics) }}</textarea>
     </div>
 
     <div class="flex justify-end mt-4">
         <div class="w-3/4">
         @if(isset($articleTranslation))
             @foreach($articleTranslation->drugs as $drug)
-                <li>{{ $drug->name }} <span class="text-sm ml-2">[<a class="text-red-light no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]</span></li>
+                <li>{{ $drug->name }} <span class="text-sm ml-2">[<a class="text-red-400 no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]</span></li>
             @endforeach
                 <div class="mt-4">
-                    <a href="{{ route('drugs.create', ['articleTranslationId' => $articleTranslation->id]) }}" class="bg-red-light p-2 text-white shadow rounded">Ajouter une molécule</a>
+                    <a href="{{ route('drugs.create', ['articleTranslationId' => $articleTranslation->id]) }}" class="bg-red-400 p-2 text-white shadow rounded">Ajouter une molécule</a>
                 </div>
         @endif
         </div>
@@ -61,7 +61,7 @@
 
     <div class="flex justify-between mt-4">
         <label for="references" class="w-1/4">Références:</label>
-        <textarea name="references" class="w-3/4 border border-red-light rounded p-2 h-48">{{ old('references', optional($articleTranslation ?? null)->references) }}</textarea>
+        <textarea name="references" class="w-3/4 border border-red-400 rounded p-2 h-48">{{ old('references', optional($articleTranslation ?? null)->references) }}</textarea>
     </div>
 
     <div class="flex mt-4">
@@ -79,10 +79,10 @@
     </div>
 
     <div class="flex justify-end mt-4">
-        <a href="{{ route('admin.articles.index') }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Liste</a>
+        <a href="{{ route('admin.articles.index') }}" class="no-underline text-grey-dark p-2 border border-gray-500 rounded mr-4">Liste</a>
         @if(isset($articleTranslation))
-            <a href="{{ route('articleTranslations.show', $articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-grey rounded mr-4">Visualiser la fiche</a>
+            <a href="{{ route('articleTranslations.show', $articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-gray-500 rounded mr-4">Visualiser la fiche</a>
         @endif
-        <button type="submit" class="p-2 text-red border border-red rounded">Enregistrer</button>
+        <button type="submit" class="p-2 text-red-500 border border-red rounded">Enregistrer</button>
     </div>
 </form>

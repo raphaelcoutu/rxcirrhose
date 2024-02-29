@@ -8,38 +8,38 @@
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-col md:flex-row items-start pt-4 leading-loose tracking-normal">
         <div class="md:w-1/4 w-full px-6 py-3 border-t-8 border-red mr-8 shadow bg-white">
-            <h2 class="text-3xl leading-none text-red border-b border-grey-light" class="text-red">{{ Str::of(__('article.summary'))->ucfirst() }}.</h2>
-            <ul class="list-reset pl-2 text-red-dark mt-2">
-                <li class="leading-normal"><a class="text-red no-underline" href="#resume">{{ Str::of(__('article.summary_table'))->ucfirst() }}</a></li>
-                <li class="leading-normal"><a class="text-red no-underline" href="#pharmacodynamie">{{ Str::of(__('article.pharmacodynamics'))->ucfirst() }}</a></li>
+            <h2 class="text-3xl leading-none text-red-500 border-b border-gray-400" class="text-red">{{ Str::of(__('article.summary'))->ucfirst() }}.</h2>
+            <ul class="list-reset pl-2 text-red-600 mt-2">
+                <li class="leading-normal"><a class="text-red-500 no-underline" href="#resume">{{ Str::of(__('article.summary_table'))->ucfirst() }}</a></li>
+                <li class="leading-normal"><a class="text-red-500 no-underline" href="#pharmacodynamie">{{ Str::of(__('article.pharmacodynamics'))->ucfirst() }}</a></li>
                 @if($article->drugs->where('table_only', 0)->count() > 0)
-                <li class="leading-normal"><a class="text-red no-underline" href="#molecules">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</a></li>
+                <li class="leading-normal"><a class="text-red-500 no-underline" href="#molecules">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</a></li>
                 @endif
                 <ul class="list-reset pl-3">
                     @foreach($article->drugs->where('table_only', 0) as $drug)
                         <li class="leading-normal">
-                            <a class="text-red-darker no-underline" href="#{{Str::slug($drug->name) }}">{{ $drug->name }}</a>
+                            <a class="text-red-800 no-underline" href="#{{Str::slug($drug->name) }}">{{ $drug->name }}</a>
                             @auth
                                 <span class="text-sm">
-                                [<a class="text-red-light no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]
+                                [<a class="text-red-400 no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]
                                 </span>
                             @endauth
                         </li>
                     @endforeach
                 </ul>
-                <li class="leading-normal"><a class="text-red no-underline" href="#references">{{ Str::of(__('article.references'))->ucfirst() }}</a></li>
+                <li class="leading-normal"><a class="text-red-500 no-underline" href="#references">{{ Str::of(__('article.references'))->ucfirst() }}</a></li>
             </ul>
         </div>
         <div class="md:w-3/4 w-full bg-white border-t-8 border-red px-2 sm:px-6 py-3 shadow mt-4 md:mt-0 break-words">
-            <div class="flex border-b border-grey-light items-center">
+            <div class="flex border-b border-gray-400 items-center">
                 <h1 class="text-3xl leading-none text-red">{{ $article->title }}</h1>
                 @auth
                 <span class="text-sm ml-2">
-                    {{-- [<a class="text-red-light no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>] --}}
+                    {{-- [<a class="text-red-400 no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>] --}}
                 </span>
                 @endauth
             </div>
-            <h3 id="resume" class="text-xl text-red py-2">{{ Str::of(__('article.summary_table'))->ucfirst() }}</h3>
+            <h3 id="resume" class="text-xl text-red-500 py-2">{{ Str::of(__('article.summary_table'))->ucfirst() }}</h3>
             <table class="w-full">
                 <thead>
                 <tr>
@@ -80,11 +80,11 @@
             </table>
             {!! $article->summary !!}
 
-            <h3 id="pharmacodynamie" class="text-xl text-red py-2">{{ Str::of(__('article.pharmacodynamics'))->ucfirst() }}</h3>
+            <h3 id="pharmacodynamie" class="text-xl text-red-500 py-2">{{ Str::of(__('article.pharmacodynamics'))->ucfirst() }}</h3>
             {!! $article->pharmacodynamics !!}
 
             @if($article->drugs->where('table_only', 0)->count() > 0)
-            <h3 id="molecules" class="text-xl text-red py-2 anchor">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</h3>
+            <h3 id="molecules" class="text-xl text-red-500 py-2 anchor">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</h3>
             @endif
             @foreach($article->drugs->where('table_only', 0) as $drug)
                 <h4 id={{Str::slug($drug->name)}} class="mt-4">{{ $drug->name }}</h4>
@@ -92,19 +92,19 @@
                 <table>
                     <tr>
                         <td width="20%" class="table-header">Absorption</td>
-                        <td class="bg-blue-lightest">{!! $drug->absorption !!}</td>
+                        <td class="bg-blue-100">{!! $drug->absorption !!}</td>
                     </tr>
                     <tr>
                         <td width="20%" class="table-header">Distribution</td>
-                        <td class="bg-blue-lightest">{!! $drug->distribution !!}</td>
+                        <td class="bg-blue-100">{!! $drug->distribution !!}</td>
                     </tr>
                     <tr>
                         <td width="20%" class="table-header">Métabolisme</td>
-                        <td class="bg-blue-lightest">{!! $drug->metabolisme !!}</td>
+                        <td class="bg-blue-100">{!! $drug->metabolisme !!}</td>
                     </tr>
                     <tr>
                         <td width="20%" class="table-header">Élimination</td>
-                        <td class="bg-blue-lightest">{!! $drug->elimination !!}</td>
+                        <td class="bg-blue-100">{!! $drug->elimination !!}</td>
                     </tr>
                 </table>
             </section>
@@ -116,7 +116,7 @@
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="bg-blue-lightest">{!! $drug->official !!}</td>
+                            <td class="bg-blue-100">{!! $drug->official !!}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -127,7 +127,7 @@
             </section>
             @endforeach
 
-            <h3 id="references" class="text-xl text-red py-2">{{ Str::of(__('article.references'))->ucfirst() }}</h3>
+            <h3 id="references" class="text-xl text-red-500 py-2">{{ Str::of(__('article.references'))->ucfirst() }}</h3>
             {!! $article->references !!}
         </div>
     </div>

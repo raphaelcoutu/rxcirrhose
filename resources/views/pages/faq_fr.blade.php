@@ -8,11 +8,11 @@
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
-            <div class="flex border-b border-grey-light items-center">
+            <div class="flex border-b border-gray-400 items-center">
                 <h1 class="text-3xl leading-none text-red">Foire aux questions</h1>
             </div>
 
-            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Comment les fiches ont-elles été réalisées?</h3>
+            <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Comment les fiches ont-elles été réalisées?</h3>
             <p class="mt-2">Pour chaque molécule incluse sur le site, les références tertiaires (telle que la monographie du produit) ont été consultées afin de voir si des recommandations claires étaient émises sur l’ajustement de dose en présence de cirrhose. Ces références ont également été consultées afin de trouver les paramètres de pharmacocinétique de la molécule.</p>
 
             <p class="mt-2">Par la suite, une revue de littérature a été effectuée sur PubMed, Embase et Google afin de répertorier les études de pharmacocinétique ou clinique ayant eu lieu chez les patients souffrant de cirrhose. Les références utilisées dans les articles trouvés ont également été consultées, lorsqu’elles étaient jugées pertinentes.</p>
@@ -25,7 +25,7 @@
 
             <p class="mt-2">Finalement, un groupe de pharmaciens et de médecins a révisé le contenu des fiches médicamenteuses.</p>
 
-            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">À quoi correspond la légende du tableau résumé se retrouvant au début de chaque fiche?</h3>
+            <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">À quoi correspond la légende du tableau résumé se retrouvant au début de chaque fiche?</h3>
 
             <p class="mt-2">Selon les données rapportées, une recommandation a été émise concernant l’utilisation de chaque molécule selon la degré de la cirrhose.</p>
 
@@ -64,10 +64,10 @@
                 <p class="md:pl-8">Il arrive que des recommandations de doses soient ajoutées à même le tableau. Cela peut être le cas lorsque des monographies le spécifie pour des raisons légales ou encore lorsque des regroupements d’experts se sont positionnés sur l’usage d’une molécule.</p>
             </div>
 
-            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Chez quel type de patient peut-on utiliser l’information du site?</h3>
+            <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Chez quel type de patient peut-on utiliser l’information du site?</h3>
             <p class="mt-2">La revue de littérature et les recommandations émises sont applicables pour les patients présentant une cirrhose compensée ou une cirrhose décompensée stable. Elles ne sont pas destinées aux patients souffrant d’une décompensation aiguë de leur maladie hépatique ou d'une hépatite fulminante.</p>
 
-            <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Est-ce normal que le site s'affiche mal sur mon navigateur?</h3>
+            <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Est-ce normal que le site s'affiche mal sur mon navigateur?</h3>
             <p class="mt-2">Présentement, le site supporte uniquement les navigateurs web suivants:</p>
             <ul>
                 <li>Apple Safari 11 et versions ultérieures</li>
