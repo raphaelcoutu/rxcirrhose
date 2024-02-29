@@ -10,9 +10,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => ''])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
-            <div class="flex border-b border-grey-light items-center">
-                <h1 class="text-3xl leading-none text-red">Disclaimer and Terms of Use</h1>
+        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red-500 px-6 py-3 shadow">
+            <div class="flex border-b border-gray-400 items-center">
+                <h1 class="text-3xl leading-none text-red-500">Disclaimer and Terms of Use</h1>
             </div>
 
             <p class="mt-2 tracking-tight font-thin text-sm">Careful attention has been given to the preparation of the information contained on this website, which comes from various sources and is provided free of charge. The recommendations on this site are for informational purposes only. It is suggested that they be compared with other bibliographic sources. The authors have made every effort to ensure that the information contained in the documents is accurate at the time of publication. This information is provided 'as is', without representation, warranty, or condition, either express or implied, statutory or otherwise, regarding the following: quality, accuracy, completeness, legality, reliability, effectiveness, or suitability for a particular purpose; uninterrupted access to this website or those linked to it; error-free use of this website or those linked to it; and the absence of computer viruses, other harmful data components, or corrupted information on this website and those linked to it.</p>

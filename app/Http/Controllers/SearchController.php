@@ -6,6 +6,7 @@ use App\Models\ArticleTranslation;
 use App\Models\SearchQuery;
 use Carbon\Carbon;
 use CodeInc\StripAccents\StripAccents;
+use Illuminate\Contracts\Database\Eloquent\Builder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
@@ -23,17 +24,29 @@ class SearchController extends Controller
         return $this->searchOnEloquent($request->get('hl'), $query);
     }
 
-    private function searchOnEloquent(string $locale, string $query = '')
+    private function searchOnEloquent(string $query = '')
     {
         $keywords = explode(' ', trim($this->stripAccents($query)));
-        $results = ArticleTranslation::select(['id', 'locale', 'title', 'slug'])
-        ->whereHas('article', function ($q) use ($keywords) {
-            foreach ($keywords as $keyword) {
-                $q->where('keywords', 'ILIKE', '%' . $keyword . '%');
-            }
-        })->where('locale', $locale)
-            ->limit(5)
-            ->get();
+
+        $results = ArticleTranslation::query()
+            ->with(['drugs' => function (Builder $query) {
+                $query->select(['article_translation_id', 'name'])->orderBy('name');
+            }])
+            ->select(['id', 'locale', 'title', 'slug'])
+            ->whereHas('article', function (Builder $query) use ($keywords) {
+                foreach ($keywords as $keyword) {
+                    $query->where('keywords', 'ILIKE', '%' . $keyword . '%');
+                }
+            })
+            ->where('locale', App::currentLocale())
+            ->take(25)
+            ->get()
+            ->map(function ($article) {
+               return [
+                   ...$article->toArray(),
+                   'drugs' => $article->drugs->pluck('name')
+               ];
+            });
 
         if (!Auth::check()) {
             $searchQuery = new SearchQuery;
@@ -47,7 +60,8 @@ class SearchController extends Controller
         return $results;
     }
 
-    function stripAccents($str) {
+    function stripAccents($str)
+    {
         return StripAccents::strip($str);
     }
 }

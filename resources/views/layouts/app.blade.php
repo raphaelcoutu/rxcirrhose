@@ -23,20 +23,23 @@
         @show
 
         @hasSection('hreflang_fr')
-        <link rel="alternate" hreflang="fr" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
-        <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/@yield('hreflang_en')?hl=en" />
-        <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
+            <link rel="alternate" hreflang="fr" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
+            <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/@yield('hreflang_en')?hl=en" />
+            <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
         @endif
-        <!-- Styles -->
-        <link rel="stylesheet" href="{{ mix('css/main.css') }}">
-    </head>
-    <body class="font-sans flex flex-col bg-red-lightest min-h-screen">
+
+    <title>@yield('title') - {{ __('navbar.brand') }}</title>
+
+    <!-- Styles -->
+    @vite('resources/css/app.css')
+</head>
+<body class="font-sans flex flex-col bg-red-100 min-h-screen dark:bg-red-950 dark:text-slate-500">
 
         <div id="app" class="flex flex-col min-h-screen">
             @yield('content')
         </div>
 
-        <script src="{{ mix('js/app.js') }}"></script>
+        @vite('resources/js/app.js')
 
     </body>
 </html>
