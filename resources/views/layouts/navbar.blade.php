@@ -22,7 +22,7 @@
                 </a>
                 <div class="flex-1 w-12 flex justify-center items-center">
                     <cirrhose-search-button
-                            class="px-2 py-6 no-underline text-sm text-gray-500 border-b-2 border-transparent hover:text-grey-darker"
+                            class="px-2 py-6 no-underline text-sm text-gray-500 border-b-2 border-transparent hover:text-gray-800"
                     ></cirrhose-search-button>
                 </div>
             </div>

@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">La cirrhose</h1>
+                <h1 class="text-3xl leading-none text-red-500">La cirrhose</h1>
             </div>
 
             <p class="mt-2">La cirrhose est le stade terminal de la maladie du foie. Celle-ci résulte le plus fréquemment d’une agression chronique des hépatocytes. Subséquemment, le dommage répété mène à la formation de nodules de fibrose, à une modification histologique et à une perte de fonction des hépatocytes pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques.
@@ -20,23 +20,23 @@
             <table class="w-full">
                 <tbody>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Virus hépatotropes</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Virus hépatotropes</td>
                     <td class="border-b-2 border-gray-100">hépatite B, hépatite C, hépatite delta</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Métaboliques</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Métaboliques</td>
                     <td class="border-b-2 border-gray-100">hémochromatose, maladie de Wilson, déficit en alpha1-antitrypsine</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Auto-immunes</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Auto-immunes</td>
                     <td class="border-b-2 border-gray-100">maladies auto-immunes, cholangite biliaire primitive</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Vasculaires</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Vasculaires</td>
                     <td class="border-b-2 border-gray-100">Budd-Chiari, insuffisance cardiaque droite</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Autres</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Autres</td>
                     <td>alcool, stéatose non alcoolique, cryptogénique</td>
                 </tr>
                 </tbody>
@@ -97,19 +97,19 @@
 un patient se présente avec une ordonnance d’un produit pour lequel aucune fiche n’est encore disponible, nous proposons l’approche suivante :
 </p>
             <div class="flex flex-col justify-center items-center">
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier les voies d’élimination principales du médicament. Lorsque plus de 20 % du produit passe par le foie, la présence d’hépatopathie peut avoir un impact important.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier les voies d’élimination principales du médicament. Lorsque plus de 20 % du produit passe par le foie, la présence d’hépatopathie peut avoir un impact important.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Calculer le score CTP du patient.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Calculer le score CTP du patient.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier si la monographie du médicament propose un ajustement posologique particulier pour le degré d’atteinte hépatique estimé du patient.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier si la monographie du médicament propose un ajustement posologique particulier pour le degré d’atteinte hépatique estimé du patient.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier si des études de pharmacocinétique ont évalué le médicament prescrit chez des patients souffrant de cirrhose (vérifier si l‘état de votre patient est comparable à celui de la population à l’étude).</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Vérifier si des études de pharmacocinétique ont évalué le médicament prescrit chez des patients souffrant de cirrhose (vérifier si l‘état de votre patient est comparable à celui de la population à l’étude).</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Si aucune donnée n’est disponible, vérifier s’il existe un médicament de la même classe pharmacothérapeutique pouvant être utilisé et pour lequel des données d’innocuité sont disponibles?</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Si aucune donnée n’est disponible, vérifier s’il existe un médicament de la même classe pharmacothérapeutique pouvant être utilisé et pour lequel des données d’innocuité sont disponibles?</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Si aucune alternative est possible, vérifier les paramètres pharmacocinétiques du médicament et vérifier si un ajustement de la dose est possible selon l’intervalle posologique recommandé et l’indication.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Si aucune alternative est possible, vérifier les paramètres pharmacocinétiques du médicament et vérifier si un ajustement de la dose est possible selon l’intervalle posologique recommandé et l’indication.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Doser les concentrations sériques de la molécule lorsque possible et envisageable.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Doser les concentrations sériques de la molécule lorsque possible et envisageable.</div>
             </div>
             <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Références suggérées</h3>
             <ul>

@@ -4,9 +4,9 @@
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="">
         <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-            <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
+            <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red-500 px-6 py-3 shadow">
                 <div class="flex border-b border-gray-400 items-center">
-                    <h1 class="text-3xl leading-none text-red">Admin</h1>
+                    <h1 class="text-3xl leading-none text-red-500">Admin</h1>
                 </div>
                 <a href="{{ route('admin.getLogout') }}">Logout</a>
                 <a href="{{ route('admin.articles.index') }}">Gestionnaire de fiches</a>
@@ -34,7 +34,7 @@
                     </tbody>
                 </table>
                 @if ($queries->hasPages())
-                    <ul class="pagination flex justify-between mx-4 mt-4 list-reset text-white font-bold">
+                    <ul class="pagination flex justify-between mx-4 mt-4 text-white font-bold">
                     {{-- Previous Page Link --}}
                     @if (!$queries->onFirstPage())
                         <li>

@@ -1,7 +1,7 @@
 @if ($errors->any())
-    <div class="w-3/4 mx-auto p-4 bg-red-100 mt-4 text-red-500 border border-red rounded shadow">
-        <h3 class="py-2 border-t border-b border-red">Erreurs à la validation</h3>
-        <ul class="list-reset p-4 font-thin">
+    <div class="w-3/4 mx-auto p-4 bg-red-100 mt-4 text-red-500 border border-red-500 rounded shadow">
+        <h3 class="py-2 border-t border-b border-red-500">Erreurs à la validation</h3>
+        <ul class="p-4 font-thin">
             @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
@@ -79,10 +79,10 @@
     </div>
 
     <div class="flex justify-end mt-4">
-        <a href="{{ route('admin.articles.index') }}" class="no-underline text-grey-dark p-2 border border-gray-500 rounded mr-4">Liste</a>
+        <a href="{{ route('admin.articles.index') }}" class="no-underline text-gray-600 p-2 border border-gray-500 rounded mr-4">Liste</a>
         @if(isset($articleTranslation))
-            <a href="{{ route('articleTranslations.show', $articleTranslation->id) }}" class="no-underline text-grey-dark p-2 border border-gray-500 rounded mr-4">Visualiser la fiche</a>
+            <a href="{{ route('articleTranslations.show', $articleTranslation->id) }}" class="no-underline text-gray-600 p-2 border border-gray-500 rounded mr-4">Visualiser la fiche</a>
         @endif
-        <button type="submit" class="p-2 text-red-500 border border-red rounded">Enregistrer</button>
+        <button type="submit" class="p-2 text-red-500 border border-red-500 rounded">Enregistrer</button>
     </div>
 </form>

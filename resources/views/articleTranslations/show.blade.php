@@ -7,15 +7,15 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-col md:flex-row items-start pt-4 leading-loose tracking-normal">
-        <div class="md:w-1/4 w-full px-6 py-3 border-t-8 border-red mr-8 shadow bg-white">
-            <h2 class="text-3xl leading-none text-red-500 border-b border-gray-400" class="text-red">{{ Str::of(__('article.summary'))->ucfirst() }}.</h2>
-            <ul class="list-reset pl-2 text-red-600 mt-2">
+        <div class="md:w-1/4 w-full px-6 py-3 border-t-8 border-red-500 mr-8 shadow bg-white">
+            <h2 class="text-3xl leading-none text-red-500 border-b border-gray-400" class="text-red-500">{{ Str::of(__('article.summary'))->ucfirst() }}.</h2>
+            <ul class="pl-2 text-red-600 mt-2">
                 <li class="leading-normal"><a class="text-red-500 no-underline" href="#resume">{{ Str::of(__('article.summary_table'))->ucfirst() }}</a></li>
                 <li class="leading-normal"><a class="text-red-500 no-underline" href="#pharmacodynamie">{{ Str::of(__('article.pharmacodynamics'))->ucfirst() }}</a></li>
                 @if($article->drugs->where('table_only', 0)->count() > 0)
                 <li class="leading-normal"><a class="text-red-500 no-underline" href="#molecules">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</a></li>
                 @endif
-                <ul class="list-reset pl-3">
+                <ul class="pl-3">
                     @foreach($article->drugs->where('table_only', 0) as $drug)
                         <li class="leading-normal">
                             <a class="text-red-800 no-underline" href="#{{Str::slug($drug->name) }}">{{ $drug->name }}</a>
@@ -30,9 +30,9 @@
                 <li class="leading-normal"><a class="text-red-500 no-underline" href="#references">{{ Str::of(__('article.references'))->ucfirst() }}</a></li>
             </ul>
         </div>
-        <div class="md:w-3/4 w-full bg-white border-t-8 border-red px-2 sm:px-6 py-3 shadow mt-4 md:mt-0 break-words">
+        <div class="md:w-3/4 w-full bg-white border-t-8 border-red-500 px-2 sm:px-6 py-3 shadow mt-4 md:mt-0 break-words">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">{{ $article->title }}</h1>
+                <h1 class="text-3xl leading-none text-red-500">{{ $article->title }}</h1>
                 @auth
                 <span class="text-sm ml-2">
                     {{-- [<a class="text-red-400 no-underline" href="{{ route('articles.edit', $article->id) }}">Edit</a>] --}}
@@ -84,7 +84,7 @@
             {!! $article->pharmacodynamics !!}
 
             @if($article->drugs->where('table_only', 0)->count() > 0)
-            <h3 id="molecules" class="text-xl text-red-500 py-2 anchor">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</h3>
+            <h3 id="molecules" class="text-xl text-red-500 py-2">{{ Str::of(__('article.drug'))->plural()->ucfirst() }}</h3>
             @endif
             @foreach($article->drugs->where('table_only', 0) as $drug)
                 <h4 id={{Str::slug($drug->name)}} class="mt-4">{{ $drug->name }}</h4>

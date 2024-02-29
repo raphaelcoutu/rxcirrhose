@@ -22,9 +22,9 @@
 </head>
 <body class="font-sans flex flex-col h-full" >
 <div id="app">
-    <header class="absolute pin-t z-10 w-full">
+    <header class="absolute top-0 z-10 w-full">
         <div class="container mx-auto flex justify-between flex-wrap">
-            <div class="flex flex-no-shrink py-2">
+            <div class="flex flex-shrink-0 py-2">
                 <a href="{{ url('/') }}" class="mt-2 font-bold text-xl text-white no-underline pl-2">{{ __('navbar.brand') }}</a>
             </div>
             <div class="block sm:hidden">

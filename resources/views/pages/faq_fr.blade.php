@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">Foire aux questions</h1>
+                <h1 class="text-3xl leading-none text-red-500">Foire aux questions</h1>
             </div>
 
             <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Comment les fiches ont-elles été réalisées?</h3>
@@ -50,17 +50,17 @@
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Initier à faible dose</span>
+                <span class="p-2 text-gray-800 font-thin">Initier à faible dose</span>
                 <p class="md:pl-8">Ce commentaire peut être ajouté lorsque l’exposition à une molécule est fortement augmentée et qu’une dose de traitement initiale réduite est jugée nécessaire. Il est employée pour guider rapidement les utilisateurs du site dans leur prise de décision.</p>
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Titrer lentement</span>
+                <span class="p-2 text-gray-800 font-thin">Titrer lentement</span>
                 <p class="md:pl-8">Ce commentaire peut être ajouté lorsque la clairance d’une molécule est fortement réduite et qu’une titration plus lente des doses est jugée nécessaire. Il est employée pour guider rapidement les utilisateurs du site dans leur prise de décision.</p>
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Autre</span>
+                <span class="p-2 text-gray-800 font-thin">Autre</span>
                 <p class="md:pl-8">Il arrive que des recommandations de doses soient ajoutées à même le tableau. Cela peut être le cas lorsque des monographies le spécifie pour des raisons légales ou encore lorsque des regroupements d’experts se sont positionnés sur l’usage d’une molécule.</p>
             </div>
 
