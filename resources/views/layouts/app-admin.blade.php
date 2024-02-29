@@ -10,9 +10,9 @@
     <title>Admin - RxCirrhose</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
-<body class="font-sans flex flex-col bg-red-lightest min-h-screen">
+<body class="font-sans flex flex-col bg-red-100 min-h-screen">
 
 <div id="app" class="flex flex-col min-h-screen">
     @yield('content')

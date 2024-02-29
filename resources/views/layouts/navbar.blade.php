@@ -18,11 +18,11 @@
                 <a href="{{ route('articleTranslations.index') }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">{{ __('navbar.drugs') }}</a>
                 <a href="{{ url('faq') }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">{{ __('navbar.faq') }}</a>
                 <a href="{{ url()->current(). '?lang='.__('navbar.other_locale') }}" class="navbar-item">
-                    @include('svg.globe', ['class' => 'sm:hidden md:hidden w-3 h-3 fill-current text-red-light']){{ __('navbar.other_locale_name') }}
+                    @include('svg.globe', ['class' => 'sm:hidden md:hidden w-3 h-3 fill-current text-red-400']){{ __('navbar.other_locale_name') }}
                 </a>
                 <div class="flex-1 w-12 flex justify-center items-center">
                     <cirrhose-search-button
-                            class="px-2 py-6 no-underline text-sm text-grey border-b-2 border-transparent hover:text-grey-darker"
+                            class="px-2 py-6 no-underline text-sm text-gray-500 border-b-2 border-transparent hover:text-grey-darker"
                     ></cirrhose-search-button>
                 </div>
             </div>

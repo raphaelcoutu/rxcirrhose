@@ -8,7 +8,7 @@
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
         <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
-            <div class="flex border-b border-grey-light items-center">
+            <div class="flex border-b border-gray-400 items-center">
                 <h1 class="text-3xl leading-none text-red">La classification Child-Pugh</h1>
             </div>
             <p class="mt-2">La classification de Child-Turcotte-Pugh (aussi connue sous le nom de score de Child-Pugh) est un outil pronostique employé chez les patients cirrhotiques. Il a été validé pour prédire la survie des patients à 1 et 2 ans.</p>
@@ -16,7 +16,7 @@
             <p class="mt-2">Il est composé de cinq paramètres : la bilirubine, l’albumine, le temps de prothrombine (ou le RNI), la présence d’ascite et d’encéphalopathie hépatique. Une valeur de 1 à 3 points est attribuée pour chaque paramètre. La somme de ces valeurs permet d’obtenir un score permettant de classifier le degré de cirrhose en consultant l'échelle de référence. La sévérité de la cirrhose se divise en 3 classes : A, B ou C, soit légère, modérée ou avancée.</p>
             <p class="mt-2">Plus le score est élevé, plus le risque de morbidité et de mortalité associé à la cirrhose augmente.</p>
 
-            <div class="mt-2 w-3/4 mx-auto bg-grey-lightest border border-grey px-4 rounded py-2 leading-none">
+            <div class="mt-2 w-3/4 mx-auto bg-gray-100 border border-gray-500 px-4 rounded py-2 leading-none">
                 <p><span class="font-medium">Score de 5 à 6 points</span> : cirrhose légère, Child-Pugh A</p>
                 <p class="ml-6">Survie à un an de 100 %</p>
                 <p class="mt-2"><span class="font-medium">Score de 7 à 9 points</span> : cirrhose modérée, Child-Pugh B</p>
