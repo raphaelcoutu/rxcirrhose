@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => ''])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">Mise en garde et conditions d’utilisation</h1>
+                <h1 class="text-3xl leading-none text-red-500">Mise en garde et conditions d’utilisation</h1>
             </div>
 
             <p class="mt-2 tracking-tight font-thin text-sm">Une attention soignée a été apportée à la préparation de l’information contenue dans ce site web, qui provient de diverses sources et est fournie sans frais. Les recommandations contenues sur ce site sont uniquement à titre indicatif. Il est suggéré de les comparer avec d'autres sources bibliographiques. Les auteurs ont fait le maximum afin de s'assurer que les renseignements contenus dans les documents sont exacts au moment de leur publication. Ces informations sont fournies « telles quelles », sans représentation, garantie ou conditions, explicites ou implicites, statutaires ou autres, touchant les éléments suivants : qualité, exactitude, intégralité, légalité, fiabilité, efficacité ou caractère approprié à une fin déterminée; accès non interrompu à ce site web ou à ceux auxquels il est relié; utilisation sans erreur de ce site web ou de ceux auxquels il est relié; et absence de virus informatique, d’autres composantes nuisibles de données ou d’informations corrompues sur ce site web et ceux auxquels il est relié.</p>

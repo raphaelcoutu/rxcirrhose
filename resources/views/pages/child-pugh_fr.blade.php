@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full sm:w-3/4 bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">La classification Child-Pugh</h1>
+                <h1 class="text-3xl leading-none text-red-500">La classification Child-Pugh</h1>
             </div>
             <p class="mt-2">La classification de Child-Turcotte-Pugh (aussi connue sous le nom de score de Child-Pugh) est un outil pronostique employé chez les patients cirrhotiques. Il a été validé pour prédire la survie des patients à 1 et 2 ans.</p>
 

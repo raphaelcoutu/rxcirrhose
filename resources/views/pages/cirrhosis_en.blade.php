@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">Cirrhosis</h1>
+                <h1 class="text-3xl leading-none text-red-500">Cirrhosis</h1>
             </div>
 
             <p class="mt-2">Cirrhosis is the final stage of liver disease. It usually is the result of chronic injury to the hepatocytes. This repeated aggression leads to the formation of fibrotic nodules, to histological modifications and to a loss of function of the hepatocytes, which can lead to numerous hepatic and extrahepatic complications.
@@ -20,23 +20,23 @@
             <table class="w-full">
                 <tbody>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Hepatotropic virus</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Hepatotropic virus</td>
                     <td class="border-b-2 border-gray-100">hepatitis B, hepatitis C, hepatitis delta</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Metabolic</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Metabolic</td>
                     <td class="border-b-2 border-gray-100">hemochromatosis, Wilson’s disease, alpha1-antitrypsin deficit</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Autoimmune</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Autoimmune</td>
                     <td class="border-b-2 border-gray-100">autoimmune diseases, primary biliary cholangitis</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Vascular</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Vascular</td>
                     <td class="border-b-2 border-gray-100">Budd-Chiari, right-sided heart failure</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-grey-darker border-b border-gray-400">Others</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Others</td>
                     <td>alcohol, non-alcoholic steatosis, cryptogenic</td>
                 </tr>
                 </tbody>
@@ -95,19 +95,19 @@
             <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Reflective approach</h3>
             <p class="mt-2">The datasheets developed on this website are meant to guide healthcare professionals in rapidly evaluating the usage of certain medications in the care for their cirrhotic patients. However, if a certain drug is not listed on this website, we recommend following these steps :</p>
             <div class="flex flex-col justify-center items-center">
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Identify the drugs’ primary elimination routes (hepatic, renal, etc.) When over 20% of the product is hepatically removed, presence of cirrhosis can have a significant impact.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Identify the drugs’ primary elimination routes (hepatic, renal, etc.) When over 20% of the product is hepatically removed, presence of cirrhosis can have a significant impact.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Calculate the patient’s CTP score</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Calculate the patient’s CTP score</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Consult the product monograph to see if the manufacturer listed recommendations on drug dosing in hepatic impairment.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Consult the product monograph to see if the manufacturer listed recommendations on drug dosing in hepatic impairment.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Search for pharmacokinetic studies of the drug in hepatic impairment (and verify if the included population corresponds to the patient being evaluated).</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Search for pharmacokinetic studies of the drug in hepatic impairment (and verify if the included population corresponds to the patient being evaluated).</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">If no data is available, look for alternative drugs in the same therapeutic class for which data in hepatic impairment is available.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">If no data is available, look for alternative drugs in the same therapeutic class for which data in hepatic impairment is available.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">If no alternative is available, analyze the pharmacokinetic properties of the drug and determine if the dosage can and should be adjusted, in regards to the usual dosage range and the indication.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">If no alternative is available, analyze the pharmacokinetic properties of the drug and determine if the dosage can and should be adjusted, in regards to the usual dosage range and the indication.</div>
                 @include('svg.arrow', ['class' => 'w-16 h-16 fill-current text-red-400'])
-                <div class="bg-gray-100 rounded border border-gray-400 text-grey-darker font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Carry out therapeutic drug monitoring, if possible and relevant.</div>
+                <div class="bg-gray-100 rounded border border-gray-400 text-gray-800 font-thin shadow px-4 py-2 w-3/4 mt-2 mb-2">Carry out therapeutic drug monitoring, if possible and relevant.</div>
             </div>
             <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">Suggested references</h3>
             <ul>

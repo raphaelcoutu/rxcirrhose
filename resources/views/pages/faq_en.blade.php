@@ -7,9 +7,9 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full bg-white border-t-8 border-red px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
             <div class="flex border-b border-gray-400 items-center">
-                <h1 class="text-3xl leading-none text-red">Frequently asked question</h1>
+                <h1 class="text-3xl leading-none text-red-500">Frequently asked question</h1>
             </div>
 
             <h3 class="mt-4 px-2 bg-gray-100 border-t border-b border-gray-400">How were the datasheets developed?</h3>
@@ -50,17 +50,17 @@
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Initiate at low dose</span>
+                <span class="p-2 text-gray-800 font-thin">Initiate at low dose</span>
                 <p class="md:pl-8">This comment can be added when the exposition to a certain drug is strongly increased and it is believed a lower initial dose should be used. This comment is used to help clinicians make faster decisions in the care for their patients.</p>
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Titrate slowlyt</span>
+                <span class="p-2 text-gray-800 font-thin">Titrate slowlyt</span>
                 <p class="md:pl-8">This comment can be added when drug clearance is greatly reduced and it is believed a slower titration should be undertaken. This comment is used to help clinicians make faster decisions in the care for their patients.</p>
             </div>
 
             <div class="mt-2">
-                <span class="p2 text-grey-darker font-thin">Other</span>
+                <span class="p-2 text-gray-800 font-thin">Other</span>
                 <p class="md:pl-8">In some instances, specific drug dosage recommendations will be incorporated directly into the table. This information will be added when monographs specify dosages for legal reasons or when a group of experts has given out its own drug dosing recommendations in hepatic impairment for a specific drug.</p>
                 <p class="md:pl-8">Also, when data are only available for a more advanced degree of cirrhosis, the recommendation for this stage of cirrhosis will also be applied to the lesser degrees of cirrhosis for the same drug.</p>
             </div>
