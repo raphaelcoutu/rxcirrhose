@@ -5,9 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
-
-window.Vue = require('vue').default;
+import './bootstrap';
 
 /**
  * The following block of code may be used to automatically register your
@@ -20,8 +18,13 @@ window.Vue = require('vue').default;
 // const files = require.context('./', true, /\.vue$/i);
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
 
-Vue.component('cirrhose-search-button', require('./components/Search-Button.vue').default);
-Vue.component('cirrhose-search', require('./components/Search.vue').default);
+import SearchButton from './components/Search-Button.vue';
+import Search from './components/Search.vue';
+
+import Vue from 'vue'
+
+Vue.component('cirrhose-search-button', SearchButton);
+Vue.component('cirrhose-search', Search);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
