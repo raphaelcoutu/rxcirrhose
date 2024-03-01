@@ -10,7 +10,7 @@
     <title>Admin - RxCirrhose</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    @vite('resources/css/app.css')
 </head>
 <body class="font-sans flex flex-col bg-red-100 min-h-screen">
 
@@ -18,7 +18,7 @@
     @yield('content')
 </div>
 
-<script src="{{ mix('js/app.js') }}"></script>
+@vite('resources/js/app.js')
 
 </body>
 </html>
