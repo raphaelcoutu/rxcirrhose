@@ -7,7 +7,7 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
-        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow dark:bg-slate-900">
             <div class="flex border-b border-gray-400 items-center">
                 <h1 class="text-3xl leading-none text-red-500">La cirrhose</h1>
             </div>
@@ -20,23 +20,23 @@
             <table class="w-full">
                 <tbody>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Virus hépatotropes</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400 dark:bg-slate-700 dark:text-slate-300">Virus hépatotropes</td>
                     <td class="border-b-2 border-gray-100">hépatite B, hépatite C, hépatite delta</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Métaboliques</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400 dark:bg-slate-700 dark:text-slate-300">Métaboliques</td>
                     <td class="border-b-2 border-gray-100">hémochromatose, maladie de Wilson, déficit en alpha1-antitrypsine</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Auto-immunes</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400 dark:bg-slate-700 dark:text-slate-300">Auto-immunes</td>
                     <td class="border-b-2 border-gray-100">maladies auto-immunes, cholangite biliaire primitive</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Vasculaires</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400 dark:bg-slate-700 dark:text-slate-300">Vasculaires</td>
                     <td class="border-b-2 border-gray-100">Budd-Chiari, insuffisance cardiaque droite</td>
                 </tr>
                 <tr>
-                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400">Autres</td>
+                    <td class="bg-gray-200 font-sans text-sm text-gray-800 border-b border-gray-400 dark:bg-slate-700 dark:text-slate-300">Autres</td>
                     <td>alcool, stéatose non alcoolique, cryptogénique</td>
                 </tr>
                 </tbody>

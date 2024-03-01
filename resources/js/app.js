@@ -16,7 +16,7 @@ import './bootstrap';
 
 import Search from './components/Search.vue';
 
-import { createApp, ref } from 'vue'
+import { createApp, onMounted, ref } from 'vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -31,6 +31,14 @@ createApp({
         const toggleMobileMenu = () => {
             mobileMenu.value = !mobileMenu.value
         }
+
+        onMounted(() => {
+            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                document.documentElement.classList.add('dark')
+            } else {
+                document.documentElement.classList.remove('dark')
+            }
+        })
 
         return {
             mobileMenu,
