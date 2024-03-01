@@ -1,5 +1,5 @@
 <script>
-import {Dialog, DialogOverlay, TransitionRoot, TransitionChild} from "@headlessui/vue";
+import { Dialog, DialogOverlay, TransitionRoot, TransitionChild, DialogPanel } from '@headlessui/vue';
 import {nextTick, onMounted, onUnmounted, ref} from "vue";
 import axios from "axios";
 
@@ -8,7 +8,7 @@ export default {
         TransitionChild,
         TransitionRoot,
         Dialog,
-        DialogOverlay
+        DialogPanel
     },
     setup() {
         let appUrl = import.meta.env.VITE_APP_URL;
@@ -114,9 +114,9 @@ export default {
     </button>
     <TransitionRoot :show="isOpen" as="template">
         <Dialog
+            as="div"
             @keydown="navigateResults"
             class="fixed inset-0 z-50 flex justify-center items-start"
-            :open="isOpen"
             @close="isOpen = false">
             <TransitionChild
                 enter="duration-200 ease-out"
@@ -126,18 +126,17 @@ export default {
                 leave-from="opacity-100"
                 leave-to="opacity-0"
                 as="template">
-                <DialogOverlay class="fixed inset-0 bg-black bg-opacity-70"></DialogOverlay>
+                <div class="fixed inset-0 bg-black bg-opacity-70" />
             </TransitionChild>
             <TransitionChild
                 enter="duration-200 ease-out"
-                enter-from="opacity-0 scale-95"
+                enter-from="opacity-0 scale-95 -translate-y-20"
                 enter-to="opacity-100 scale-100"
                 leave="duration-200 ease-in"
                 leave-from="opacity-100 scale-100"
-                leave-to="opacity-0 scale-95"
-
+                leave-to="opacity-0 scale-95 -translate-y-20"
                 as="template">
-                <div
+                <DialogPanel
                     class="flex flex-col overflow-hidden w-full max-w-2xl bg-white rounded-lg mx-4 max-h-[80vh] mt-[10vh] relative">
                     <form
                         @submit="onSubmit"
@@ -186,7 +185,7 @@ export default {
                             Aucun résultat
                         </p>
                     </div>
-                </div>
+                </DialogPanel>
             </TransitionChild>
         </Dialog>
     </TransitionRoot>
