@@ -27,6 +27,9 @@
             <div class="flex flex-shrink-0 py-2">
                 <a href="{{ url('/') }}" class="mt-2 font-bold text-xl text-white no-underline pl-2">{{ __('navbar.brand') }}</a>
             </div>
+            <div class="flex-1 flex items-center justify-center px-4">
+                <cirrhose-search class="w-full lg:w-3/4"></cirrhose-search>
+            </div>
             <div class="block sm:hidden">
                 <button class="flex items-center text-white p-2 m-2 border border-white rounded" @click="toggleMobileMenu">
                     <i class="fas fa-bars"></i>
@@ -41,15 +44,9 @@
                     <a href="{{ url('/?lang='.__('navbar.other_locale')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-100 hover:bg-red-400 sm:hover:bg-transparent trans">
                         @include('svg.globe', ['class' => 'h-4 h-4 fill-current text-white inline-block']){{ __('navbar.other_locale_name') }}
                     </a>
-                    <div class="w-12 flex justify-center items-center">
-                        <cirrhose-search-button
-                                class="px-2 py-6 no-underline text-sm text-gray-400 border-b-2 border-transparent hover:text-gray-700"
-                        ></cirrhose-search-button>
-                    </div>
                 </div>
             </div>
         </div>
-        <cirrhose-search class="fixed w-full"></cirrhose-search>
     </header>
     <div id="globalContent" class="flex-1">
         <main class="relative overflow-hidden">
