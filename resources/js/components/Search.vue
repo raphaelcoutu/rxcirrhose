@@ -1,93 +1,193 @@
-<template>
-    <transition name="bounce">
-        <section class="absolute z-10" v-show="show">
-            <div class="mx-auto container h-auto bg-red-100 rounded-b shadow-md">
-                <div class=" flex w-full">
-                    <div class="mx-auto w-2/5 relative flex">
-                        <input type="search" ref="query" class="py-2 pl-10 my-2 w-full rounded" placeholder="Rechercher ...." v-model="query" @keyup="getArticles()" @keyup.esc="clear()">
-                        <svg class="absolute left-0 top-0 mt-3 ml-2 h-6 w-6 fill-current text-gray-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M112 32C50.1 32 0 82.1 0 144v224c0 61.9 50.1 112 112 112s112-50.1 112-112V144c0-61.9-50.1-112-112-112zm48 224H64V144c0-26.5 21.5-48 48-48s48 21.5 48 48v112zm139.7-29.7c-3.5-3.5-9.4-3.1-12.3.8-45.3 62.5-40.4 150.1 15.9 206.4 56.3 56.3 143.9 61.2 206.4 15.9 4-2.9 4.3-8.8.8-12.3L299.7 226.3zm229.8-19c-56.3-56.3-143.9-61.2-206.4-15.9-4 2.9-4.3 8.8-.8 12.3l210.8 210.8c3.5 3.5 9.4 3.1 12.3-.8 45.3-62.6 40.5-150.1-15.9-206.4z"/></svg>
-                        <button @click="clear()" tabindex="1" class="bg-transparent border border-transparent hover:border-gray-400 rounded text-gray-600 font-semibold p-1 self-center ml-4 text-2xl">&times;</button>
-                    </div>
-                </div>
-                <div class="py-4 flex flex-col">
-                    <a :href="`/articles/${item.locale}/${item.slug}`" class="search-item" tabindex="0" v-for="item in results" :key="item.id">{{ item.title }}</a>
-                    <div class="mx-auto w-2/5">
-                        <p class="search-not-found" v-if="dirty &&!results.length">Aucun résultat trouvé.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </transition>
-</template>
-
-<style>
-    .bounce-enter-active {
-        animation: bounce-in .3s;
-    }
-    .bounce-leave-active {
-        animation: bounce-in .1s reverse;
-    }
-    @keyframes bounce-in {
-        0% {
-            transform: translateY(-20px);
-            opacity: 0;
-        }
-        100% {
-            transform: translateY(0px);
-            opacity: 100;
-        }
-    }
-</style>
-
 <script>
-    import { EventBus } from './../event-bus';
-    import axios from 'axios';
-    import _ from 'lodash';
-    import Vue from 'vue'
+import {Dialog, DialogOverlay, TransitionRoot, TransitionChild} from "@headlessui/vue";
+import {nextTick, onMounted, onUnmounted, ref} from "vue";
+import axios from "axios";
 
-    export default {
-        mounted() {
-            EventBus.$on('toggleSearch', boolean => {
-                this.show = !this.show;
-                if (this.show){
-                    let self = this
-                    Vue.nextTick().then(() => self.$refs.query.focus());
+export default {
+    components: {
+        TransitionChild,
+        TransitionRoot,
+        Dialog,
+        DialogOverlay
+    },
+    setup() {
+        let appUrl = import.meta.env.VITE_APP_URL;
+        const dirty = ref(false)
+
+        const isAppleOs = () => {
+            const platform = navigator?.userAgent?.platform || navigator?.platform || "unknown"
+            return /(Mac|iPhone|iPod|iPad)/i.test(platform);
+        }
+        const keyboardShortcut = isAppleOs() ? "⌘+K" : "Ctrl+K"
+        const isOpen = ref(false)
+
+        const onKeyDown = (event) => {
+            if ((event.metaKey || event.ctrlKey) && event.key === 'k') {
+                event.preventDefault()
+
+                if (isOpen.value) return
+
+                isOpen.value = true
+            }
+        };
+
+        const results = ref([]);
+        const resultsRefs = ref([])
+        const selectedIndex = ref(0)
+
+        const search = _.debounce(async (term) => {
+            if (term.length === 0) {
+                results.value = []
+                return
+            }
+
+            let {data} = await axios.get(`${appUrl}/search?q=${term}`)
+            results.value = data;
+            dirty.value = true
+            selectedIndex.value = 0
+
+            await nextTick();
+            resultsRefs.value = [];
+        }, 250)
+
+        const navigateResults = (event) => {
+            if (event.code === 'ArrowDown') {
+                if (selectedIndex.value === results.value.length - 1) {
+                    selectedIndex.value = 0;
+                } else {
+                    selectedIndex.value++
                 }
-            });
-        },
-
-        data() {
-            return {
-                query: null,
-                show: false,
-                results: [],
-                appUrl: import.meta.env.VITE_APP_URL
+            } else if (event.code === 'ArrowUp') {
+                if (selectedIndex.value === 0) {
+                    selectedIndex.value = results.value.length - 1
+                } else {
+                    selectedIndex.value--;
+                }
             }
-        },
 
-        methods: {
-            getArticles: _.debounce(function() {
-                if(!this.query || this.query == "" || this.query.length < 3) return;
+            resultsRefs.value[selectedIndex.value]?.scrollIntoView(false)
+        }
 
-                axios.get(`${this.appUrl}/search?q=${this.query}`)
-                    .then((response) => {
-                        if (response.data) {
-                            this.results = response.data;
-                        }
-                    });
-            }, 300),
-
-            clear() {
-                this.query = null;
-                this.show = false;
-                this.results = []
-            }
-        },
-
-        computed: {
-            dirty() {
-                return this.query !== null;
+        const onTermKeydown = (event) => {
+            if (['ArrowUp', 'ArrowDown'].includes(event.code)) {
+                navigateResults(event)
+                event.preventDefault()
             }
         }
+
+        const onSubmit = (event) => {
+            if (results.value[selectedIndex.value]) {
+                let selected = results.value[selectedIndex.value]
+                window.location = `/articles/${selected.locale}/${selected.slug}`
+            }
+
+            event.preventDefault()
+        }
+
+        onMounted(() => window.addEventListener('keydown', onKeyDown));
+        onUnmounted(() => window.removeEventListener('keydown', onKeyDown));
+
+        return {
+            dirty,
+            resultsRefs,
+            selectedIndex,
+            results,
+            search,
+            isOpen,
+            keyboardShortcut,
+            onTermKeydown,
+            onSubmit,
+            navigateResults
+        }
     }
+}
 </script>
+
+<template>
+    <button
+        @click="isOpen = true"
+        v-bind="$attrs"
+        class="flex items-center space-x-2 border border-red-900/15 shadow-sm px-3 py-1.5 hover:border-red-400 focus:outline-none focus:border-red-400 rounded-lg bg-white">
+        <span class="fa fa-search text-gray-400 -ml-1"></span>
+        <span class="text-gray-400 flex-1 text-left text-sm">Recherche...</span>
+        <span class="flex-none font-bold text-xs text-gray-400">{{ keyboardShortcut }}</span>
+    </button>
+    <TransitionRoot :show="isOpen" as="template">
+        <Dialog
+            @keydown="navigateResults"
+            class="fixed inset-0 z-50 flex justify-center items-start"
+            :open="isOpen"
+            @close="isOpen = false">
+            <TransitionChild
+                enter="duration-200 ease-out"
+                enter-from="opacity-0"
+                enter-to="opacity-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100"
+                leave-to="opacity-0"
+                as="template">
+                <DialogOverlay class="fixed inset-0 bg-black bg-opacity-70"></DialogOverlay>
+            </TransitionChild>
+            <TransitionChild
+                enter="duration-200 ease-out"
+                enter-from="opacity-0 scale-95"
+                enter-to="opacity-100 scale-100"
+                leave="duration-200 ease-in"
+                leave-from="opacity-100 scale-100"
+                leave-to="opacity-0 scale-95"
+
+                as="template">
+                <div
+                    class="flex flex-col overflow-hidden w-full max-w-2xl bg-white rounded-lg mx-4 max-h-[80vh] mt-[10vh] relative">
+                    <form
+                        @submit="onSubmit"
+                        class="relative flex items-center"
+                        action="#">
+                        <div class="absolute inset-y-0 left-0 flex items-center pl-4 pointer-events-none">
+                            <i class="fa fa-search text-gray-700"></i>
+                        </div>
+
+
+                        <input
+                            @keydown="onTermKeydown"
+                            @input="(e) => search(e.target.value)"
+                            class="w-full py-4 pl-12 border-b border-gray-100 outline-none placeholder-gray-400"
+                            type="text"
+                            placeholder="Recherche...">
+
+                        <div class="absolute inset-y-0 right-0 flex items-center pr-3">
+                            <button
+                                @click="isOpen = false"
+                                class="flex items-center p-1.5 uppercase font-semibold tracking-wider text-gray-700 rounded-md border border-gray-200 focus:outline-none focus:border-gray-300 text-xxs"
+                                type="button">
+                                Esc
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="overflow-auto">
+                        <ul v-if="results.length > 0" class="divide-y divide-gray-100">
+                            <li
+                                v-for="(item, index) in results"
+                                :key="index"
+                                :ref="el => {resultsRefs[index] = el}"
+                                :class="selectedIndex === index ? 'bg-gray-100': null"
+                                @mousemove="selectedIndex = index">
+                                <a
+                                    class="flex flex-col justify-center px-4 py-2.5"
+                                    :href="`/articles/${item.locale}/${item.slug}`">
+                                    <p class="font-semibold text-gray-600 mt-1">{{ item.title }}</p>
+                                    <p class="text-sm text-gray-400">{{ item.drugs.join(', ') }}</p>
+                                </a>
+                            </li>
+                        </ul>
+
+                        <p v-if="results.length === 0  && dirty" class="p-10 text-lg text-center text-gray-400">
+                            Aucun résultat
+                        </p>
+                    </div>
+                </div>
+            </TransitionChild>
+        </Dialog>
+    </TransitionRoot>
+</template>

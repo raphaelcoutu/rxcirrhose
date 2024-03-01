@@ -1,4 +1,3 @@
-
 /**
  * First we will load all of this project's JavaScript dependencies which
  * includes Vue and other libraries. It is a great starting point when
@@ -15,16 +14,9 @@ import './bootstrap';
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
 
-// const files = require.context('./', true, /\.vue$/i);
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default));
-
-import SearchButton from './components/Search-Button.vue';
 import Search from './components/Search.vue';
 
-import Vue from 'vue'
-
-Vue.component('cirrhose-search-button', SearchButton);
-Vue.component('cirrhose-search', Search);
+import {createApp} from 'vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,15 +24,17 @@ Vue.component('cirrhose-search', Search);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-    data: {
-        mobileMenu: false
+createApp({
+    data() {
+        return {
+            mobileMenu: false
+        }
     },
     methods: {
-        toggleMobileMenu() {
-            this.mobileMenu = !this.mobileMenu;
+        toggleMobileMenu: () => {
+            this.mobileMenu = !this.mobileMenu
         }
     }
-
-});
+})
+    .component('cirrhose-search', Search)
+    .mount('#app')

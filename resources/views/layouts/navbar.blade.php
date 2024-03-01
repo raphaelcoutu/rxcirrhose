@@ -1,11 +1,14 @@
 <nav>
     <div class="bg-white">
         <div class="container mx-auto flex justify-between flex-wrap">
-            <div class="w-1/5 px-6">
+            <div class="w-1/5 pl-6">
                 <a href="{{ url('/') }}" class="flex items-center no-underline text-black">
                 @include('svg.liver', ['class' => 'h-16 w-16'])
                 <span class="font-semibold text-xl">{{ __('navbar.brand') }}</span>
                 </a>
+            </div>
+            <div class="flex-1 flex items-center">
+                <cirrhose-search class="w-full"></cirrhose-search>
             </div>
             <div class="block sm:hidden flex items-center">
                 <button class="flex items-center text-black p-2 m-2 border border-black rounded" @click="toggleMobileMenu">
@@ -20,13 +23,7 @@
                 <a href="{{ url()->current(). '?lang='.__('navbar.other_locale') }}" class="navbar-item">
                     @include('svg.globe', ['class' => 'sm:hidden md:hidden w-3 h-3 fill-current text-red-400']){{ __('navbar.other_locale_name') }}
                 </a>
-                <div class="flex-1 w-12 flex justify-center items-center">
-                    <cirrhose-search-button
-                            class="px-2 py-6 no-underline text-sm text-gray-500 border-b-2 border-transparent hover:text-gray-800"
-                    ></cirrhose-search-button>
-                </div>
             </div>
         </div>
     </div>
-    <cirrhose-search class="fixed w-full"></cirrhose-search>
 </nav>
