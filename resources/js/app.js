@@ -16,7 +16,7 @@ import './bootstrap';
 
 import Search from './components/Search.vue';
 
-import {createApp} from 'vue'
+import { createApp, ref } from 'vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -25,14 +25,16 @@ import {createApp} from 'vue'
  */
 
 createApp({
-    data() {
-        return {
-            mobileMenu: false
+    setup() {
+        const mobileMenu = ref(false)
+
+        const toggleMobileMenu = () => {
+            mobileMenu.value = !mobileMenu.value
         }
-    },
-    methods: {
-        toggleMobileMenu: () => {
-            this.mobileMenu = !this.mobileMenu
+
+        return {
+            mobileMenu,
+            toggleMobileMenu
         }
     }
 })
