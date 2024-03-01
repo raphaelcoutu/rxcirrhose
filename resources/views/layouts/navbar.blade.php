@@ -1,5 +1,5 @@
 <nav>
-    <div class="bg-white">
+    <div class="bg-white dark:bg-slate-900">
         <div class="container mx-auto flex justify-between flex-wrap">
             <div class="w-2/12 lg:w-1/5 pl-6">
                 <a href="{{ url('/') }}" class="flex items-center no-underline text-black">

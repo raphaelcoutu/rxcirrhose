@@ -66,12 +66,16 @@ td > h4 {
     @apply bg-red-400 text-red-700 font-thin;
 }
 
-/*@tailwind utilities;*/
-
-#stripes {
+.stripes {
     transform-origin: 0;
     transform: skewY(-6deg);
     background: linear-gradient(150deg, #CC1F1A 0%, #E3342F 30%, #EF5753 50%);
+}
+
+
+.dark\:stripes:where(.dark, .dark *) {
+    --tw-bg-opacity: 1;
+    background: linear-gradient(150deg, #841410 0%, #7c0c0a 30%, #640c0c 50%);
 }
 
 a {

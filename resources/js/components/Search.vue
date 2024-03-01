@@ -107,7 +107,7 @@ export default {
     <button
         @click="isOpen = true"
         v-bind="$attrs"
-        class="flex items-center space-x-2 border border-red-900/15 shadow-sm px-3 py-1.5 hover:border-red-400 focus:outline-none focus:border-red-400 rounded-lg bg-white">
+        class="flex items-center space-x-2 border border-red-900/15 shadow-sm px-3 py-1.5 hover:border-red-400 focus:outline-none focus:border-red-400 rounded-lg bg-white dark:bg-slate-800 dark:border-red-300">
         <span class="fa fa-search text-gray-400 -ml-1"></span>
         <span class="text-gray-400 flex-1 text-left text-sm">Recherche...</span>
         <span class="flex-none font-bold text-xs text-gray-400">{{ keyboardShortcut }}</span>
@@ -137,7 +137,7 @@ export default {
                 leave-to="opacity-0 scale-95 -translate-y-20"
                 as="template">
                 <DialogPanel
-                    class="flex flex-col overflow-hidden w-full max-w-2xl bg-white rounded-lg mx-4 max-h-[80vh] mt-[10vh] relative">
+                    class="flex flex-col overflow-hidden w-full max-w-2xl bg-white rounded-lg mx-4 max-h-[80vh] mt-[10vh] relative dark:bg-slate-800">
                     <form
                         @submit="onSubmit"
                         class="relative flex items-center"
@@ -150,14 +150,14 @@ export default {
                         <input
                             @keydown="onTermKeydown"
                             @input="(e) => search(e.target.value)"
-                            class="w-full py-4 pl-12 border-b border-gray-100 outline-none placeholder-gray-400"
+                            class="w-full py-4 pl-12 border-b border-gray-100 outline-none placeholder-gray-400 dark:bg-slate-800 dark:border-slate-700"
                             type="text"
                             placeholder="Recherche...">
 
                         <div class="absolute inset-y-0 right-0 flex items-center pr-3">
                             <button
                                 @click="isOpen = false"
-                                class="flex items-center p-1.5 uppercase font-semibold tracking-wider text-gray-700 rounded-md border border-gray-200 focus:outline-none focus:border-gray-300 text-xxs"
+                                class="flex items-center p-1.5 uppercase font-semibold tracking-wider text-gray-700 rounded-md border border-gray-200 focus:outline-none focus:border-gray-300 text-xxs dark:text-slate-400 dark:border-slate-400"
                                 type="button">
                                 Esc
                             </button>
@@ -165,17 +165,17 @@ export default {
                     </form>
 
                     <div class="overflow-auto">
-                        <ul v-if="results.length > 0" class="divide-y divide-gray-100">
+                        <ul v-if="results.length > 0" class="divide-y divide-gray-100 dark:divide-slate-700">
                             <li
                                 v-for="(item, index) in results"
                                 :key="index"
                                 :ref="el => {resultsRefs[index] = el}"
-                                :class="selectedIndex === index ? 'bg-gray-100': null"
+                                :class="selectedIndex === index ? 'bg-gray-100 dark:bg-gray-700': null"
                                 @mousemove="selectedIndex = index">
                                 <a
                                     class="flex flex-col justify-center px-4 py-2.5"
                                     :href="`/articles/${item.locale}/${item.slug}`">
-                                    <p class="font-semibold text-gray-600 mt-1">{{ item.title }}</p>
+                                    <p class="font-semibold text-gray-600 mt-1 dark:text-slate-500">{{ item.title }}</p>
                                     <p class="text-sm text-gray-400">{{ item.drugs.join(', ') }}</p>
                                 </a>
                             </li>

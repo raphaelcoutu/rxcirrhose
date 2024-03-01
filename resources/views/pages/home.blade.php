@@ -20,14 +20,14 @@
 
     @vite('resources/css/app.css')
 </head>
-<body class="font-sans flex flex-col h-full">
+<body class="font-sans flex flex-col h-full dark:bg-slate-900 dark:text-slate-500">
 <div id="app">
     <header class="absolute top-0 z-10 w-full mt-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between">
             <div class="flex justify-between flex-1">
                 <div class="flex flex-shrink-0 py-2">
                     <a href="{{ url('/') }}"
-                       class="font-bold text-xl text-white no-underline pl-2">{{ __('navbar.brand') }}</a>
+                       class="font-bold text-xl text-white no-underline pl-2 dark:text-red-100">{{ __('navbar.brand') }}</a>
                 </div>
                 <div class="flex-1 flex items-center justify-center px-4">
                     <cirrhose-search class="w-full lg:w-3/4"></cirrhose-search>
@@ -62,11 +62,11 @@
     <div id="globalContent" class="flex-1">
         <main class="relative overflow-hidden">
             <header class="relative">
-                <div id="stripes" class="w-full h-full overflow-hidden absolute">
+                <div class="stripes dark:stripes w-full h-full overflow-hidden absolute">
                 </div>
                 <section id="intro"
-                         class="block relative h-128 flex md:items-center items-start pt-8 container mx-auto">
-                    <div class="w-full text-white flex flex-col md:flex-row-reverse justify-between">
+                         class="relative h-128 flex md:items-center items-start pt-8 container mx-auto">
+                    <div class="w-full text-white flex flex-col md:flex-row-reverse justify-between dark:text-red-100">
                         <div class="w-full md:w-2/5 flex justify-center mb-6">
                             @include('svg.liver', ['class' => 'mt-4 md:h-64 md:w-64 sm:w-32 sm:h-32 w-24 h-24'])
                         </div>
@@ -76,7 +76,7 @@
                                 <h1 class="text-xl sm:text-3xl">{{ __('home.header') }}</h1>
                             </div>
                             <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">{{ __('home.intro') }}</p>
-                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-400 no-underline text-center md:mt-8 mt-4 w-full md:w-1/2 border border-gray-200 hover:border-red-300 hover:bg-red-50 hover:text-red-600"
+                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-400 no-underline text-center md:mt-8 mt-4 w-full md:w-1/2 border border-gray-200 hover:border-red-300 hover:bg-red-50 hover:text-red-600 dark:bg-red-700 dark:border-red-600 dark:text-red-200 dark:hover:bg-red-800 dark:hover:border-red-700 dark:hover:text-red-300"
                                href="{{ route('articleTranslations.index') }}">{{ __('home.explore_docs') }}</a>
                         </div>
                     </div>
@@ -84,13 +84,13 @@
             </header>
             <section id="primary" class="mx-auto container flex flex-col items-center justify-around pb-8">
                 <div
-                    class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-400 shadow border rounded border-red-600 py-3">
+                    class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-400 shadow border rounded border-red-600 py-3 dark:text-red-600">
                     <p>{{ $articlesCount }} {{ __('home.articles_written') }}</p>
                     <p>{{ $drugsCount }} {{ __('home.drugs_written') }}</p>
                 </div>
                 <div class="w-full flex justify-center mt-8">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
-                        @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32'])
+                        @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
                     </div>
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl">{{ __('home.content') }}</h2>
@@ -99,14 +99,14 @@
                 </div>
                 <div class="w-full flex md:flex-row-reverse justify-center mt-4">
                     <div class="md:w-1/3 w-1/4 flex justify-center items-center">
-                        @include('svg.document', ['class' => 'w-16 h-16 md:w-32 md:h-32'])
+                        @include('svg.document', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
                     </div>
                     <div class="w-2/3">
                         <h2 class="text-xl md:text-2xl md:text-right">{{ __('home.structure') }}</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
                             <p>{!! __('home.structure_text') !!}</p>
                             <p class="mt-2">{{ __('home.about_child_pugh') }} <a href="{{ url('child-pugh') }}"
-                                                                                 class="text-red-400 font-bold no-underline">{{ __('home.here') }}</a>.
+                                                                                 class="text-red-400 font-bold no-underline dark:text-red-700">{{ __('home.here') }}</a>.
                             </p>
                         </div>
                     </div>
@@ -118,7 +118,7 @@
                         <h2 class="text-center">{{ __('home.caution') }}</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div
-                                class="w-full mt-4 bg-red-100 rounded border-2 border-red-600 p-4 text-red-800 shadow tracking-normal leading-normal flex items-center">
+                                class="w-full mt-4 bg-red-100 rounded border-2 border-red-600 p-4 text-red-800 shadow tracking-normal leading-normal flex items-center dark:bg-red-900 dark:text-red-400">
                                 <p>{{ __('home.caution_text') }}</p>
                             </div>
                         </div>
@@ -127,7 +127,7 @@
                         <h2 class="text-center">{{ __('home.conflict_of_interest') }}</h2>
                         <div class="flex w-3/4 mt-10 mx-auto">
                             <div
-                                class="w-full mt-4 p-4 text-red-800 bg-white shadow tracking-normal leading-normal flex items-center">
+                                class="w-full mt-4 p-4 tracking-normal leading-normal flex items-center">
                                 <p>{{ __('home.conflict_of_interest_text') }}</p>
                             </div>
                         </div>
