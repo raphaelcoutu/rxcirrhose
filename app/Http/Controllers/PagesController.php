@@ -12,7 +12,9 @@ class PagesController extends Controller
 {
     public function home()
     {
-        $articles = Cache::remember('articles', 600, function () {
+        $cacheKey = 'home_articles_' . App::currentLocale();
+
+        $articles = Cache::remember($cacheKey, 600, function () {
             return ArticleTranslation::with('drugs')
                 ->select('id')
                 ->where('locale', App::currentLocale())
