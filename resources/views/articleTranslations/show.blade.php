@@ -2,7 +2,7 @@
 
 @section('title', $article->title)
 
-@section('description', mb_substr(strip_tags($article->pharmacodynamics), 0, 150).'...')
+@section('description', trim(mb_substr(strip_tags($article->pharmacodynamics), 0, 150).'...'))
 
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])

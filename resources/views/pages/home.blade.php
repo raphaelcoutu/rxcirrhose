@@ -6,13 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+
+
+
+    <title>{{ __('navbar.brand') }}</title>
+
+    <meta name="description" content="{{ __('navbar.description') }}" />
+
     <meta property="og:url" content="{{ url()->current() }}" />
     <meta property="og:type" content="article" />
     <meta property="og:title" content="{{ __('navbar.brand') }}" />
     <meta property="og:description" content="{{ __('navbar.description') }}" />
-    <meta property="description" content="{{ __('navbar.description') }}" />
-
-    <title>{{ __('navbar.brand') }}</title>
 
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
 </head>
