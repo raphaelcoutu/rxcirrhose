@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use App\Search\Searchable;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Article extends Model
 {
@@ -15,7 +15,7 @@ class Article extends Model
 
     protected $guarded = [];
 
-    public function translations()
+    public function translations(): HasMany
     {
         return $this->hasMany(ArticleTranslation::class);
     }

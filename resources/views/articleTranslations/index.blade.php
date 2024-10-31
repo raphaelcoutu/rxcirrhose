@@ -14,7 +14,7 @@
                 @foreach($articles as $article)
                 <li>
                     <i class="fas fa-long-arrow-alt-right"></i>
-                    <a class="text-red-dark no-underline" href="{{ route('articleTranslations.showBySlug', ['locale' => App::currentLocale(), 'slug' => $article->slug]) }}">{{ $article->title }}</a>
+                    <a class="text-red-dark no-underline" href="{{ route('article-translations.showBySlug', ['locale' => App::currentLocale(), 'slug' => $article->slug]) }}">{{ $article->title }}</a>
                 </li>
                 @endforeach
             </ul>

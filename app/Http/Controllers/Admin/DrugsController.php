@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Models\Article;
+use App\Http\Controllers\Controller;
 use App\Models\ArticleTranslation;
 use App\Models\Drug;
 use Illuminate\Http\Request;
 
-class DrugsAdminController extends Controller
+class DrugsController extends Controller
 {
     public function __construct()
     {
@@ -49,7 +49,7 @@ class DrugsAdminController extends Controller
         $drug = new Drug($request->all());
         $articleTranslation->drugs()->save($drug);
 
-        return redirect()->route('admin.articleTranslations.edit', $request['article_translation_id']);
+        return redirect()->route('admin.article-translations.edit', $request['article_translation_id']);
     }
 
     /**
@@ -92,7 +92,7 @@ class DrugsAdminController extends Controller
         $drug = Drug::find($request->id);
         $drug->update($request->all());
 
-        return redirect()->route('admin.articleTranslations.edit', $drug->article_translation_id);
+        return redirect()->route('admin.article-translations.edit', $drug->article_translation_id);
     }
 
     /**

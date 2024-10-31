@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class ArticleTranslation extends Model
 {
@@ -11,13 +13,18 @@ class ArticleTranslation extends Model
 
     protected $guarded = [];
 
-    public function article()
+    public function article(): BelongsTo
     {
         return $this->belongsTo(Article::class);
     }
 
-    public function drugs()
+    public function drugs(): HasMany
     {
         return $this->hasMany(Drug::class);
+    }
+
+    public function revisions(): HasMany
+    {
+        return $this->hasMany(ArticleRevision::class);
     }
 }

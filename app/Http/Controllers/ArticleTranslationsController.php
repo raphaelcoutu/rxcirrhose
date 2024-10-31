@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ArticleRevision;
 use Illuminate\Http\Request;
 use App\Models\ArticleTranslation;
 use Illuminate\Support\Facades\App;
@@ -48,7 +49,14 @@ class ArticleTranslationsController extends Controller
         if(!$article->active && !Auth::check())
             return abort(403);
 
-        return view('articleTranslations.show', compact('article'));
+        $lastRevision = ArticleRevision::query()
+            ->where('article_translation_id', $article->id)
+            ->where('hidden', false)
+            ->orderBy('revision_date', 'desc')
+            ->orderBy('id', 'desc')
+            ->first();
+
+        return view('articleTranslations.show', compact('article', 'lastRevision'));
     }
 
     public function redirectToLocalizedArticle($slug)

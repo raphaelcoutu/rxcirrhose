@@ -1,16 +1,18 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
-use Illuminate\Support\Str;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
+use App\Models\ArticleRevision;
 use App\Models\ArticleTranslation;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
-class ArticleTranslationsAdminController extends Controller
+class ArticleTranslationsController extends Controller
 {
     public function __construct()
     {
@@ -24,7 +26,7 @@ class ArticleTranslationsAdminController extends Controller
      */
     public function create()
     {
-        if(!request('articleId') || !request('locale')) {
+        if (!request('articleId') || !request('locale')) {
             return abort(404);
         }
 
@@ -36,7 +38,7 @@ class ArticleTranslationsAdminController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -60,16 +62,16 @@ class ArticleTranslationsAdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function show($locale, $slug)
     {
-        $article = ArticleTranslation::with(['drugs' => function($query) {
+        $article = ArticleTranslation::with(['drugs' => function ($query) {
             $query->orderBy('name');
         }])->where('slug', $slug)->where('locale', App::currentLocale())->firstOrFail();
 
-        if(!$article->active && !Auth::check())
+        if (!$article->active && !Auth::check())
             return abort(403);
 
         return view('articleTranslations.show', compact('article'));
@@ -78,25 +80,34 @@ class ArticleTranslationsAdminController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $articleTranslation = ArticleTranslation::with(['drugs' => function($query) {
-            $query->orderBy('name');
-        }, 'article:id,name'])->findOrFail($id);
+        $articleTranslation = ArticleTranslation::query()
+            ->with([
+                'drugs' => function ($query) {
+                    $query->orderBy('name');
+                },
+                'article:id,name'
+            ])
+            ->findOrFail($id);
 
         $article = $articleTranslation->article;
 
-        return view('admin.articleTranslations.edit', compact('articleTranslation', 'article'));
+        $lastRevision = ArticleRevision::orderBy('revision_date')
+            ->orderBy('id', 'desc')
+            ->firstWhere('article_translation_id', $articleTranslation->id);
+
+        return view('admin.articleTranslations.edit', compact('articleTranslation', 'article', 'lastRevision'));
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -120,7 +131,7 @@ class ArticleTranslationsAdminController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

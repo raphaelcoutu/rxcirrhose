@@ -36,7 +36,7 @@
                 <div class="w-full sm:flex justify-between items-center tracking-tight font-thin uppercase bg-red-lightest sm:bg-transparent">
                     <a href="{{ url('/') }}" class="block sm:inline-block p-2 text-sm text-black sm:text-white sm:border-b-2 border-red-lightest no-underline sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.home') }}</a>
                     <a href="{{ url(__('navbar.cirrhosis')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.cirrhosis') }}</a>
-                    <a href="{{ route('articleTranslations.index') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.drugs') }}</a>
+                    <a href="{{ route('article-translations.index') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.drugs') }}</a>
                     <a href="{{ url('faq') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.faq') }}</a>
                     <a href="{{ url('/?lang='.__('navbar.other_locale')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">
                         @include('svg.globe', ['class' => 'w-4 h-4 fill-current text-white']){{ __('navbar.other_locale_name') }}
@@ -67,7 +67,7 @@
                                 <h1 class="text-xl sm:text-3xl">{{ __('home.header') }}</h1>
                             </div>
                             <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">{{ __('home.intro') }}</p>
-                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('articleTranslations.index') }}">{{ __('home.explore_docs') }}</a>
+                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('article-translations.index') }}">{{ __('home.explore_docs') }}</a>
                         </div>
                     </div>
                 </section>

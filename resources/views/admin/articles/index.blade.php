@@ -25,16 +25,16 @@
                             </td>
                             <td>
                                 @if ($articleFr = $article->translations->firstWhere('locale', 'fr'))
-                                    <a href="{{ route('admin.articleTranslations.edit', ['id' => $articleFr]) }}">Modifier</a>
+                                    <a href="{{ route('admin.article-translations.edit', ['id' => $articleFr]) }}">Modifier</a>
                                 @else
-                                    <a href="{{ route('admin.articleTranslations.create', ['articleId' => $article->id, 'locale' => 'fr']) }}">Ajouter</a>
+                                    <a href="{{ route('admin.article-translations.create', ['articleId' => $article->id, 'locale' => 'fr']) }}">Ajouter</a>
                                 @endif
                             </td>
                             <td>
                                 @if ($articleEn = $article->translations->firstWhere('locale', 'en'))
-                                    <a href="{{ route('admin.articleTranslations.edit', ['id' => $articleEn]) }}">Modifier</a>
+                                    <a href="{{ route('admin.article-translations.edit', ['id' => $articleEn]) }}">Modifier</a>
                                 @else
-                                    <a href="{{ route('admin.articleTranslations.create', ['articleId' => $article->id, 'locale' => 'en']) }}">Ajouter</a>
+                                    <a href="{{ route('admin.article-translations.create', ['articleId' => $article->id, 'locale' => 'en']) }}">Ajouter</a>
                                 @endif
                             </td>
                         </tr>

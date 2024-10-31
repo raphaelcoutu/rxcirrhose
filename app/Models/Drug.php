@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Drug extends Model
 {
@@ -11,7 +12,7 @@ class Drug extends Model
 
     protected $guarded = [];
 
-    public function articleTranslation()
+    public function articleTranslation(): BelongsTo
     {
         return $this->belongsTo(ArticleTranslation::class);
     }

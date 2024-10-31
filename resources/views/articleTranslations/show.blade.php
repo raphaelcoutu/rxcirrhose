@@ -21,7 +21,7 @@
                             <a class="text-red-darker no-underline" href="#{{Str::slug($drug->name) }}">{{ $drug->name }}</a>
                             @auth
                                 <span class="text-sm">
-                                [<a class="text-red-light no-underline" href="{{ route('drugs.edit', $drug->id) }}">Edit</a>]
+                                [<a class="text-red-light no-underline" href="{{ route('admin.drugs.edit', $drug->id) }}">Edit</a>]
                                 </span>
                             @endauth
                         </li>
@@ -39,6 +39,9 @@
                 </span>
                 @endauth
             </div>
+            @isset($lastRevision)
+            <p class="flex justify-end text-sm"><i>Dernière révision: {{ $lastRevision->revision_date }}</i></p>
+            @endisset
             <h3 id="resume" class="text-xl text-red py-2">{{ Str::of(__('article.summary_table'))->ucfirst() }}</h3>
             <table class="w-full">
                 <thead>

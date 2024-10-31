@@ -1,15 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Models\Article;
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\ArticleTranslation;
-use Illuminate\Support\Facades\App;
-use Illuminate\Support\Facades\Auth;
 
-class ArticlesAdminController extends Controller
+class ArticlesController extends Controller
 {
     public function __construct()
     {
