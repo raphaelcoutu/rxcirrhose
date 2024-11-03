@@ -67,15 +67,17 @@
                     </div>
                 </div>
 
-                <div class="flex justify-between mt-4">
-                    <label for="references" class="w-1/4">Dernière version [<a class="text-red-light no-underline" href="{{route('admin.article-revisions.index', $articleTranslation)}}">Éditer</a>]:</label>
-                    <div class="w-3/4">
-                        <p>Auteur: {{ $lastRevision?->author ?? 'Aucun(e)' }}</p>
-                        <p>Date: {{ $lastRevision?->revision_date ?? 'Aucune' }}<p>
-                        <p>Description: {{ $lastRevision?->content ?? 'Aucune' }}</p>
-                        @if($lastRevision?->hidden === true)<p>(Cachée)</p>@endif
+                @if(isset($articleTranslation))
+                    <div class="flex justify-between mt-4">
+                        <label for="references" class="w-1/4">Dernière version [<a class="text-red-light no-underline" href="{{route('admin.article-revisions.index', $articleTranslation)}}">Éditer</a>]:</label>
+                        <div class="w-3/4">
+                            <p>Auteur: {{ $lastRevision?->author ?? 'Aucun(e)' }}</p>
+                            <p>Date: {{ $lastRevision?->revision_date ?? 'Aucune' }}<p>
+                            <p>Description: {{ $lastRevision?->content ?? 'Aucune' }}</p>
+                            @if($lastRevision?->hidden === true)<p>(Cachée)</p>@endif
+                        </div>
                     </div>
-                </div>
+                @endif
 
                 <div class="flex justify-between mt-4">
                     <label for="references" class="w-1/4">Références:</label>
