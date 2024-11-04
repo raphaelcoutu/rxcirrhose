@@ -31,7 +31,7 @@ class ArticleTranslationsController extends Controller
             $query->orderBy('name');
         }])->findOrFail($id);
 
-        return redirect()->route('articleTranslations.showBySlug', ['locale' => $article->locale, 'slug' => $article->slug], 301);
+        return redirect()->route('article-translations.showBySlug', ['locale' => $article->locale, 'slug' => $article->slug], 301);
     }
 
     /**
