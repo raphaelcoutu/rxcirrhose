@@ -22,6 +22,11 @@
                 <meta property="og:title" content="@yield('title') - {{ __('navbar.brand') }}"/>
         @show
 
+        @hasSection('hreflang_fr')
+        <link rel="alternate" hreflang="fr" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
+        <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/@yield('hreflang_en')?hl=en" />
+        <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
+        @endif
         <!-- Styles -->
         <link rel="stylesheet" href="{{ mix('css/main.css') }}">
     </head>

@@ -14,12 +14,16 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
+        if(!$request->has('hl')) {
+            abort(500);
+        }
+
         $query = $request->get('q') ?? '';
 
-        return $this->searchOnEloquent($query);
+        return $this->searchOnEloquent($request->get('hl'), $query);
     }
 
-    private function searchOnEloquent(string $query = '')
+    private function searchOnEloquent(string $locale, string $query = '')
     {
         $keywords = explode(' ', trim($this->stripAccents($query)));
         $results = ArticleTranslation::select(['id', 'locale', 'title', 'slug'])
@@ -27,7 +31,7 @@ class SearchController extends Controller
             foreach ($keywords as $keyword) {
                 $q->where('keywords', 'ILIKE', '%' . $keyword . '%');
             }
-        })->where('locale', App::currentLocale())
+        })->where('locale', $locale)
             ->limit(5)
             ->get();
 

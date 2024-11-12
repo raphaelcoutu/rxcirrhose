@@ -13,11 +13,11 @@
                 </button>
             </div>
             <div :class="mobileMenu ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto md:w-3/5 md:justify-between tracking-tight font-thin uppercase sm:justify-end" v-cloak>
-                <a href="/" class="navbar-item">{{ __('navbar.home') }}</a>
-                <a href="{{ url(__('navbar.cirrhosis')) }}" class="navbar-item {{ $active == 'cirrhose' ? 'active' : '' }}">{{ __('navbar.cirrhosis') }}</a>
-                <a href="{{ route('article-translations.index') }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">{{ __('navbar.drugs') }}</a>
-                <a href="{{ url('faq') }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">{{ __('navbar.faq') }}</a>
-                <a href="{{ url()->current(). '?lang='.__('navbar.other_locale') }}" class="navbar-item">
+                <a href="/?hl={{App::currentLocale() }}" class="navbar-item">{{ __('navbar.home') }}</a>
+                <a href="{{ url(__('navbar.cirrhosis')) . '?hl=' . App::currentLocale() }}" class="navbar-item {{ $active == 'cirrhose' ? 'active' : '' }}">{{ __('navbar.cirrhosis') }}</a>
+                <a href="{{ route('article-translations.index') . '?hl=' . App::currentLocale() }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">{{ __('navbar.drugs') }}</a>
+                <a href="{{ url('faq') . '?hl=' . App::currentLocale() }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">{{ __('navbar.faq') }}</a>
+                <a href="{{ url()->current(). '?hl='.__('navbar.other_locale') }}" class="navbar-item">
                     @include('svg.globe', ['class' => 'sm:hidden md:hidden w-3 h-3 fill-current text-red-light']){{ __('navbar.other_locale_name') }}
                 </a>
                 <div class="flex-1 w-12 flex justify-center items-center">
@@ -28,5 +28,5 @@
             </div>
         </div>
     </div>
-    <cirrhose-search class="fixed w-full"></cirrhose-search>
+    <cirrhose-search class="fixed w-full" locale="{{ App::currentLocale() }}"></cirrhose-search>
 </nav>

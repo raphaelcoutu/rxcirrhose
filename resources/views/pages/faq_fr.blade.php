@@ -4,6 +4,9 @@
 
 @section('description', 'Pour chaque molécule incluse sur le site, les références tertiaires (telle que la monographie du produit) ont été consultées afin de voir si des recommandations claires étaient émises sur l’ajustement de dose en présence de cirrhose...')
 
+@section('hreflang_fr', 'faq')
+@section('hreflang_en', 'faq')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

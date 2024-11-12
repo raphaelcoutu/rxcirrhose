@@ -4,6 +4,9 @@
 
 @section('description', 'For each molecule added to the website, tertiary sources (such as drug monographs) were consulted to see if drug dosing recommendations in hepatic impairment...')
 
+@section('hreflang_fr', 'faq')
+@section('hreflang_en', 'faq')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'faq'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

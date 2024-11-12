@@ -7,8 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-
-
     <title>{{ __('navbar.brand') }}</title>
 
     <meta name="description" content="{{ __('navbar.description') }}" />
@@ -19,6 +17,10 @@
     <meta property="og:description" content="{{ __('navbar.description') }}" />
 
     <link rel="stylesheet" href="{{ mix('css/main.css') }}">
+
+    <link rel="alternate" hreflang="fr" href="{{ config('app.url') }}/?hl=fr" />
+    <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/?hl=en" />
+    <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/?hl=fr" />
 </head>
 <body class="font-sans flex flex-col h-full" >
 <div id="app">
@@ -34,11 +36,11 @@
             </div>
             <div :class="mobileMenu ? 'block' : 'hidden'" class="w-full sm:flex sm:items-center sm:w-auto md:w-3/5 sm:justify-end" v-cloak>
                 <div class="w-full sm:flex justify-between items-center tracking-tight font-thin uppercase bg-red-lightest sm:bg-transparent">
-                    <a href="{{ url('/') }}" class="block sm:inline-block p-2 text-sm text-black sm:text-white sm:border-b-2 border-red-lightest no-underline sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.home') }}</a>
-                    <a href="{{ url(__('navbar.cirrhosis')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.cirrhosis') }}</a>
-                    <a href="{{ route('article-translations.index') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.drugs') }}</a>
-                    <a href="{{ url('faq') }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.faq') }}</a>
-                    <a href="{{ url('/?lang='.__('navbar.other_locale')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">
+                    <a href="{{ url('/') . '?hl=' . App::currentLocale() }}" class="block sm:inline-block p-2 text-sm text-black sm:text-white sm:border-b-2 border-red-lightest no-underline sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.home') }}</a>
+                    <a href="{{ url(__('navbar.cirrhosis')) . '?hl=' . App::currentLocale() }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.cirrhosis') }}</a>
+                    <a href="{{ route('article-translations.index') . '?hl=' . App::currentLocale() }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.drugs') }}</a>
+                    <a href="{{ url('faq') . '?hl=' . App::currentLocale() }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">{{ __('navbar.faq') }}</a>
+                    <a href="{{ url('/?hl='.__('navbar.other_locale')) }}" class="block sm:inline-block p-2 text-sm no-underline text-black sm:text-white border-b-2 border-transparent sm:hover:border-red-lightest hover:bg-red-light sm:hover:bg-transparent trans">
                         @include('svg.globe', ['class' => 'w-4 h-4 fill-current text-white']){{ __('navbar.other_locale_name') }}
                     </a>
                     <div class="w-12 flex justify-center items-center">
@@ -49,7 +51,7 @@
                 </div>
             </div>
         </div>
-        <cirrhose-search class="fixed w-full"></cirrhose-search>
+        <cirrhose-search class="fixed w-full" locale="{{ App::currentLocale() }}"></cirrhose-search>
     </header>
     <div id="globalContent" class="flex-1">
         <main class="relative overflow-hidden">
@@ -67,7 +69,7 @@
                                 <h1 class="text-xl sm:text-3xl">{{ __('home.header') }}</h1>
                             </div>
                             <p class="font-thin lg:w-3/4 w-full mt-8 leading-normal">{{ __('home.intro') }}</p>
-                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('article-translations.index') }}">{{ __('home.explore_docs') }}</a>
+                            <a class="uppercase bg-white shadow md:p-4 p-2 rounded text-red-light no-underline text-center md:mt-8 mt-4 w-full md:w-1/2" href="{{ route('article-translations.index') . '?hl=' . App::currentLocale() }}">{{ __('home.explore_docs') }}</a>
                         </div>
                     </div>
                 </section>
@@ -94,7 +96,7 @@
                         <h2 class="text-xl md:text-2xl md:text-right">{{ __('home.structure') }}</h2>
                         <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
                             <p>{!! __('home.structure_text') !!}</p>
-                            <p class="mt-2">{{ __('home.about_child_pugh') }} <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">{{ __('home.here') }}</a>.</p>
+                            <p class="mt-2">{{ __('home.about_child_pugh') }} <a href="{{ url('child-pugh') . '?hl=' . App::currentLocale() }}" class="text-red-light font-bold no-underline">{{ __('home.here') }}</a>.</p>
                         </div>
                     </div>
                 </div>

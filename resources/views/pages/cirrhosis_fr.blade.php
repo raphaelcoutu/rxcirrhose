@@ -4,6 +4,9 @@
 
 @section('description', 'La cirrhose est le stade terminal de la maladie du foie. Celle-ci résulte le plus fréquemment d’une agression chronique des hépatocytes. Subséquemment, le dommage répété mène à la formation de nodules de fibrose, à une modification histologique et à une perte de fonction des hépatocytes pouvant entraîner de nombreuses complications hépatiques et extra-hépatiques...')
 
+@section('hreflang_fr', 'cirrhose')
+@section('hreflang_en', 'cirrhosis')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">
@@ -84,7 +87,7 @@
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Sévérité de la cirrhose</h3>
             <p class="mt-2">La cirrhose est généralement classifiée comme étant compensée ou décompensée. Elle est dite compensée lorsque le patient ne présente aucun symptôme clinique de sa cirrhose. À l’inverse, on parle de cirrhose décompensée lorsque le patient développe des signes de complication associés, tels l'ictère, l'hémorragie digestive, l'encéphalopathie hépatique ou l'ascite.
-            <p class="mt-2">Certains outils ont été développés et validés pour évaluer le pronostic des patients cirrhotiques et classifier le degré de sévérité de la cirrhose. Le score Child-Turcotte-Pugh est le plus fréquemment utilisé à cet effet, puisqu'il est simple d’utilisation et qu’il permet d'établir rapidement le stade de la maladie et le pronostic d'un patient. C’est également pour cette raison qu’il est universellement employé pour formuler les recommandations sur les ajustements de médicaments en cirrhose. Nous vous invitons à consulter la page suivante pour vous familiariser avec cette classification <a href="{{ url('child-pugh') }}" class="text-red-light font-bold no-underline">ici</a>.</>
+            <p class="mt-2">Certains outils ont été développés et validés pour évaluer le pronostic des patients cirrhotiques et classifier le degré de sévérité de la cirrhose. Le score Child-Turcotte-Pugh est le plus fréquemment utilisé à cet effet, puisqu'il est simple d’utilisation et qu’il permet d'établir rapidement le stade de la maladie et le pronostic d'un patient. C’est également pour cette raison qu’il est universellement employé pour formuler les recommandations sur les ajustements de médicaments en cirrhose. Nous vous invitons à consulter la page suivante pour vous familiariser avec cette classification <a href="{{ url('child-pugh') . '?hl=fr' }}" class="text-red-light font-bold no-underline">ici</a>.</>
             <p class="mt-2">Le score MELD, obtenu à partir d'une formule mathématique plus complexe intégrant la créatinine, le RNI et la bilirubine, permet lui aussi d'établir le risque de mortalité à 3 mois d’un patient cirrhotique. Pour sa part, il est utilisé pour prioriser les patients sur la liste d'attente de transplantation hépatique.
 
             <h3 class="mt-4 px-2 bg-grey-lightest border-t border-b border-grey-light">Altérations pharmacocinétiques</h3>

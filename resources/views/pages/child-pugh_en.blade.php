@@ -4,6 +4,9 @@
 
 @section('description', 'The Child-Turcotte-Pugh classification (also known as the Child-Pugh score) is a prognostic tool used in caring for cirrhotic patients. It is validated to predict survival at 1 and 2 years...')
 
+@section('hreflang_fr', 'child-pugh')
+@section('hreflang_en', 'child-pugh')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'cirrhose'])
     <div class="mx-auto container flex flex-grow justify-between items-start pt-4 leading-loose tracking-normal">

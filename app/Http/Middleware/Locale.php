@@ -19,20 +19,11 @@ class Locale
      */
     public function handle(Request $request, Closure $next)
     {
-        $session = $request->getSession();
-
-        if (!$session->has(self::SESSION_KEY)) {
-            $session->set(self::SESSION_KEY, $request->getPreferredLanguage(self::LOCALES));
+        if(!$request->has('hl') || !in_array($request->get('hl'), self::LOCALES)) {
+            return redirect($request->fullUrlWithQuery(['hl' => 'fr']));
         }
 
-        if ($request->has('lang')) {
-            $lang = $request->get('lang');
-            if (in_array($lang, self::LOCALES)) {
-                $session->set(self::SESSION_KEY, $lang);
-            }
-        }
-
-        app()->setLocale($session->get(self::SESSION_KEY));
+        app()->setLocale($request->get('hl'));
 
         return $next($request);
     }

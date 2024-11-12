@@ -2,6 +2,9 @@
 
 @section('title', 'Médicaments')
 
+@section('hreflang_fr', 'articles')
+@section('hreflang_en', 'articles')
+
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-1 justify-between items-start pt-4 leading-loose tracking-normal relative">
@@ -14,7 +17,7 @@
                 @foreach($articles as $article)
                 <li>
                     <i class="fas fa-long-arrow-alt-right"></i>
-                    <a class="text-red-dark no-underline" href="{{ route('article-translations.showBySlug', ['locale' => App::currentLocale(), 'slug' => $article->slug]) }}">{{ $article->title }}</a>
+                    <a class="text-red-dark no-underline" href="{{ route('article-translations.showBySlug', ['locale' => App::currentLocale(), 'slug' => $article->slug, 'hl' => App::currentLocale()]) }}">{{ $article->title }}</a>
                 </li>
                 @endforeach
             </ul>
