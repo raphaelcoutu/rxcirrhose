@@ -53,6 +53,7 @@
                 <li>Nourredine-Nassim Krid, candidat au Pharm.D (2023): Rédaction de fiches</li>
                 <li>Sandra Labonté, candidate à la maîtrise en pharmacothérapie avancée (2024): Rédaction de fiches</li>
                 <li>Jessica Lan, candidate au Pharm.D (2024): Rédaction et révision de fiches</li>
+                <li>Marc-André Lord, candidat au Pharm.D (2024): Rédaction et révision de fiches</li>
             </ul>
         </div>
     </div>

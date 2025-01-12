@@ -52,7 +52,8 @@
                 <li>Wael Mouas, candidate for Pharm.D (2021): Writing of drug datasheets</li>
                 <li>Nourredine-Nassim Krid, candidate for Pharm.D (2023): Writing of drug datasheets</li>
                 <li>Sandra Labonté, candidate for Master's in Advanced Pharmacotherapy (2024): Writing of drug datasheets</li>
-                <li>Jessica Lan, candidate for Pharm.D (2024): Writing of drug datasheets</li>
+                <li>Jessica Lan, candidate for Pharm.D (2024): Writing and reviewing of drug datasheets</li>
+                <li>Marc-André Lord, candidate for Pharm.D (2024): Writing and reviewing of drug datasheets</li>
             </ul>
         </div>
     </div>
