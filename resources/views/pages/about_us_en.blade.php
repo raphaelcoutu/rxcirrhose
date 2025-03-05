@@ -54,6 +54,7 @@
                 <li>Sandra Labonté, candidate for Master's in Advanced Pharmacotherapy (2024): Writing of drug datasheets</li>
                 <li>Jessica Lan, candidate for Pharm.D (2024): Writing and reviewing of drug datasheets</li>
                 <li>Marc-André Lord, candidate for Pharm.D (2024): Writing and reviewing of drug datasheets</li>
+                <li>Sewanou Mickael Tossou, candidate for Pharm.D (2025): Writing and reviewing of drug datasheets</li>
             </ul>
         </div>
     </div>

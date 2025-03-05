@@ -54,6 +54,7 @@
                 <li>Sandra Labonté, candidate à la maîtrise en pharmacothérapie avancée (2024): Rédaction de fiches</li>
                 <li>Jessica Lan, candidate au Pharm.D (2024): Rédaction et révision de fiches</li>
                 <li>Marc-André Lord, candidat au Pharm.D (2024): Rédaction et révision de fiches</li>
+                <li>Sewanou Mickael Tossou, candidat au Pharm.D (2025): Rédaction et révisions de fiches</li>
             </ul>
         </div>
     </div>
