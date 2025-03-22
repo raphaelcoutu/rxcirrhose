@@ -58,21 +58,21 @@
                     <td>{{ $drug->name }}</td>
                     <td class="{{ $drug->childClass("A") }}">
                         @if($drug->childa_text)
-                            {{ $drug->childa_text }}
+                            {!! $drug->childa_text !!}
                         @else
                             {{ $drug->childString("A") }}
                         @endif
                     </td>
                     <td class="{{ $drug->childClass("B") }}">
                         @if($drug->childb_text)
-                            {{ $drug->childb_text }}
+                            {!! $drug->childb_text !!}
                         @else
                             {{ $drug->childString("B") }}
                         @endif
                     </td>
                     <td class="{{ $drug->childClass("C") }}">
                         @if($drug->childc_text)
-                            {{ $drug->childc_text }}
+                            {!! $drug->childc_text !!}
                         @else
                             {{ $drug->childString("C") }}
                         @endif
