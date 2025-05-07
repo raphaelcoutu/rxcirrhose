@@ -55,6 +55,7 @@
                 <li>Jessica Lan, candidate au Pharm.D (2024): Rédaction et révision de fiches</li>
                 <li>Marc-André Lord, candidat au Pharm.D (2024): Rédaction et révision de fiches</li>
                 <li>Sewanou Mickael Tossou, candidat au Pharm.D (2025): Rédaction et révisions de fiches</li>
+                <li>Lauriane Chagnon, candidate au Pharm.D (2025): Rédaction de fiches</li>
             </ul>
         </div>
     </div>
