@@ -16,6 +16,7 @@ import './bootstrap';
 
 import Search from './components/Search.vue';
 import DarkModeToggle from './components/DarkModeToggle.vue';
+import ArticleSearch from './components/ArticleSearch.vue';
 
 import { createApp, onMounted, ref } from 'vue'
 
@@ -65,4 +66,5 @@ createApp({
 })
     .component('cirrhose-search', Search)
     .component('dark-mode-toggle', DarkModeToggle)
+    .component('article-search', ArticleSearch)
     .mount('#app')
