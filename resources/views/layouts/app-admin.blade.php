@@ -12,7 +12,7 @@
     <!-- Styles -->
     @vite('resources/css/app.css')
 </head>
-<body class="font-sans flex flex-col bg-red-100 min-h-screen">
+<body class="font-sans flex flex-col bg-red-100 min-h-screen dark:bg-slate-900 dark:text-gray-300">
 
 <div id="app" class="flex flex-col min-h-screen">
     @yield('content')

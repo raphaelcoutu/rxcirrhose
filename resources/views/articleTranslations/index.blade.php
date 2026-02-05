@@ -8,7 +8,7 @@
 @section('content')
     @include('layouts.navbar', ['active' => 'medicaments'])
     <div class="mx-auto container flex flex-1 justify-between items-start pt-4 leading-loose tracking-normal relative">
-        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow">
+        <div class="mx-auto w-full bg-white border-t-8 border-red-500 px-6 py-3 shadow dark:bg-slate-800 dark:border-red-500">
             <div class="flex border-b border-gray-400 items-center">
                 <h2 class="text-3xl leading-none text-red-500">{{ __('article.drug_datasheets') }}</h2>
             </div>

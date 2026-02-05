@@ -4,28 +4,32 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+    transition: background-color 0.3s, color 0.3s;
+}
+
 .navbar-item {
-    @apply block flex-1 px-2 py-3 text-sm text-gray-500 no-underline border-b-2 border-transparent trans;
+    @apply block flex-1 px-2 py-3 text-sm text-gray-500 no-underline border-b-2 border-transparent trans dark:text-gray-300 dark:hover:bg-slate-800;
 }
 
 .navbar-item:hover {
-    @apply bg-red-100 text-black;
+    @apply bg-red-100 text-black dark:text-white dark:bg-slate-700;
 }
 
 nav a.active {
-    @apply text-red-500 bg-red-100;
+    @apply text-red-500 bg-red-100 dark:text-red-400 dark:bg-transparent;
 }
 
 .search-item {
-    @apply bg-white p-2 shadow-md border-l-4 border-blue-200 font-bold text-blue-700 mx-auto w-2/5;
+    @apply bg-white p-2 shadow-md border-l-4 border-blue-200 font-bold text-blue-700 mx-auto w-2/5 dark:bg-slate-800 dark:text-gray-300 dark:border-slate-600;
 }
 
 .search-item:hover {
-    @apply bg-blue-100 cursor-pointer;
+    @apply bg-blue-100 cursor-pointer dark:bg-slate-700;
 }
 
 .search-not-found {
-    @apply bg-white p-2 shadow-md border-l-4 text-blue-700;
+    @apply bg-white p-2 shadow-md border-l-4 text-blue-700 dark:bg-slate-800 dark:text-gray-300;
 }
 
 @screen md {
@@ -34,36 +38,44 @@ nav a.active {
     }
 
     .navbar-item:hover {
-        @apply border-red-500 bg-transparent;
+        @apply border-red-500 bg-transparent dark:border-red-400;
     }
 
     nav a.active {
-        @apply text-red-900 border-red-500 bg-transparent;
+        @apply text-red-900 border-red-500 bg-transparent dark:text-red-400 dark:border-red-400;
     }
 }
 
 .table-header {
-    @apply py-2 px-6 bg-gray-200 font-sans font-medium uppercase text-sm text-gray-700 border-b border-gray-400;
+    @apply py-2 px-6 bg-gray-200 font-sans font-medium uppercase text-sm text-gray-700 border-b border-gray-400 dark:bg-slate-800 dark:text-gray-300 dark:border-slate-700;
 }
 
 td > h4 {
-    @apply font-medium tracking-tight text-gray-700 uppercase text-sm bg-white border-t border-b border-blue-400 pl-4;
+    @apply font-medium tracking-tight text-gray-700 uppercase text-sm bg-white border-t border-b border-blue-400 pl-4 dark:text-gray-200 dark:bg-slate-800 dark:border-slate-600;
+}
+
+table td, table th {
+    @apply border-b border-gray-300 dark:border-gray-600;
+}
+
+table tbody tr td:first-child {
+    @apply border-r border-gray-300 dark:border-gray-600;
 }
 
 .securitaire {
-    @apply bg-green-400 text-green-700 font-thin;
+    @apply bg-emerald-100 text-emerald-800 border border-emerald-300 dark:bg-emerald-900/50 dark:text-emerald-200 dark:border-emerald-700;
 }
 
 .precaution {
-    @apply bg-yellow-400 text-yellow-700 font-thin;
+    @apply bg-amber-100 text-amber-800 border border-amber-300 dark:bg-amber-900/50 dark:text-amber-200 dark:border-amber-700;
 }
 
 .absence-donnees {
-    @apply bg-gray-400 text-gray-700 font-thin;
+    @apply bg-stone-200 text-stone-700 border border-stone-400 dark:bg-stone-700 dark:text-stone-300 dark:border-stone-600;
 }
 
 .non-recommande {
-    @apply bg-red-400 text-red-700 font-thin;
+    @apply bg-rose-200 text-rose-800 border border-rose-300 dark:bg-rose-900/50 dark:text-rose-200 dark:border-rose-700;
 }
 
 .stripes {
@@ -75,7 +87,7 @@ td > h4 {
 
 .dark\:stripes:where(.dark, .dark *) {
     --tw-bg-opacity: 1;
-    background: linear-gradient(150deg, #841410 0%, #7c0c0a 30%, #640c0c 50%);
+    background: linear-gradient(150deg, #581c1a 0%, #4a1816 30%, #3d1515 50%);
 }
 
 a {
