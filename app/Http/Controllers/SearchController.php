@@ -15,13 +15,13 @@ class SearchController extends Controller
 {
     public function search(Request $request)
     {
-        if(!$request->has('hl')) {
+        if (! $request->has('hl')) {
             abort(500);
         }
 
         $query = $request->get('q') ?? '';
 
-        return $this->searchOnEloquent($request->get('hl'), $query);
+        return $this->searchOnEloquent($query);
     }
 
     private function searchOnEloquent(string $query = '')
@@ -35,20 +35,20 @@ class SearchController extends Controller
             ->select(['id', 'locale', 'title', 'slug'])
             ->whereHas('article', function (Builder $query) use ($keywords) {
                 foreach ($keywords as $keyword) {
-                    $query->where('keywords', 'ILIKE', '%' . $keyword . '%');
+                    $query->where('keywords', 'ILIKE', '%'.$keyword.'%');
                 }
             })
             ->where('locale', App::currentLocale())
             ->take(25)
             ->get()
             ->map(function ($article) {
-               return [
-                   ...$article->toArray(),
-                   'drugs' => $article->drugs->pluck('name')
-               ];
+                return [
+                    ...$article->toArray(),
+                    'drugs' => $article->drugs->pluck('name'),
+                ];
             });
 
-        if (!Auth::check()) {
+        if (! Auth::check()) {
             $searchQuery = new SearchQuery;
             $searchQuery->host = request()->getClientIp();
             $searchQuery->query = $query;
@@ -60,7 +60,7 @@ class SearchController extends Controller
         return $results;
     }
 
-    function stripAccents($str)
+    public function stripAccents($str)
     {
         return StripAccents::strip($str);
     }

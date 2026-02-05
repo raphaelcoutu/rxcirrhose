@@ -41,7 +41,7 @@ export default {
                 return
             }
 
-            let {data} = await axios.get(`${appUrl}/search?q=${term}`)
+            let {data} = await axios.get(`${appUrl}/search?q=${term}&hl=1`)
             results.value = data;
             dirty.value = true
             selectedIndex.value = 0
