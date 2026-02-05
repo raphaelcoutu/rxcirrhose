@@ -54,7 +54,7 @@
                     <a href="{{ url('faq') . '?hl=' . App::currentLocale() }}"
                        class="block md:inline-block p-2 text-md no-underline text-black md:text-white border-b-2 border-transparent md:hover:border-red-100 hover:bg-red-400 md:hover:bg-transparent trans dark:text-gray-200 dark:hover:text-white">{{ __('navbar.faq') }}</a>
                     <dark-mode-toggle :is-dark="isDark" @toggle="toggleDark"></dark-mode-toggle>
-                    <a href="{{ url('/?hl='.__('navbar.other_locale')) . '?hl=' . App::currentLocale() }}"
+                    <a href="{{ url('/?hl='.__('navbar.other_locale')) }}"
                        class="block md:inline-block p-2 text-md no-underline text-black md:text-white border-b-2 border-transparent md:hover:border-red-100 hover:bg-red-400 md:hover:bg-transparent trans dark:text-gray-200 dark:hover:text-white">
                         @include('svg.globe', ['class' => 'h-4 h-4 fill-current text-white inline-block']){{ __('navbar.other_locale_name') }}
                     </a>
