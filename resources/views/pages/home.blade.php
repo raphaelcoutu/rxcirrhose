@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="min-h-screen bg-white dark:bg-slate-900">
 <head>
     @include('layouts.analytics')
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <script>
+        (() => {
+            const storedTheme = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const useDark = storedTheme === 'dark' || (storedTheme === null && prefersDark);
+
+            document.documentElement.classList.toggle('dark', useDark);
+            document.documentElement.style.colorScheme = useDark ? 'dark' : 'light';
+        })();
+    </script>
 
     <title>{{ __('navbar.brand') }}</title>
 
@@ -22,7 +32,7 @@
     <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/?hl=en" />
     <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/?hl=fr" />
 </head>
-<body class="font-sans flex flex-col h-full dark:bg-slate-900 dark:text-gray-300">
+<body class="font-sans flex flex-col h-full bg-white dark:bg-slate-900 dark:text-gray-300">
 <div id="app">
     <header class="absolute top-0 z-10 w-full mt-4">
         <div class="container mx-auto flex flex-col md:flex-row justify-between">
@@ -85,58 +95,60 @@
                     </div>
                 </section>
             </header>
-            <section id="primary" class="mx-auto container flex flex-col items-center justify-around pb-8">
-                <div
-                    class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-400 shadow border rounded border-red-600 py-3 dark:text-red-400 dark:border-red-500 dark:bg-slate-800">
-                    <p>{{ $articlesCount }} {{ __('home.articles_written') }}</p>
-                    <p>{{ $drugsCount }} {{ __('home.drugs_written') }}</p>
-                </div>
-                <div class="w-full flex justify-center mt-8">
-                    <div class="md:w-1/3 w-1/4 flex justify-center items-center">
-                        @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
+            <div class="bg-white dark:bg-slate-900">
+                <section id="primary" class="mx-auto container flex flex-col items-center justify-around pb-8">
+                    <div
+                        class="md:w-1/2 w-3/4 flex flex-col justify-center text-center md:text-3xl text-red-400 shadow border rounded border-red-600 py-3 dark:text-red-400 dark:border-red-500 dark:bg-slate-800">
+                        <p>{{ $articlesCount }} {{ __('home.articles_written') }}</p>
+                        <p>{{ $drugsCount }} {{ __('home.drugs_written') }}</p>
                     </div>
-                    <div class="w-2/3">
-                        <h2 class="text-xl md:text-2xl">{{ __('home.content') }}</h2>
-                        <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">{{ __('home.content_text') }}</p>
-                    </div>
-                </div>
-                <div class="w-full flex md:flex-row-reverse justify-center mt-4">
-                    <div class="md:w-1/3 w-1/4 flex justify-center items-center">
-                        @include('svg.document', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
-                    </div>
-                    <div class="w-2/3">
-                        <h2 class="text-xl md:text-2xl md:text-right">{{ __('home.structure') }}</h2>
-                        <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
-                            <p>{!! __('home.structure_text') !!}</p>
-                            <p class="mt-2">{{ __('home.about_child_pugh') }} <a href="{{ url('child-pugh') . '?hl=' . App::currentLocale() }}"
-                                                                                 class="text-red-400 font-bold no-underline dark:text-red-400">{{ __('home.here') }}</a>.
-                            </p>
+                    <div class="w-full flex justify-center mt-8">
+                        <div class="md:w-1/3 w-1/4 flex justify-center items-center">
+                            @include('svg.list', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
+                        </div>
+                        <div class="w-2/3">
+                            <h2 class="text-xl md:text-2xl">{{ __('home.content') }}</h2>
+                            <p class="sm:leading-normal md:mt-6 mt-2 text-sm md:text-base">{{ __('home.content_text') }}</p>
                         </div>
                     </div>
-                </div>
-            </section>
-            <section class="relative py-8 mt-10">
-                <div class="container mx-auto w-full md:w-2/3 flex-col">
-                    <div>
-                        <h2 class="text-center">{{ __('home.caution') }}</h2>
-                        <div class="flex w-3/4 mt-10 mx-auto">
-                            <div
-                                class="w-full mt-4 bg-red-100 rounded border-2 border-red-600 p-4 text-red-800 shadow tracking-normal leading-normal flex items-center dark:bg-slate-800 dark:text-red-400 dark:border-red-500">
-                                <p>{{ __('home.caution_text') }}</p>
+                    <div class="w-full flex md:flex-row-reverse justify-center mt-4">
+                        <div class="md:w-1/3 w-1/4 flex justify-center items-center">
+                            @include('svg.document', ['class' => 'w-16 h-16 md:w-32 md:h-32 dark:fill-slate-400'])
+                        </div>
+                        <div class="w-2/3">
+                            <h2 class="text-xl md:text-2xl md:text-right">{{ __('home.structure') }}</h2>
+                            <div class="sm:leading-normal md:mt-6 mt-2 md:text-right text-sm md:text-base">
+                                <p>{!! __('home.structure_text') !!}</p>
+                                <p class="mt-2">{{ __('home.about_child_pugh') }} <a href="{{ url('child-pugh') . '?hl=' . App::currentLocale() }}"
+                                                                                     class="text-red-400 font-bold no-underline dark:text-red-400">{{ __('home.here') }}</a>.
+                                </p>
                             </div>
                         </div>
                     </div>
-                    <div class="mt-10">
-                        <h2 class="text-center">{{ __('home.conflict_of_interest') }}</h2>
-                        <div class="flex w-3/4 mt-10 mx-auto">
-                            <div
-                                class="w-full mt-4 p-4 tracking-normal leading-normal flex items-center">
-                                <p>{{ __('home.conflict_of_interest_text') }}</p>
+                </section>
+                <section class="relative py-8 mt-10">
+                    <div class="container mx-auto w-full md:w-2/3 flex-col">
+                        <div>
+                            <h2 class="text-center">{{ __('home.caution') }}</h2>
+                            <div class="flex w-3/4 mt-10 mx-auto">
+                                <div
+                                    class="w-full mt-4 bg-red-100 rounded border-2 border-red-600 p-4 text-red-800 shadow tracking-normal leading-normal flex items-center dark:bg-slate-800 dark:text-red-400 dark:border-red-500">
+                                    <p>{{ __('home.caution_text') }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-10">
+                            <h2 class="text-center">{{ __('home.conflict_of_interest') }}</h2>
+                            <div class="flex w-3/4 mt-10 mx-auto">
+                                <div
+                                    class="w-full mt-4 p-4 tracking-normal leading-normal flex items-center">
+                                    <p>{{ __('home.conflict_of_interest_text') }}</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </div>
         </main>
     </div>
     @include('layouts.footer')

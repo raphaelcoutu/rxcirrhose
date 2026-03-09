@@ -1,11 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="min-h-screen">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="min-h-screen bg-red-100 dark:bg-slate-900">
     <head>
         @include('layouts.analytics')
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{{ csrf_token() }}">
+        <script>
+            (() => {
+                const storedTheme = localStorage.getItem('theme');
+                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                const useDark = storedTheme === 'dark' || (storedTheme === null && prefersDark);
+
+                document.documentElement.classList.toggle('dark', useDark);
+                document.documentElement.style.colorScheme = useDark ? 'dark' : 'light';
+            })();
+        </script>
 
         <title>@yield('title') - {{ __('navbar.brand') }}</title>
 

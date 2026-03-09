@@ -18,7 +18,7 @@ import Search from './components/Search.vue';
 import DarkModeToggle from './components/DarkModeToggle.vue';
 import ArticleSearch from './components/ArticleSearch.vue';
 
-import { createApp, onMounted, ref } from 'vue'
+import { createApp, ref } from 'vue'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -39,22 +39,16 @@ createApp({
             isDark.value = !isDark.value
             if (isDark.value) {
                 document.documentElement.classList.add('dark')
+                document.documentElement.style.colorScheme = 'dark'
                 localStorage.theme = 'dark'
             } else {
                 document.documentElement.classList.remove('dark')
+                document.documentElement.style.colorScheme = 'light'
                 localStorage.theme = 'light'
             }
         }
 
-        onMounted(() => {
-            if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-                isDark.value = true
-                document.documentElement.classList.add('dark')
-            } else {
-                isDark.value = false
-                document.documentElement.classList.remove('dark')
-            }
-        })
+        isDark.value = document.documentElement.classList.contains('dark')
 
         return {
             mobileMenu,
