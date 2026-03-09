@@ -13,13 +13,30 @@ La cirrhose est le stade final de l'atteinte hepatique chronique. Elle resulte h
 
 Les causes d'atteinte hepatique chronique sont nombreuses :
 
-|                    |                                                                    |
-|--------------------|--------------------------------------------------------------------|
-| Virus hepatotropes | hepatite B, hepatite C, hepatite delta                             |
-| Metaboliques       | hemochromatose, maladie de Wilson, deficit en alpha-1-antitrypsine |
-| Auto-immunes       | maladies auto-immunes, cholangite biliaire primitive               |
-| Vasculaires        | Budd-Chiari, insuffisance cardiaque droite                         |
-| Autres             | alcool, steatose non alcoolique, cryptogenique                     |
+<table>
+    <tbody>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Virus hepatotropes</td>
+            <td class="dark:text-gray-300">hepatite B, hepatite C, hepatite delta</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Metaboliques</td>
+            <td class="dark:text-gray-300">hemochromatose, maladie de Wilson, deficit en alpha-1-antitrypsine</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Auto-immunes</td>
+            <td class="dark:text-gray-300">maladies auto-immunes, cholangite biliaire primitive</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Vasculaires</td>
+            <td class="dark:text-gray-300">Budd-Chiari, insuffisance cardiaque droite</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Autres</td>
+            <td class="dark:text-gray-300">alcool, steatose non alcoolique, cryptogenique</td>
+        </tr>
+    </tbody>
+</table>
 
 Dans les pays occidentaux, l'alcool, le syndrome metabolique et l'hepatite C sont les causes principales de la cirrhose.
 
@@ -82,17 +99,17 @@ Les fiches developpees sur ce site visent a aider les professionnels de la sante
 
 <div class="callout-flow">
     <div class="callout-step">Identifier les principales voies d'elimination du medicament (hepatique, renale, etc.). Lorsque plus de 20 % du produit est elimine par voie hepatique, la presence de cirrhose peut avoir un impact significatif.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Calculer le score CTP du patient.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Consulter la monographie pour voir si le fabricant a emis des recommandations de dosage en insuffisance hepatique.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Rechercher des etudes pharmacocinetiques en insuffisance hepatique et verifier si la population incluse correspond au patient evalue.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Si aucune donnee n'est disponible, chercher des medicaments alternatifs de la meme classe therapeutique pour lesquels des donnees en insuffisance hepatique existent.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Si aucune alternative n'est disponible, analyser les proprietes pharmacocinetiques du medicament et determiner si la dose peut ou doit etre ajustee selon la plage usuelle et l'indication.</div>
-    <svg class="w-16 h-16 fill-current text-red-400" viewBox="0 0 176 265" xmlns="http://www.w3.org/2000/svg"><path d="M63.1764 240.27C77.3458 273.002 85.8346 270.774 100.004 240.27C132.265 170.979 176 132.068 176 132.068C176 132.068 138.004 129.431 115.758 110.329L111.101 106.331L111.759 100.228L125.242 -6.46078e-06L49.2943 -1.05644e-05L64.8593 99.9648L65.7118 105.438L61.6654 109.225C38.5395 130.87 0 132.068 0 132.068C0 132.068 36.7926 178.67 63.1764 240.27Z"/></svg>
+    <svg class="w-16 h-16 fill-current text-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 612 612"><path d="M403.939,295.749l-78.814,78.833V172.125c0-10.557-8.568-19.125-19.125-19.125c-10.557,0-19.125,8.568-19.125,19.125 v202.457l-78.814-78.814c-7.478-7.478-19.584-7.478-27.043,0c-7.478,7.478-7.478,19.584,0,27.042l108.19,108.19 c4.59,4.59,10.863,6.005,16.812,4.953c5.929,1.052,12.221-0.382,16.811-4.953l108.19-108.19c7.478-7.478,7.478-19.583,0-27.042 C423.523,288.29,411.417,288.29,403.939,295.749z M306,0C137.012,0,0,136.992,0,306s137.012,306,306,306s306-137.012,306-306 S475.008,0,306,0z M306,573.75C158.125,573.75,38.25,453.875,38.25,306C38.25,158.125,158.125,38.25,306,38.25 c147.875,0,267.75,119.875,267.75,267.75C573.75,453.875,453.875,573.75,306,573.75z" /></svg>
     <div class="callout-step">Effectuer un suivi therapeutique des concentrations si cela est possible et pertinent.</div>
 </div>
 

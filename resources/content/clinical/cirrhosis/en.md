@@ -13,13 +13,30 @@ Cirrhosis is the final stage of liver disease. It usually is the result of chron
 
 There are many causes of chronic hepatic injury:
 
-|  |  |
-| --- | --- |
-| Hepatotropic virus | hepatitis B, hepatitis C, hepatitis delta |
-| Metabolic | hemochromatosis, Wilson's disease, alpha1-antitrypsin deficit |
-| Autoimmune | autoimmune diseases, primary biliary cholangitis |
-| Vascular | Budd-Chiari, right-sided heart failure |
-| Others | alcohol, non-alcoholic steatosis, cryptogenic |
+<table>
+    <tbody>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Hepatotropic virus</td>
+            <td class="dark:text-gray-300">hepatitis B, hepatitis C, hepatitis delta</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Metabolic</td>
+            <td class="dark:text-gray-300">hemochromatosis, Wilson's disease, alpha1-antitrypsin deficit</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Autoimmune</td>
+            <td class="dark:text-gray-300">autoimmune diseases, primary biliary cholangitis</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Vascular</td>
+            <td class="dark:text-gray-300">Budd-Chiari, right-sided heart failure</td>
+        </tr>
+        <tr>
+            <td class="bg-gray-200 font-sans text-sm text-gray-800 dark:bg-slate-700 dark:text-slate-300">Others</td>
+            <td class="dark:text-gray-300">alcohol, non-alcoholic steatosis, cryptogenic</td>
+        </tr>
+    </tbody>
+</table>
 
 In western countries, alcohol, metabolic syndrome and hepatitis C are the primary causes of cirrhosis.
 

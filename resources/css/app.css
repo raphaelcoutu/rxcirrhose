@@ -147,6 +147,22 @@ td {
     @apply pl-5;
 }
 
+.clinical-content ul {
+    @apply list-disc;
+}
+
+.clinical-content ol {
+    @apply list-decimal;
+}
+
+.clinical-content li {
+    @apply ml-2;
+}
+
+.clinical-content table {
+    @apply w-full;
+}
+
 .clinical-content a {
     @apply font-bold text-red-400;
 }
