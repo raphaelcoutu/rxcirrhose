@@ -126,6 +126,43 @@ td {
     transition: linear 300ms;
 }
 
+.clinical-content h2,
+.clinical-content h3,
+.clinical-content h4 {
+    @apply mt-4 border-y border-gray-400 bg-gray-100 px-2 text-lg text-gray-700 dark:border-slate-600 dark:bg-slate-800 dark:text-gray-200;
+}
+
+.clinical-content p,
+.clinical-content ul,
+.clinical-content ol,
+.clinical-content table,
+.clinical-content blockquote,
+.clinical-content .callout-flow,
+.clinical-content .score-box {
+    @apply mt-2;
+}
+
+.clinical-content ul,
+.clinical-content ol {
+    @apply pl-5;
+}
+
+.clinical-content a {
+    @apply font-bold text-red-400;
+}
+
+.clinical-content .score-box {
+    @apply mx-auto w-full rounded border border-gray-500 bg-gray-100 px-4 py-2 leading-none sm:w-3/4 dark:bg-slate-700;
+}
+
+.clinical-content .callout-flow {
+    @apply flex flex-col items-center justify-center;
+}
+
+.clinical-content .callout-step {
+    @apply my-2 w-3/4 rounded border border-gray-400 bg-gray-100 px-4 py-2 font-thin text-gray-800 shadow dark:border-slate-600 dark:bg-slate-800 dark:text-gray-300;
+}
+
 [v-cloak] > * {
     display: none;
 }

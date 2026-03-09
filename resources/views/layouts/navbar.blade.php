@@ -21,7 +21,7 @@
                 <a href="{{ route('article-translations.index') . '?hl=' . App::currentLocale() }}" class="navbar-item {{ $active == 'medicaments' ? 'active' : '' }}">{{ __('navbar.drugs') }}</a>
                 <a href="{{ url('faq') . '?hl=' . App::currentLocale() }}" class="navbar-item {{ $active == 'faq' ? 'active' : '' }}">{{ __('navbar.faq') }}</a>
                 <dark-mode-toggle :is-dark="isDark" @toggle="toggleDark"></dark-mode-toggle>
-                <a href="{{ url()->current(). '?hl='.__('navbar.other_locale') }}" class="navbar-item">
+                <a href="{{ $localeSwitchUrl ?? url()->current(). '?hl='.__('navbar.other_locale') }}" class="navbar-item">
                     @include('svg.globe', ['class' => 'w-4 h-4 fill-current text-red-400 hidden lg:inline-block']){{ __('navbar.other_locale_name') }}
                 </a>
             </div>

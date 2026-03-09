@@ -78,7 +78,7 @@ export default {
         const onSubmit = (event) => {
             if (results.value[selectedIndex.value]) {
                 let selected = results.value[selectedIndex.value]
-                window.location = `/articles/${selected.locale}/${selected.slug}`
+                window.location = selected.url
             }
 
             event.preventDefault()
@@ -174,9 +174,13 @@ export default {
                                 @mousemove="selectedIndex = index">
                                 <a
                                     class="flex flex-col justify-center px-4 py-2.5"
-                                    :href="`/articles/${item.locale}/${item.slug}`">
-                                    <p class="font-semibold text-gray-600 mt-1 dark:text-slate-500">{{ item.title }}</p>
-                                    <p class="text-sm text-gray-400">{{ item.drugs.join(', ') }}</p>
+                                    :href="item.url">
+                                    <div class="flex items-center gap-2">
+                                        <p class="font-semibold text-gray-600 mt-1 dark:text-slate-500">{{ item.title }}</p>
+                                        <span class="rounded-full bg-gray-100 px-2 py-0.5 text-xs uppercase tracking-wide text-gray-500 dark:bg-slate-700 dark:text-slate-300">{{ item.label }}</span>
+                                    </div>
+                                    <p v-if="item.drugs.length > 0" class="text-sm text-gray-400">{{ item.drugs.join(', ') }}</p>
+                                    <p v-else-if="item.description" class="text-sm text-gray-400">{{ item.description }}</p>
                                 </a>
                             </li>
                         </ul>

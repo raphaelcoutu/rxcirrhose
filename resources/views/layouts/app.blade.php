@@ -27,6 +27,14 @@
             <link rel="alternate" hreflang="en" href="{{ config('app.url') }}/@yield('hreflang_en')?hl=en" />
             <link rel="alternate" hreflang="x-default" href="{{ config('app.url') }}/@yield('hreflang_fr')?hl=fr" />
         @endif
+        @isset($alternateLinks)
+            @foreach($alternateLinks as $locale => $alternateLink)
+                <link rel="alternate" hreflang="{{ $locale }}" href="{{ $alternateLink }}" />
+            @endforeach
+            @if(isset($alternateLinks['fr']))
+                <link rel="alternate" hreflang="x-default" href="{{ $alternateLinks['fr'] }}" />
+            @endif
+        @endisset
 
     <title>@yield('title') - {{ __('navbar.brand') }}</title>
 

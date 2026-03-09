@@ -19,7 +19,7 @@ class StaticPagesTest extends TestCase
      */
     public function testHomePageReturns200()
     {
-        $response = $this->get('/');
+        $response = $this->get('/?hl=fr');
 
         $response->assertStatus(200);
     }
@@ -36,7 +36,7 @@ class StaticPagesTest extends TestCase
             ->create();
 
         $response = $this->fr()
-            ->get('/');
+            ->get('/?hl=fr');
 
         $response->assertSeeText('2 fiches médicamenteuses');
         $response->assertSeeText('4 molécules analysées');
@@ -49,20 +49,43 @@ class StaticPagesTest extends TestCase
      */
     public function testStaticPagesReturn200()
     {
-        // Child-Pugh
-        $response = $this->fr()->get('/child-pugh');
-        $response->assertStatus(200);
-
-        // Cirrhose
-        $response = $this->fr()->get('/cirrhose');
-        $response->assertStatus(200);
-
         // FAQ
-        $response = $this->fr()->get('/faq');
+        $response = $this->get('/faq?hl=fr');
         $response->assertStatus(200);
 
         // Qui Sommes-nous?
-        $response = $this->fr()->get('/qui-sommes-nous');
+        $response = $this->get('/qui-sommes-nous?hl=fr');
         $response->assertStatus(200);
+    }
+
+    public function testClinicalArticlesIndexReturns200()
+    {
+        $response = $this->get('/infos-cliniques?hl=fr');
+
+        $response->assertStatus(200);
+        $response->assertSeeText('Cirrhose');
+        $response->assertSeeText('La classification Child-Pugh');
+        $response->assertDontSeeText('Foire aux questions');
+    }
+
+    public function testClinicalArticleReturns200()
+    {
+        $response = $this->get('/clinical/fr/cirrhosis?hl=fr');
+
+        $response->assertStatus(200);
+        $response->assertSeeText('Cirrhose');
+        $response->assertSeeText('Etiologies');
+    }
+
+    public function testLegacyClinicalRoutesRedirectToCanonicalUrls()
+    {
+        $this->get('/cirrhose?hl=fr')
+            ->assertRedirect('/clinical/fr/cirrhosis?hl=fr');
+
+        $this->get('/cirrhosis?hl=en')
+            ->assertRedirect('/clinical/en/cirrhosis?hl=en');
+
+        $this->get('/child-pugh?hl=fr')
+            ->assertRedirect('/clinical/fr/child-pugh?hl=fr');
     }
 }
