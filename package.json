@@ -11,7 +11,7 @@
         "@headlessui/vue": "^1.7.19",
         "@vitejs/plugin-vue": "^6.0.4",
         "autoprefixer": "^10.4.17",
-        "axios": "^1.11.0",
+        "axios": "^1.15.2",
         "babel-polyfill": "^6.26.0",
         "concurrently": "^9.0.1",
         "laravel-vite-plugin": "^2.0.0",
