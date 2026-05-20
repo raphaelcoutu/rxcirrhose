@@ -11,7 +11,6 @@ export default {
         DialogPanel
     },
     setup() {
-        let appUrl = import.meta.env.VITE_APP_URL;
         const dirty = ref(false)
 
         const isAppleOs = () => {
@@ -41,7 +40,12 @@ export default {
                 return
             }
 
-            let {data} = await axios.get(`${appUrl}/search?q=${term}&hl=1`)
+            let {data} = await axios.get('/search', {
+                params: {
+                    q: term,
+                    hl: 1,
+                },
+            })
             results.value = data;
             dirty.value = true
             selectedIndex.value = 0
